@@ -32,7 +32,7 @@
   aria-label="{{ section.settings.accessibility_info | escape }}"
 >
   {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
-    <div class="slideshow__controls slideshow__controls--top slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    {% comment %} <div class="slideshow__controls slideshow__controls--top slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -41,7 +41,7 @@
         aria-controls="Slider-{{ section.id }}"
       >
         {% render 'icon-caret' %}
-      </button>
+      </button> {% endcomment %}
       <div class="slider-counter slider-counter--{{ section.settings.slider_visual }}{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
         {%- if section.settings.slider_visual == 'counter' -%}
           <span class="slider-counter--current">1</span>
@@ -66,7 +66,7 @@
           </div>
         {%- endif -%}
       </div>
-      <button
+      {% comment %} <button
         type="button"
         class="slider-button slider-button--next"
         name="next"
@@ -74,21 +74,21 @@
         aria-controls="Slider-{{ section.id }}"
       >
         {% render 'icon-caret' %}
-      </button>
+      </button> {% endcomment %}
 
       {%- if section.settings.auto_rotate -%}
-        <button
+        {% comment %} <button
           type="button"
           class="slideshow__autoplay slider-button no-js-hidden{% if section.settings.auto_rotate == false %} slideshow__autoplay--paused{% endif %}"
           aria-label="{{ 'sections.slideshow.pause_slideshow' | t }}"
         >
           {%- render 'icon-pause' -%}
           {%- render 'icon-play' -%}
-        </button>
+        </button> {% endcomment %}
       {%- endif -%}
     </div>
     <noscript>
-      <div class="slider-buttons">
+      {% comment %} <div class="slider-buttons">
         <div class="slider-counter">
           {%- for block in section.blocks -%}
             <a
@@ -99,7 +99,7 @@
               {{ forloop.index }}
             </a>
           {%- endfor -%}
-        </div>
+        </div> {% endcomment %}
       </div>
     </noscript>
   {%- endif -%}
@@ -307,6 +307,10 @@
         {
           "value": "large",
           "label": "t:sections.slideshow.settings.slide_height.options__4.label"
+        }
+        {
+          "value": "adapt_height",
+          "label": "t:sections.slideshow.settings.slide_height.options__5.label"
         }
       ],
       "default": "medium",
