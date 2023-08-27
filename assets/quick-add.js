@@ -46,7 +46,6 @@ if (!customElements.get('quick-add-modal')) {
             if (window.ProductModel) window.ProductModel.loadShopifyXR();
 
             this.removeGalleryListSemantic();
-            this.updateImageSizes();
             this.preventVariantURLSwitching();
             super.show(opener);
           })
@@ -76,12 +75,9 @@ if (!customElements.get('quick-add-modal')) {
       }
 
       preventVariantURLSwitching() {
-        const variantPicker = this.modalContent.querySelector(
-          'variant-radios,variant-selects',
-        );
-        if (!variantPicker) return;
-
-        variantPicker.setAttribute('data-update-url', 'false');
+        this.modalContent
+          .querySelector('variant-radios,variant-selects')
+          .setAttribute('data-update-url', 'false');
       }
 
       removeDOMElements() {
@@ -92,10 +88,6 @@ if (!customElements.get('quick-add-modal')) {
 
         const productModal = this.productElement.querySelector('product-modal');
         if (productModal) productModal.remove();
-
-        const modalDialog =
-          this.productElement.querySelectorAll('modal-dialog');
-        if (modalDialog) modalDialog.forEach((modal) => modal.remove());
       }
 
       preventDuplicatedIDs() {
@@ -106,9 +98,9 @@ if (!customElements.get('quick-add-modal')) {
             `quickadd-${sectionId}`,
           );
         this.productElement
-          .querySelectorAll('variant-selects, variant-radios, product-info')
-          .forEach((element) => {
-            element.dataset.originalSection = sectionId;
+          .querySelectorAll('variant-selects, variant-radios')
+          .forEach((variantSelect) => {
+            variantSelect.dataset.originalSection = sectionId;
           });
       }
 
@@ -122,28 +114,6 @@ if (!customElements.get('quick-add-modal')) {
         galleryList
           .querySelectorAll('[id^="Slide-"]')
           .forEach((li) => li.setAttribute('role', 'presentation'));
-      }
-
-      updateImageSizes() {
-        const product = this.modalContent.querySelector('.product');
-        const desktopColumns = product.classList.contains('product--columns');
-        if (!desktopColumns) return;
-
-        const mediaImages = product.querySelectorAll('.product__media img');
-        if (!mediaImages.length) return;
-
-        let mediaImageSizes =
-          '(min-width: 1000px) 715px, (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)';
-
-        if (product.classList.contains('product--medium')) {
-          mediaImageSizes = mediaImageSizes.replace('715px', '605px');
-        } else if (product.classList.contains('product--small')) {
-          mediaImageSizes = mediaImageSizes.replace('715px', '495px');
-        }
-
-        mediaImages.forEach((img) =>
-          img.setAttribute('sizes', mediaImageSizes),
-        );
       }
     },
   );

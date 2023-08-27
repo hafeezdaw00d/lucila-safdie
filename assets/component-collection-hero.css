@@ -1,6 +1,9 @@
 .collection-hero__inner {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  text-align: center;
+  margin-top: 30%;
 }
 
 .collection-hero--with-image .collection-hero__inner {
@@ -33,6 +36,8 @@
     align-items: center;
     flex-direction: row;
     padding-bottom: 0;
+    margin: 0;
+    text-align: left;
   }
 }
 

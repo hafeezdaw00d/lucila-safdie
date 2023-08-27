@@ -24,7 +24,7 @@ document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
     );
   });
 
-  if (summary.closest('header-drawer, menu-drawer')) return;
+  if (summary.closest('header-drawer')) return;
   summary.parentElement.addEventListener('keyup', onKeyUpEscape);
 });
 
@@ -74,14 +74,6 @@ function trapFocus(container, elementToFocus = container) {
   document.addEventListener('focusin', trapFocusHandlers.focusin);
 
   elementToFocus.focus();
-
-  if (
-    elementToFocus.tagName === 'INPUT' &&
-    ['search', 'text', 'email', 'url'].includes(elementToFocus.type) &&
-    elementToFocus.value
-  ) {
-    elementToFocus.setSelectionRange(0, elementToFocus.value.length);
-  }
 }
 
 // Here run the querySelector to figure out if the browser supports :focus-visible or not and run code based on it.
@@ -175,30 +167,10 @@ class QuantityInput extends HTMLElement {
     super();
     this.input = this.querySelector('input');
     this.changeEvent = new Event('change', { bubbles: true });
-    this.input.addEventListener('change', this.onInputChange.bind(this));
+
     this.querySelectorAll('button').forEach((button) =>
       button.addEventListener('click', this.onButtonClick.bind(this)),
     );
-  }
-
-  quantityUpdateUnsubscriber = undefined;
-
-  connectedCallback() {
-    this.validateQtyRules();
-    this.quantityUpdateUnsubscriber = subscribe(
-      PUB_SUB_EVENTS.quantityUpdate,
-      this.validateQtyRules.bind(this),
-    );
-  }
-
-  disconnectedCallback() {
-    if (this.quantityUpdateUnsubscriber) {
-      this.quantityUpdateUnsubscriber();
-    }
-  }
-
-  onInputChange(event) {
-    this.validateQtyRules();
   }
 
   onButtonClick(event) {
@@ -209,20 +181,6 @@ class QuantityInput extends HTMLElement {
     if (previousValue !== this.input.value)
       this.input.dispatchEvent(this.changeEvent);
   }
-
-  validateQtyRules() {
-    const value = parseInt(this.input.value);
-    if (this.input.min) {
-      const min = parseInt(this.input.min);
-      const buttonMinus = this.querySelector(".quantity__button[name='minus']");
-      buttonMinus.classList.toggle('disabled', value <= min);
-    }
-    if (this.input.max) {
-      const max = parseInt(this.input.max);
-      const buttonPlus = this.querySelector(".quantity__button[name='plus']");
-      buttonPlus.classList.toggle('disabled', value >= max);
-    }
-  }
 }
 
 customElements.define('quantity-input', QuantityInput);
@@ -232,18 +190,6 @@ function debounce(fn, wait) {
   return (...args) => {
     clearTimeout(t);
     t = setTimeout(() => fn.apply(this, args), wait);
-  };
-}
-
-function throttle(fn, delay) {
-  let lastCall = 0;
-  return function (...args) {
-    const now = new Date().getTime();
-    if (now - lastCall < delay) {
-      return;
-    }
-    lastCall = now;
-    return fn(...args);
   };
 }
 
@@ -385,6 +331,12 @@ class MenuDrawer extends HTMLElement {
 
     this.mainDetailsToggle = this.querySelector('details');
 
+    if (navigator.platform === 'iPhone')
+      document.documentElement.style.setProperty(
+        '--viewport-height',
+        `${window.innerHeight}px`,
+      );
+
     this.addEventListener('keyup', this.onKeyUp.bind(this));
     this.addEventListener('focusout', this.onFocusOut.bind(this));
     this.bindEvents();
@@ -394,9 +346,8 @@ class MenuDrawer extends HTMLElement {
     this.querySelectorAll('summary').forEach((summary) =>
       summary.addEventListener('click', this.onSummaryClick.bind(this)),
     );
-    this.querySelectorAll('button:not(.localization-selector)').forEach(
-      (button) =>
-        button.addEventListener('click', this.onCloseButtonClick.bind(this)),
+    this.querySelectorAll('button').forEach((button) =>
+      button.addEventListener('click', this.onCloseButtonClick.bind(this)),
     );
   }
 
@@ -437,13 +388,6 @@ class MenuDrawer extends HTMLElement {
       isOpen
         ? this.closeMenuDrawer(event, summaryElement)
         : this.openMenuDrawer(summaryElement);
-
-      if (window.matchMedia('(max-width: 990px)')) {
-        document.documentElement.style.setProperty(
-          '--viewport-height',
-          `${window.innerHeight}px`,
-        );
-      }
     } else {
       setTimeout(() => {
         detailsElement.classList.add('menu-opening');
@@ -486,12 +430,9 @@ class MenuDrawer extends HTMLElement {
     );
     removeTrapFocus(elementToFocus);
     this.closeAnimation(this.mainDetailsToggle);
-
-    if (event instanceof KeyboardEvent)
-      elementToFocus?.setAttribute('aria-expanded', false);
   }
 
-  onFocusOut() {
+  onFocusOut(event) {
     setTimeout(() => {
       if (
         this.mainDetailsToggle.hasAttribute('open') &&
@@ -552,7 +493,8 @@ class HeaderDrawer extends MenuDrawer {
   }
 
   openMenuDrawer(summaryElement) {
-    this.header = this.header || document.querySelector('.section-header');
+    this.header =
+      this.header || document.getElementById('shopify-section-header');
     this.borderOffset =
       this.borderOffset ||
       this.closest('.header-wrapper').classList.contains(
@@ -573,31 +515,14 @@ class HeaderDrawer extends MenuDrawer {
     });
 
     summaryElement.setAttribute('aria-expanded', true);
-    window.addEventListener('resize', this.onResize);
     trapFocus(this.mainDetailsToggle, summaryElement);
     document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
   }
 
   closeMenuDrawer(event, elementToFocus) {
-    if (!elementToFocus) return;
     super.closeMenuDrawer(event, elementToFocus);
     this.header.classList.remove('menu-open');
-    window.removeEventListener('resize', this.onResize);
   }
-
-  onResize = () => {
-    this.header &&
-      document.documentElement.style.setProperty(
-        '--header-bottom-position',
-        `${parseInt(
-          this.header.getBoundingClientRect().bottom - this.borderOffset,
-        )}px`,
-      );
-    document.documentElement.style.setProperty(
-      '--viewport-height',
-      `${window.innerHeight}px`,
-    );
-  };
 }
 
 customElements.define('header-drawer', HeaderDrawer);
@@ -691,13 +616,6 @@ class DeferredMedia extends HTMLElement {
         content.querySelector('video, model-viewer, iframe'),
       );
       if (focus) deferredElement.focus();
-      if (
-        deferredElement.nodeName == 'VIDEO' &&
-        deferredElement.getAttribute('autoplay')
-      ) {
-        // force autoplay for safari
-        deferredElement.play();
-      }
     }
   }
 }
@@ -748,10 +666,6 @@ class SliderComponent extends HTMLElement {
   }
 
   update() {
-    // Temporarily prevents unneeded updates resulting from variant changes
-    // This should be refactored as part of https://github.com/Shopify/dawn/issues/2057
-    if (!this.slider || !this.nextButton) return;
-
     const previousPage = this.currentPage;
     this.currentPage =
       Math.round(this.slider.scrollLeft / this.sliderItemOffset) + 1;
@@ -810,12 +724,8 @@ class SliderComponent extends HTMLElement {
       event.currentTarget.name === 'next'
         ? this.slider.scrollLeft + step * this.sliderItemOffset
         : this.slider.scrollLeft - step * this.sliderItemOffset;
-    this.setSlidePosition(this.slideScrollPosition);
-  }
-
-  setSlidePosition(position) {
     this.slider.scrollTo({
-      left: position,
+      left: this.slideScrollPosition,
     });
   }
 }
@@ -833,10 +743,6 @@ class SlideshowComponent extends SliderComponent {
     this.sliderFirstItemNode = this.slider.querySelector('.slideshow__slide');
     if (this.sliderItemsToShow.length > 0) this.currentPage = 1;
 
-    this.announcementBarSlider = this.querySelector('.announcement-bar-slider');
-    // Value below should match --duration-announcement-bar CSS value
-    this.announcerBarAnimationDelay = this.announcementBarSlider ? 250 : 0;
-
     this.sliderControlLinksArray = Array.from(
       this.sliderControlWrapper.querySelectorAll('.slider-counter__link'),
     );
@@ -846,65 +752,33 @@ class SlideshowComponent extends SliderComponent {
     this.slider.addEventListener('scroll', this.setSlideVisibility.bind(this));
     this.setSlideVisibility();
 
-    if (this.announcementBarSlider) {
-      this.announcementBarArrowButtonWasClicked = false;
-
-      this.reducedMotion = window.matchMedia(
-        '(prefers-reduced-motion: reduce)',
-      );
-      this.reducedMotion.addEventListener('change', () => {
-        if (this.slider.getAttribute('data-autoplay') === 'true')
-          this.setAutoPlay();
-      });
-
-      [this.prevButton, this.nextButton].forEach((button) => {
-        button.addEventListener(
-          'click',
-          () => {
-            this.announcementBarArrowButtonWasClicked = true;
-          },
-          { once: true },
-        );
-      });
-    }
-
     if (this.slider.getAttribute('data-autoplay') === 'true')
       this.setAutoPlay();
   }
 
   setAutoPlay() {
+    this.sliderAutoplayButton = this.querySelector('.slideshow__autoplay');
     this.autoplaySpeed = this.slider.dataset.speed * 1000;
+
+    this.sliderAutoplayButton.addEventListener(
+      'click',
+      this.autoPlayToggle.bind(this),
+    );
     this.addEventListener('mouseover', this.focusInHandling.bind(this));
     this.addEventListener('mouseleave', this.focusOutHandling.bind(this));
     this.addEventListener('focusin', this.focusInHandling.bind(this));
     this.addEventListener('focusout', this.focusOutHandling.bind(this));
 
-    if (this.querySelector('.slideshow__autoplay')) {
-      this.sliderAutoplayButton = this.querySelector('.slideshow__autoplay');
-      this.sliderAutoplayButton.addEventListener(
-        'click',
-        this.autoPlayToggle.bind(this),
-      );
-      this.autoplayButtonIsSetToPlay = true;
-      this.play();
-    } else {
-      this.reducedMotion.matches || this.announcementBarArrowButtonWasClicked
-        ? this.pause()
-        : this.play();
-    }
+    this.play();
+    this.autoplayButtonIsSetToPlay = true;
   }
 
   onButtonClick(event) {
     super.onButtonClick(event);
-    this.wasClicked = true;
-
     const isFirstSlide = this.currentPage === 1;
     const isLastSlide = this.currentPage === this.sliderItemsToShow.length;
 
-    if (!isFirstSlide && !isLastSlide) {
-      this.applyAnimationToAnnouncementBar(event.currentTarget.name);
-      return;
-    }
+    if (!isFirstSlide && !isLastSlide) return;
 
     if (isFirstSlide && event.currentTarget.name === 'previous') {
       this.slideScrollPosition =
@@ -913,19 +787,9 @@ class SlideshowComponent extends SliderComponent {
     } else if (isLastSlide && event.currentTarget.name === 'next') {
       this.slideScrollPosition = 0;
     }
-
-    this.setSlidePosition(this.slideScrollPosition);
-
-    this.applyAnimationToAnnouncementBar(event.currentTarget.name);
-  }
-
-  setSlidePosition(position) {
-    if (this.setPositionTimeout) clearTimeout(this.setPositionTimeout);
-    this.setPositionTimeout = setTimeout(() => {
-      this.slider.scrollTo({
-        left: position,
-      });
-    }, this.announcerBarAnimationDelay);
+    this.slider.scrollTo({
+      left: this.slideScrollPosition,
+    });
   }
 
   update() {
@@ -955,31 +819,20 @@ class SlideshowComponent extends SliderComponent {
   }
 
   focusOutHandling(event) {
-    if (this.sliderAutoplayButton) {
-      const focusedOnAutoplayButton =
-        event.target === this.sliderAutoplayButton ||
-        this.sliderAutoplayButton.contains(event.target);
-      if (!this.autoplayButtonIsSetToPlay || focusedOnAutoplayButton) return;
-      this.play();
-    } else if (
-      !this.reducedMotion.matches &&
-      !this.announcementBarArrowButtonWasClicked
-    ) {
-      this.play();
-    }
+    const focusedOnAutoplayButton =
+      event.target === this.sliderAutoplayButton ||
+      this.sliderAutoplayButton.contains(event.target);
+    if (!this.autoplayButtonIsSetToPlay || focusedOnAutoplayButton) return;
+    this.play();
   }
 
   focusInHandling(event) {
-    if (this.sliderAutoplayButton) {
-      const focusedOnAutoplayButton =
-        event.target === this.sliderAutoplayButton ||
-        this.sliderAutoplayButton.contains(event.target);
-      if (focusedOnAutoplayButton && this.autoplayButtonIsSetToPlay) {
-        this.play();
-      } else if (this.autoplayButtonIsSetToPlay) {
-        this.pause();
-      }
-    } else if (this.announcementBarSlider.contains(event.target)) {
+    const focusedOnAutoplayButton =
+      event.target === this.sliderAutoplayButton ||
+      this.sliderAutoplayButton.contains(event.target);
+    if (focusedOnAutoplayButton && this.autoplayButtonIsSetToPlay) {
+      this.play();
+    } else if (this.autoplayButtonIsSetToPlay) {
       this.pause();
     }
   }
@@ -1018,65 +871,26 @@ class SlideshowComponent extends SliderComponent {
     const slideScrollPosition =
       this.currentPage === this.sliderItems.length
         ? 0
-        : this.slider.scrollLeft + this.sliderItemOffset;
-
-    this.setSlidePosition(slideScrollPosition);
-    this.applyAnimationToAnnouncementBar();
+        : this.slider.scrollLeft +
+          this.slider.querySelector('.slideshow__slide').clientWidth;
+    this.slider.scrollTo({
+      left: slideScrollPosition,
+    });
   }
 
-  setSlideVisibility(event) {
+  setSlideVisibility() {
     this.sliderItemsToShow.forEach((item, index) => {
-      const linkElements = item.querySelectorAll('a');
+      const button = item.querySelector('a');
       if (index === this.currentPage - 1) {
-        if (linkElements.length)
-          linkElements.forEach((button) => {
-            button.removeAttribute('tabindex');
-          });
+        if (button) button.removeAttribute('tabindex');
         item.setAttribute('aria-hidden', 'false');
         item.removeAttribute('tabindex');
       } else {
-        if (linkElements.length)
-          linkElements.forEach((button) => {
-            button.setAttribute('tabindex', '-1');
-          });
+        if (button) button.setAttribute('tabindex', '-1');
         item.setAttribute('aria-hidden', 'true');
         item.setAttribute('tabindex', '-1');
       }
     });
-    this.wasClicked = false;
-  }
-
-  applyAnimationToAnnouncementBar(button = 'next') {
-    if (!this.announcementBarSlider) return;
-
-    const itemsCount = this.sliderItems.length;
-    const increment = button === 'next' ? 1 : -1;
-
-    const currentIndex = this.currentPage - 1;
-    let nextIndex = (currentIndex + increment) % itemsCount;
-    nextIndex = nextIndex === -1 ? itemsCount - 1 : nextIndex;
-
-    const nextSlide = this.sliderItems[nextIndex];
-    const currentSlide = this.sliderItems[currentIndex];
-
-    const animationClassIn = 'announcement-bar-slider--fade-in';
-    const animationClassOut = 'announcement-bar-slider--fade-out';
-
-    const isFirstSlide = currentIndex === 0;
-    const isLastSlide = currentIndex === itemsCount - 1;
-
-    const shouldMoveNext =
-      (button === 'next' && !isLastSlide) ||
-      (button === 'previous' && isFirstSlide);
-    const direction = shouldMoveNext ? 'next' : 'previous';
-
-    currentSlide.classList.add(`${animationClassOut}-${direction}`);
-    nextSlide.classList.add(`${animationClassIn}-${direction}`);
-
-    setTimeout(() => {
-      currentSlide.classList.remove(`${animationClassOut}-${direction}`);
-      nextSlide.classList.remove(`${animationClassIn}-${direction}`);
-    }, this.announcerBarAnimationDelay * 2);
   }
 
   linkToSlide(event) {
@@ -1107,7 +921,6 @@ class VariantSelects extends HTMLElement {
     this.toggleAddButton(true, '', false);
     this.updatePickupAvailability();
     this.removeErrorMessage();
-    this.updateVariantStatuses();
 
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
@@ -1142,14 +955,12 @@ class VariantSelects extends HTMLElement {
     if (!this.currentVariant) return;
     if (!this.currentVariant.featured_media) return;
 
-    const mediaGalleries = document.querySelectorAll(
-      `[id^="MediaGallery-${this.dataset.section}"]`,
+    const mediaGallery = document.getElementById(
+      `MediaGallery-${this.dataset.section}`,
     );
-    mediaGalleries.forEach((mediaGallery) =>
-      mediaGallery.setActiveMedia(
-        `${this.dataset.section}-${this.currentVariant.featured_media.id}`,
-        true,
-      ),
+    mediaGallery.setActiveMedia(
+      `${this.dataset.section}-${this.currentVariant.featured_media.id}`,
+      true,
     );
 
     const modalContent = document.querySelector(
@@ -1192,42 +1003,6 @@ class VariantSelects extends HTMLElement {
     });
   }
 
-  updateVariantStatuses() {
-    const selectedOptionOneVariants = this.variantData.filter(
-      (variant) => this.querySelector(':checked').value === variant.option1,
-    );
-    const inputWrappers = [...this.querySelectorAll('.product-form__input')];
-    inputWrappers.forEach((option, index) => {
-      if (index === 0) return;
-      const optionInputs = [
-        ...option.querySelectorAll('input[type="radio"], option'),
-      ];
-      const previousOptionSelected =
-        inputWrappers[index - 1].querySelector(':checked').value;
-      const availableOptionInputsValue = selectedOptionOneVariants
-        .filter(
-          (variant) =>
-            variant.available &&
-            variant[`option${index}`] === previousOptionSelected,
-        )
-        .map((variantOption) => variantOption[`option${index + 1}`]);
-      this.setInputAvailability(optionInputs, availableOptionInputsValue);
-    });
-  }
-
-  setInputAvailability(listOfOptions, listOfAvailableOptions) {
-    listOfOptions.forEach((input) => {
-      if (listOfAvailableOptions.includes(input.getAttribute('value'))) {
-        input.innerText = input.getAttribute('value');
-      } else {
-        input.innerText = window.variantStrings.unavailable_with_option.replace(
-          '[value]',
-          input.getAttribute('value'),
-        );
-      }
-    });
-  }
-
   updatePickupAvailability() {
     const pickUpAvailability = document.querySelector('pickup-availability');
     if (!pickUpAvailability) return;
@@ -1249,13 +1024,8 @@ class VariantSelects extends HTMLElement {
   }
 
   renderProductInfo() {
-    const requestedVariantId = this.currentVariant.id;
-    const sectionId = this.dataset.originalSection
-      ? this.dataset.originalSection
-      : this.dataset.section;
-
     fetch(
-      `${this.dataset.url}?variant=${requestedVariantId}&section_id=${
+      `${this.dataset.url}?variant=${this.currentVariant.id}&section_id=${
         this.dataset.originalSection
           ? this.dataset.originalSection
           : this.dataset.section
@@ -1263,9 +1033,6 @@ class VariantSelects extends HTMLElement {
     )
       .then((response) => response.text())
       .then((responseText) => {
-        // prevent unnecessary ui changes from abandoned selections
-        if (this.currentVariant.id !== requestedVariantId) return;
-
         const html = new DOMParser().parseFromString(responseText, 'text/html');
         const destination = document.getElementById(
           `price-${this.dataset.section}`,
@@ -1277,109 +1044,15 @@ class VariantSelects extends HTMLElement {
               : this.dataset.section
           }`,
         );
-        const skuSource = html.getElementById(
-          `Sku-${
-            this.dataset.originalSection
-              ? this.dataset.originalSection
-              : this.dataset.section
-          }`,
-        );
-        const skuDestination = document.getElementById(
-          `Sku-${this.dataset.section}`,
-        );
-        const inventorySource = html.getElementById(
-          `Inventory-${
-            this.dataset.originalSection
-              ? this.dataset.originalSection
-              : this.dataset.section
-          }`,
-        );
-        const inventoryDestination = document.getElementById(
-          `Inventory-${this.dataset.section}`,
-        );
-
-        const volumePricingSource = html.getElementById(
-          `Volume-${
-            this.dataset.originalSection
-              ? this.dataset.originalSection
-              : this.dataset.section
-          }`,
-        );
-
-        const pricePerItemDestination = document.getElementById(
-          `Price-Per-Item-${this.dataset.section}`,
-        );
-        const pricePerItemSource = html.getElementById(
-          `Price-Per-Item-${
-            this.dataset.originalSection
-              ? this.dataset.originalSection
-              : this.dataset.section
-          }`,
-        );
-
-        const volumePricingDestination = document.getElementById(
-          `Volume-${this.dataset.section}`,
-        );
-        const qtyRules = document.getElementById(
-          `Quantity-Rules-${this.dataset.section}`,
-        );
-        const volumeNote = document.getElementById(
-          `Volume-Note-${this.dataset.section}`,
-        );
-
-        if (volumeNote) volumeNote.classList.remove('hidden');
-        if (volumePricingDestination)
-          volumePricingDestination.classList.remove('hidden');
-        if (qtyRules) qtyRules.classList.remove('hidden');
-
         if (source && destination) destination.innerHTML = source.innerHTML;
-        if (inventorySource && inventoryDestination)
-          inventoryDestination.innerHTML = inventorySource.innerHTML;
-        if (skuSource && skuDestination) {
-          skuDestination.innerHTML = skuSource.innerHTML;
-          skuDestination.classList.toggle(
-            'hidden',
-            skuSource.classList.contains('hidden'),
-          );
-        }
-
-        if (volumePricingSource && volumePricingDestination) {
-          volumePricingDestination.innerHTML = volumePricingSource.innerHTML;
-        }
-
-        if (pricePerItemSource && pricePerItemDestination) {
-          pricePerItemDestination.innerHTML = pricePerItemSource.innerHTML;
-          pricePerItemDestination.classList.toggle(
-            'hidden',
-            pricePerItemSource.classList.contains('hidden'),
-          );
-        }
 
         const price = document.getElementById(`price-${this.dataset.section}`);
 
-        if (price) price.classList.remove('hidden');
-
-        if (inventoryDestination)
-          inventoryDestination.classList.toggle(
-            'hidden',
-            inventorySource.innerText === '',
-          );
-
-        const addButtonUpdated = html.getElementById(
-          `ProductSubmitButton-${sectionId}`,
-        );
+        if (price) price.classList.remove('visibility-hidden');
         this.toggleAddButton(
-          addButtonUpdated ? addButtonUpdated.hasAttribute('disabled') : true,
+          !this.currentVariant.available,
           window.variantStrings.soldOut,
         );
-
-        publish(PUB_SUB_EVENTS.variantChange, {
-          data: {
-            sectionId,
-            html,
-            variant: this.currentVariant,
-          },
-        });
       });
   }
 
@@ -1410,32 +1083,9 @@ class VariantSelects extends HTMLElement {
     const addButton = button.querySelector('[name="add"]');
     const addButtonText = button.querySelector('[name="add"] > span');
     const price = document.getElementById(`price-${this.dataset.section}`);
-    const inventory = document.getElementById(
-      `Inventory-${this.dataset.section}`,
-    );
-    const sku = document.getElementById(`Sku-${this.dataset.section}`);
-    const pricePerItem = document.getElementById(
-      `Price-Per-Item-${this.dataset.section}`,
-    );
-    const volumeNote = document.getElementById(
-      `Volume-Note-${this.dataset.section}`,
-    );
-    const volumeTable = document.getElementById(
-      `Volume-${this.dataset.section}`,
-    );
-    const qtyRules = document.getElementById(
-      `Quantity-Rules-${this.dataset.section}`,
-    );
-
     if (!addButton) return;
     addButtonText.textContent = window.variantStrings.unavailable;
-    if (price) price.classList.add('hidden');
-    if (inventory) inventory.classList.add('hidden');
-    if (sku) sku.classList.add('hidden');
-    if (pricePerItem) pricePerItem.classList.add('hidden');
-    if (volumeNote) volumeNote.classList.add('hidden');
-    if (volumeTable) volumeTable.classList.add('hidden');
-    if (qtyRules) qtyRules.classList.add('hidden');
+    if (price) price.classList.add('visibility-hidden');
   }
 
   getVariantData() {
@@ -1453,16 +1103,6 @@ class VariantRadios extends VariantSelects {
     super();
   }
 
-  setInputAvailability(listOfOptions, listOfAvailableOptions) {
-    listOfOptions.forEach((input) => {
-      if (listOfAvailableOptions.includes(input.getAttribute('value'))) {
-        input.classList.remove('disabled');
-      } else {
-        input.classList.add('disabled');
-      }
-    });
-  }
-
   updateOptions() {
     const fieldsets = Array.from(this.querySelectorAll('fieldset'));
     this.options = fieldsets.map((fieldset) => {
@@ -1475,47 +1115,25 @@ class VariantRadios extends VariantSelects {
 
 customElements.define('variant-radios', VariantRadios);
 
-class ProductRecommendations extends HTMLElement {
-  constructor() {
-    super();
-  }
+// var val = document.querySelectorAll('.grid__item');
+// for(let i = 0; i < val.length; i++){
+//     var test = val[i];
+//     var newVal = test.querySelector('.color-inverse');
+//     if(newVal != null){
+//         newVal.closest('.grid__item').classList.add('active');
+//     }
+// }
 
-  connectedCallback() {
-    const handleIntersection = (entries, observer) => {
-      if (!entries[0].isIntersecting) return;
-      observer.unobserve(this);
+// $( document ).ready(function() {
+//       $(".mega-menu").click(function() {
+//           // $(".mega-menu__content").toggle("fast");
+//           $(".mega-menu__content").fadeIn("slow");
 
-      fetch(this.dataset.url)
-        .then((response) => response.text())
-        .then((text) => {
-          const html = document.createElement('div');
-          html.innerHTML = text;
-          const recommendations = html.querySelector('product-recommendations');
-
-          if (recommendations && recommendations.innerHTML.trim().length) {
-            this.innerHTML = recommendations.innerHTML;
-          }
-
-          if (
-            !this.querySelector('slideshow-component') &&
-            this.classList.contains('complementary-products')
-          ) {
-            this.remove();
-          }
-
-          if (html.querySelector('.grid__item')) {
-            this.classList.add('product-recommendations--loaded');
-          }
-        })
-        .catch((e) => {
-          console.error(e);
-        });
-    };
-
-    new IntersectionObserver(handleIntersection.bind(this), {
-      rootMargin: '0px 0px 400px 0px',
-    }).observe(this);
-  }
-}
-
-customElements.define('product-recommendations', ProductRecommendations);
+//           console.log( "ready!" );
+//         });
+//       $(".mega-menu").click(function() {
+//           // $(".mega-menu__content").toggle("fast");
+//           $(".mega-menu__content").fadeOut("slow");
+//           console.log( "ready!" );
+//         });
+// });

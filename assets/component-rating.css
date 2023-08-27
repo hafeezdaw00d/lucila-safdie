@@ -14,7 +14,6 @@
 }
 
 .rating-star {
-  --color-rating-star: rgb(var(--color-foreground));
   --percent: calc(
     (
         var(--rating) / var(--rating-max) + var(--rating-decimal) *
@@ -34,7 +33,7 @@
   content: '★★★★★';
   background: linear-gradient(
     90deg,
-    var(--color-rating-star) var(--percent),
+    var(--color-icon) var(--percent),
     rgba(var(--color-foreground), 0.15) var(--percent)
   );
   -webkit-background-clip: text;

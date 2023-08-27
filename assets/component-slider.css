@@ -10,21 +10,22 @@ slider-component {
   );
   position: relative;
   display: block;
+  /*width: 80%;*/
 }
 
 slider-component.slider-component-full-width {
-  --desktop-margin-left-first-item: 1.5rem;
+  /* --desktop-margin-left-first-item: 1.5rem; */
 }
 
 @media screen and (max-width: 749px) {
   slider-component.page-width {
-    padding: 0 1.5rem;
+    padding: 0 3rem;
   }
 }
 
 @media screen and (min-width: 749px) and (max-width: 990px) {
   slider-component.page-width {
-    padding: 0 5rem;
+    padding: 0 1rem;
   }
 }
 
@@ -49,10 +50,6 @@ slider-component.slider-component-full-width {
   padding-bottom: 0;
 }
 
-.slider__slide[aria-hidden='true'] {
-  visibility: hidden;
-}
-
 @media screen and (max-width: 749px) {
   .slider.slider--mobile {
     position: relative;
@@ -65,16 +62,10 @@ slider-component.slider-component-full-width {
     margin-bottom: 1rem;
   }
 
-  /* Fix to show some space at the end of our sliders in all browsers */
-  .slider--mobile:after {
-    content: '';
-    width: 0;
-    padding-left: 1.5rem;
-  }
-
   .slider.slider--mobile .slider__slide {
     margin-bottom: 0;
-    padding-top: max(var(--focus-outline-padding), var(--shadow-padding-top));
+    /*padding-top: max(var(--focus-outline-padding), var(--shadow-padding-top));*/
+    padding-top: 0;
     padding-bottom: max(
       var(--focus-outline-padding),
       var(--shadow-padding-bottom)
@@ -117,14 +108,6 @@ slider-component.slider-component-full-width {
     scroll-padding-left: 1.5rem;
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
-  }
-
-  /* Fix to show some space at the end of our sliders in all browsers */
-  .slider--tablet:after {
-    content: '';
-    width: 0;
-    padding-left: 1.5rem;
-    margin-left: calc(-1 * var(--grid-desktop-horizontal-spacing));
   }
 
   .slider.slider--tablet .slider__slide {
@@ -177,14 +160,6 @@ slider-component.slider-component-full-width {
     scroll-padding-left: var(--desktop-margin-left-first-item);
   }
 
-  /* Fix to show some space at the end of our sliders in all browsers */
-  .slider--desktop:after {
-    content: '';
-    width: 0;
-    padding-left: 5rem;
-    margin-left: calc(-1 * var(--grid-desktop-horizontal-spacing));
-  }
-
   .slider.slider--desktop .slider__slide {
     margin-bottom: 0;
     padding-top: max(var(--focus-outline-padding), var(--shadow-padding-top));
@@ -199,6 +174,10 @@ slider-component.slider-component-full-width {
     scroll-margin-left: var(--desktop-margin-left-first-item);
   }
 
+  .slider.slider--desktop .slider__slide:last-child {
+    margin-right: 5rem;
+  }
+
   .slider-component-full-width .slider--desktop {
     scroll-padding-left: 1.5rem;
   }
@@ -208,9 +187,8 @@ slider-component.slider-component-full-width {
     scroll-margin-left: 1.5rem;
   }
 
-  /* Fix to show some space at the end of our sliders in all browsers */
-  .slider-component-full-width .slider--desktop:after {
-    padding-left: 1.5rem;
+  .slider-component-full-width .slider--desktop .slider__slide:last-child {
+    margin-right: 1.5rem;
   }
 
   .slider--desktop.grid--5-col-desktop .grid__item {
@@ -300,7 +278,7 @@ slider-component.slider-component-full-width {
 }
 
 .slider-counter {
-  display: flex;
+  display: none;
   justify-content: center;
   min-width: 4.4rem;
 }
@@ -370,9 +348,13 @@ slider-component.slider-component-full-width {
 }
 
 .slider-buttons {
+  position: absolute;
+  top: 0vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 @media screen and (min-width: 990px) {
@@ -394,23 +376,32 @@ slider-component.slider-component-full-width {
 }
 
 .slider-button {
-  color: rgba(var(--color-foreground), 0.75);
+  color: white;
   background: transparent;
   border: none;
   cursor: pointer;
-  width: 44px;
-  height: 44px;
+  width: 9rem;
+  height: 7rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .slider-button:not([disabled]):hover {
-  color: rgb(var(--color-foreground));
+  filter: blur(2px);
 }
 
 .slider-button .icon {
-  height: 0.6rem;
+  height: 3.5rem;
+  width: auto;
+}
+
+@media screen and (max-width: 749px) {
+  .slider-button .icon {
+    height: 9rem;
+    width: auto;
+  }
 }
 
 .slider-button[disabled] .icon {
@@ -427,9 +418,20 @@ slider-component.slider-component-full-width {
 }
 
 .slider-button--next:not([disabled]):hover .icon {
-  transform: rotate(-90deg) scale(1.1);
+  transform: rotate(-90deg);
 }
 
 .slider-button--prev:not([disabled]):hover .icon {
-  transform: rotate(90deg) scale(1.1);
+  transform: rotate(90deg);
+}
+
+.home-slider {
+  width: 50vw;
+  height: 90vh;
+}
+
+.prod-slider {
+  filter: invert(1);
+  top: 92%;
+  /*padding: 0 10px;*/
 }
