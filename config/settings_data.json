@@ -2,9 +2,9 @@
   "current": {
     "logo": "shopify:\/\/shop_images\/logo-derecho.png",
     "logo_width": 90,
-    "type_header_font": "assistant_n4",
+    "type_header_font": "sans-serif",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "sans-serif",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
