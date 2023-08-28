@@ -26,7 +26,7 @@
 {%- endif -%}
 
 <slideshow-component
-  class="slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
+  class=" slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
   role="region"
   aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
   aria-label="{{ section.settings.accessibility_info | escape }}"
@@ -42,7 +42,7 @@
       >
         {% render 'icon-caret' %}
       </button> {% endcomment %}
-      <div class="slider-counter slider-counter--{{ section.settings.slider_visual }}{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
+      <div class="hidden slider-counter slider-counter--{{ section.settings.slider_visual }}{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
         {%- if section.settings.slider_visual == 'counter' -%}
           <span class="slider-counter--current">1</span>
           <span aria-hidden="true"> / </span>
@@ -105,7 +105,7 @@
   {%- endif -%}
 
   <div
-    class="slideshow banner banner--{{ section.settings.slide_height }} grid grid--1-col slider slider--everywhere{% if section.settings.show_text_below %} banner--mobile-bottom{% endif %}{% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+    class="slideshow banner grid grid--1-col slider slider--everywhere{% if section.settings.show_text_below %} banner--mobile-bottom{% endif %}{% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
     id="Slider-{{ section.id }}"
     aria-live="polite"
     aria-atomic="true"
@@ -153,7 +153,7 @@
             {%- endif -%}
           {%- endif -%}
         </div>
-        <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll and forloop.index == 1 %} scroll-trigger animate--slide-in{% endif %}">
+        <div class=" twcss-min-h-[100vh] slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll and forloop.index == 1 %} scroll-trigger animate--slide-in{% endif %}">
           <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
             {%- if block.settings.heading != blank -%}
               <h2 class="banner__heading inline-richtext {{ block.settings.heading_size }}">
@@ -307,7 +307,7 @@
         {
           "value": "large",
           "label": "t:sections.slideshow.settings.slide_height.options__4.label"
-        }
+        },
         {
           "value": "adapt_height",
           "label": "t:sections.slideshow.settings.slide_height.options__5.label"

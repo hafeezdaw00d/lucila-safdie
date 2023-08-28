@@ -553,6 +553,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: grid;
 }
 
+.twcss-hidden {
+  display: none;
+}
+
+.twcss-min-h-\[100vh\] {
+  min-height: 100vh;
+}
+
 .twcss-w-\[100\%\] {
   width: 100%;
 }
