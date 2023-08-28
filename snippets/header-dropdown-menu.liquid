@@ -30,7 +30,7 @@
                         <a
                           id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                           href="{{ childlink.url }}"
-                          class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
+                          class="helv-reset header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
                           {% if childlink.current %}
                           aria-current="page"
                           {% endif %}>
@@ -48,7 +48,7 @@
                                 <a
                                   id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
                                   href="{{ grandchildlink.url }}"
-                                  class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
+                                  class="helv header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
                                   {% if grandchildlink.current %}
                                   aria-current="page"
                                   {% endif %}>
@@ -71,7 +71,7 @@
             <a
               id="HeaderMenu-{{ link.handle }}"
               href="{{ link.url }}"
-              class="header__menu-item list-menu__item link link--text focus-inset"
+              class="helv-reset header__menu-item list-menu__item link link--text focus-inset"
               {% if link.current %}
               aria-current="page"
               {% endif %}>
@@ -85,7 +85,7 @@
           {%- endif -%}
         </li>
       {%- endfor -%}
-      <li class="header__menu-item list-menu__item link link--text focus-inset{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+      <li class="helv-reset header__menu-item list-menu__item link link--text focus-inset{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
         <div class="desktop-localization-wrapper">
           {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
             <noscript class="small-hide medium-hide">
@@ -183,7 +183,7 @@
 
         <a
           href="{{ routes.cart_url }}"
-          class="link focus-inset"
+          class="helv-reset link focus-inset"
           id="cart-icon-bubble">
           {%- liquid
       if cart == empty

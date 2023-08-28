@@ -235,6 +235,7 @@
           font-size: 1.6rem;
         }
       }
+
     {% endstyle %}
 
     {{ 'app.css' | asset_url | stylesheet_tag }}
@@ -273,6 +274,14 @@
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
+
+    {%- if template == 'index' -%}
+      <div class="x-image-slider">
+        <img class="mySlides" src="https://www.distalphalanx.com/cdn/shop/files/1_8f41bba5-c0d1-4cc7-81b2-4eabf060f673.webp?v=1689220379">
+        <img class="mySlides" src="https://www.distalphalanx.com/cdn/shop/files/1_17f9fce9-4623-4f60-944e-a158d7c3091a.webp?v=1689221364">
+        <img class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1iJe7NRhPD-p9unhpBiNAmJXdkTkKzGsOig&usqp=CAU">
+      </div>
+    {%- endif -%}
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
@@ -330,6 +339,21 @@
         recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
       };
+
+     var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none"; 
+          }
+          slideIndex++;
+          if (slideIndex > x.length) {slideIndex = 1} 
+          x[slideIndex-1].style.display = "block"; 
+          setTimeout(carousel, 200); // Change image every 200 ms
+        }
     </script>
 
     {%- if settings.predictive_search_enabled -%}

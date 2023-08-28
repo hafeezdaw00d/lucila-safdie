@@ -73,6 +73,30 @@
 
 /* base */
 
+.helv {
+  font-size: 1rem;
+  letter-spacing: -0.006rem;
+  line-height: normal;
+}
+
+.helv-reset {
+  font-size: 1rem !important;
+  letter-spacing: -0.006rem !important;
+  line-height: normal !important;
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.x-image-slider {
+  display: flex;
+  justify-content: center;
+}
+
+.mySlides {
+  height: 100vh;
+  object-fit: cover;
+}
+
 .no-js:not(html) {
   display: none !important;
 }
@@ -596,10 +620,10 @@ details > * {
   --duration-long: 500ms;
   --duration-extra-long: 600ms;
   --duration-extended: 3s;
-  --ease-out-slow: cubic-bezier(0, 0, 0.3, 1);
+  --ease-out-slow: cubic-bezier(0, 0, 0.1, 0);
   --animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow)
     forwards;
-  --animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+  --animation-fade-in: fadeIn var(--duration-short);
 }
 
 .underlined-link,
@@ -2401,7 +2425,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
   /* max-width: 390px; */
   height: auto;
   top: 2rem;
-  background-color: rgb(var(--color-background));
+  background-color: transparent !important;
 }
 
 .header-wrapper--border-bottom {
@@ -2878,10 +2902,11 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .header__active-menu-item {
-  transition: text-decoration-thickness var(--duration-short) ease;
+  /* transition: text-decoration-thickness var(--duration-short) ease; */
   color: rgb(var(--color-foreground));
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  /* text-decoration: underline; */
+  /* text-underline-offset: 0.3rem; */
+  text-shadow: 0 0 5px mediumaquamarine;
 }
 
 .header__menu-item:hover .header__active-menu-item {
@@ -3353,7 +3378,7 @@ details-disclosure > details {
 
   .scroll-trigger:not(.scroll-trigger--offscreen).animate--slide-in {
     animation: var(--animation-slide-in);
-    animation-delay: calc(var(--animation-order) * 75ms);
+    animation-delay: calc(var(--animation-order) * 0ms);
   }
 
   .scroll-trigger.scroll-trigger--design-mode.animate--fade-in,
@@ -3382,7 +3407,7 @@ details-disclosure > details {
 
   @keyframes fadeIn {
     from {
-      opacity: 0.01;
+      opacity: 1;
     }
     to {
       opacity: 1;
