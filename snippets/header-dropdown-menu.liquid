@@ -3,7 +3,9 @@
 
   Usage:
   {% render 'header-dropdown-menu' %}
-  {% endcomment %}<nav class="header__inline-menu">
+  {% endcomment %}
+  
+<nav class="{% if template == 'index' %}hidden {% endif %} header__inline-menu">
     <ul class="twcss-grid twcss-justify-self-center twcss-justify-items-center twcss-grid-flow-col" role="list">
       {%- for link in section.settings.menu.links -%}
         <li>
