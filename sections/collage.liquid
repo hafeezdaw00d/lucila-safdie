@@ -23,7 +23,7 @@
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient isolate">
-  <div class="page-width section-{{ section.id }}-padding">
+  <div class="section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="collage-wrapper-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {{ section.settings.heading }}
@@ -51,12 +51,6 @@
                 {% endif %}>
                 {%- if block.settings.image != blank -%}
                   {%- liquid
-                      if section.settings.desktop_layout == 'left'
-                        assign large_block = forloop.first
-                      else
-                        assign large_block = forloop.last
-                      endif
-
                       assign grid_space_desktop = settings.spacing_grid_horizontal | divided_by: 2 | append: 'px'
                       assign grid_space_mobile = settings.spacing_grid_horizontal | divided_by: 4 | append: 'px'
                     -%}
