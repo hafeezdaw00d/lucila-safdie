@@ -14,10 +14,22 @@
           "type": "image",
           "settings": {
           }
+        },
+        "36f132e4-66c0-432a-94f5-160e3e31b7b3": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "21e6dce1-f991-4a2f-87b7-03d69f804714": {
+          "type": "image",
+          "settings": {
+          }
         }
       },
       "block_order": [
-        "template--15935446417546__efbf6637-635a-44e8-8833-251e79e22a0d-image-1"
+        "template--15935446417546__efbf6637-635a-44e8-8833-251e79e22a0d-image-1",
+        "36f132e4-66c0-432a-94f5-160e3e31b7b3",
+        "21e6dce1-f991-4a2f-87b7-03d69f804714"
       ],
       "settings": {
         "heading": "Multimedia collage",
