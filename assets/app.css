@@ -589,8 +589,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-auto-flow: column;
 }
 
+.twcss-grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .twcss-justify-items-center {
   justify-items: center;
+}
+
+.twcss-gap-4 {
+  gap: 1rem;
 }
 
 .twcss-self-center {
