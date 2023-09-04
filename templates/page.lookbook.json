@@ -119,6 +119,18 @@
             "image": "shopify:\/\/shop_images\/23.jpg"
           }
         },
+        "5324642e-c9b2-4cbb-8ba0-e3ddf75819f4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08338_alta_web.jpg"
+          }
+        },
+        "012eee7e-19f3-46fa-8d0a-d7cb5f5796d3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08310_alta_web.jpg"
+          }
+        },
         "094a7ba3-c417-431a-96ad-6f6406c2c279": {
           "type": "image",
           "settings": {
@@ -319,6 +331,8 @@
         "6400151d-6a08-4d46-9a23-70315ba568ca",
         "8e9ce144-5344-4647-8c08-1a7f5ed2e8e9",
         "399f1997-a319-4fbd-b282-794ccdeae67d",
+        "5324642e-c9b2-4cbb-8ba0-e3ddf75819f4",
+        "012eee7e-19f3-46fa-8d0a-d7cb5f5796d3",
         "094a7ba3-c417-431a-96ad-6f6406c2c279",
         "0badec4f-2202-46f7-bff4-3c91b9070ee9",
         "b5116520-3ed6-4251-a4fb-82649cf1462b",
