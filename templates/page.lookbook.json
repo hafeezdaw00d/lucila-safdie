@@ -179,18 +179,6 @@
             "image": "shopify:\/\/shop_images\/33.jpg"
           }
         },
-        "a17b7194-a700-4cc4-8926-c445c79173ae": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/20.jpg"
-          }
-        },
-        "35d319c3-3dfd-4843-83d6-78cc2ed524ec": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/19_ef8f719a-8b3f-4dc4-8cdf-d44cc77f6de6.jpg"
-          }
-        },
         "e4d83a76-62d6-4e82-8283-63b82319beed": {
           "type": "image",
           "settings": {
@@ -275,6 +263,18 @@
             "image": "shopify:\/\/shop_images\/43.jpg"
           }
         },
+        "c9eb6bd2-2947-4b61-9536-cedd84d3a42d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/22.jpg"
+          }
+        },
+        "0a7a48d1-0fb2-4e6d-ad15-e70a2042e474": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/21.jpg"
+          }
+        },
         "8d233c44-36a7-4556-9784-865c6f54f6a6": {
           "type": "image",
           "settings": {
@@ -287,16 +287,16 @@
             "image": "shopify:\/\/shop_images\/47.jpg"
           }
         },
-        "0a7a48d1-0fb2-4e6d-ad15-e70a2042e474": {
+        "a17b7194-a700-4cc4-8926-c445c79173ae": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/21.jpg"
+            "image": "shopify:\/\/shop_images\/20.jpg"
           }
         },
-        "c9eb6bd2-2947-4b61-9536-cedd84d3a42d": {
+        "35d319c3-3dfd-4843-83d6-78cc2ed524ec": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/22.jpg"
+            "image": "shopify:\/\/shop_images\/19_ef8f719a-8b3f-4dc4-8cdf-d44cc77f6de6.jpg"
           }
         }
       },
@@ -329,8 +329,6 @@
         "d0747463-b047-4a0b-b084-a98508606f10",
         "eda4465c-ac5a-4757-805c-7dcd185f6915",
         "348c21d6-8811-49f6-b3b4-d7b077a18271",
-        "a17b7194-a700-4cc4-8926-c445c79173ae",
-        "35d319c3-3dfd-4843-83d6-78cc2ed524ec",
         "e4d83a76-62d6-4e82-8283-63b82319beed",
         "9e7cd2ff-e25a-48e3-a73c-a3c2f714ec93",
         "21a42578-114d-41e9-9877-d7ae287373d8",
@@ -345,10 +343,12 @@
         "96b9ab84-9560-4ffe-a587-b3080d36a16c",
         "b7346335-43cd-4c0c-b3ba-9c9c6e2e7746",
         "e8aaad97-f4da-4454-a308-dda9bc760182",
+        "c9eb6bd2-2947-4b61-9536-cedd84d3a42d",
+        "0a7a48d1-0fb2-4e6d-ad15-e70a2042e474",
         "8d233c44-36a7-4556-9784-865c6f54f6a6",
         "8f0d51b6-0a9b-45e9-a96f-b468eb237472",
-        "0a7a48d1-0fb2-4e6d-ad15-e70a2042e474",
-        "c9eb6bd2-2947-4b61-9536-cedd84d3a42d"
+        "a17b7194-a700-4cc4-8926-c445c79173ae",
+        "35d319c3-3dfd-4843-83d6-78cc2ed524ec"
       ],
       "settings": {
         "heading": "",
