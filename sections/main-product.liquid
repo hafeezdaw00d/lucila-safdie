@@ -88,10 +88,10 @@
                 {{- block.settings.text -}}
               </p>
             {%- when 'title' -%}
-              <div class="product__title" {{ block.shopify_attributes }}>
+              <div class="twcss-lowercase product__title" {{ block.shopify_attributes }}>
                 <h1>{{ product.title | escape }}</h1>
                 <a href="{{ product.url }}" class="product__title">
-                  <h2 class="h1">
+                  <h2 class="twcss-lowercase h1">
                     {{ product.title | escape }}
                   </h2>
                 </a>
@@ -110,7 +110,7 @@
                   <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                 </div>
               {%- endif -%}
-                <div class="product__tax caption rte">
+                <div class="helv-reset twcss-lowercase product__tax caption rte">
                   {%- if cart.taxes_included -%}
                     {{ 'products.product.include_taxes' | t }}
                   {%- endif -%}
@@ -381,7 +381,7 @@
                       {%- if product.selected_or_first_available_variant.quantity_price_breaks.size >= 3 -%}
                         <show-more-button>
                           <button
-                            class="button-show-more link underlined-link"
+                            class="button-show-more link"
                             id="Show-More-{{ section.id }}"
                             type="button"
                           >
