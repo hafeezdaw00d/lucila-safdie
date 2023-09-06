@@ -3,7 +3,7 @@
   --alpha-button-border: 1;
   --alpha-link: 0.85;
   --alpha-badge-border: 0.1;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(197, 197, 197, 0.35);
 }
 
 .product-card-wrapper .card,
