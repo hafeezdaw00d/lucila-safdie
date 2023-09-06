@@ -573,6 +573,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
+.twcss-mt-10 {
+  margin-top: 2.5rem;
+}
+
+.twcss-mt-6 {
+  margin-top: 1.5rem;
+}
+
+.twcss-mt-4 {
+  margin-top: 1rem;
+}
+
 .twcss-block {
   display: block;
 }
@@ -621,6 +633,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 390px;
 }
 
+.twcss-flex-shrink {
+  flex-shrink: 1;
+}
+
 .twcss-grid-flow-row {
   grid-auto-flow: row;
 }
@@ -631,6 +647,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.twcss-flex-col {
+  flex-direction: column;
 }
 
 .twcss-justify-center {
@@ -651,6 +671,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-justify-self-center {
   justify-self: center;
+}
+
+.twcss-p-4 {
+  padding: 1rem;
 }
 
 .twcss-text-center {

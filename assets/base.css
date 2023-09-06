@@ -3,6 +3,7 @@
   --alpha-button-border: 1;
   --alpha-link: 0.85;
   --alpha-badge-border: 0.1;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .product-card-wrapper .card,
@@ -92,7 +93,6 @@
 
 .x-image-slider {
   height: 100vh;
-  padding: 1rem;
   display: flex;
   justify-content: center;
 }
