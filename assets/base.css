@@ -74,14 +74,6 @@
 
 /* base */
 
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
-}
-
 .helv {
   font-size: 1rem;
   letter-spacing: -0.06rem;
@@ -100,7 +92,7 @@ body {
 }
 
 .x-image-slider {
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
 }
