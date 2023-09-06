@@ -513,6 +513,38 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: fixed;
 }
 
+.twcss-absolute {
+  position: absolute;
+}
+
+.twcss-top-\[50\%\] {
+  top: 50%;
+}
+
+.twcss-top-\[20\%\] {
+  top: 20%;
+}
+
+.twcss-top-\[25\%\] {
+  top: 25%;
+}
+
+.twcss-top-\[26\%\] {
+  top: 26%;
+}
+
+.twcss-top-\[27\%\] {
+  top: 27%;
+}
+
+.twcss-top-\[60\%\] {
+  top: 60%;
+}
+
+.twcss-top-\[75\%\] {
+  top: 75%;
+}
+
 .twcss-row-start-1 {
   grid-row-start: 1;
 }
@@ -557,6 +589,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+.twcss-h-\[10\%\] {
+  height: 10%;
+}
+
 .twcss-min-h-\[100vh\] {
   min-height: 100vh;
 }
@@ -577,6 +613,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 25%;
 }
 
+.twcss-w-\[100vw\] {
+  width: 100vw;
+}
+
 .twcss-max-w-\[390px\] {
   max-width: 390px;
 }
@@ -591,6 +631,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.twcss-justify-center {
+  justify-content: center;
 }
 
 .twcss-justify-items-center {
@@ -609,6 +653,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-self: center;
 }
 
+.twcss-text-center {
+  text-align: center;
+}
+
 .twcss-lowercase {
   text-transform: lowercase;
+}
+
+.twcss-underline {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
 }
