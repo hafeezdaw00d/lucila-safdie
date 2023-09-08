@@ -75,7 +75,7 @@
 /* base */
 
 .helv {
-  font-size: 1rem;
+  font-size: 1.2rem;
   letter-spacing: -0.06rem;
   line-height: normal;
 }
@@ -83,7 +83,7 @@
 .helv-reset {
   text-transform: lowercase;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1rem !important;
+  font-size: 1.2rem !important;
   letter-spacing: -0.06rem !important;
   line-height: normal !important;
   text-decoration: none !important;
@@ -285,7 +285,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 ::selection {
-  background-color: rgba(var(--color-foreground), 0.2);
+  background-color: aquamarine;
 }
 
 .text-body {
@@ -536,7 +536,7 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: 1rem;
+  font-size: inherit;
   font-family: inherit;
 }
 
@@ -3376,6 +3376,10 @@ details-disclosure > details {
     opacity: 0.01;
   }
 
+  .page-fade {
+    animation: var(--animation-fade-in) var-;
+  }
+
   .scroll-trigger.animate--slide-in {
     transform: translateY(2rem);
   }
@@ -3416,7 +3420,7 @@ details-disclosure > details {
 
   @keyframes fadeIn {
     from {
-      opacity: 1;
+      opacity: 0;
     }
     to {
       opacity: 1;
