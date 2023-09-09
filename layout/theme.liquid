@@ -216,6 +216,14 @@
         height: 100%;
       }
 
+      body::-webkit-scrollbar {
+        display: none !important;
+        height: 0px;
+        width: 0px;
+        background: transparent;
+        -webkit-appearance: none;
+      }
+
       body {
         display: grid;
         grid-template-rows: auto auto 1fr auto;

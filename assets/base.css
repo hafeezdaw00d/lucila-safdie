@@ -74,12 +74,8 @@
 
 /* base */
 
-body::-webkit-scrollbar {
-  display: none;
-}
-
 .helv {
-  font-size: 1.2rem;
+  font-size: 12px !important;
   letter-spacing: -0.06rem;
   line-height: normal;
 }
@@ -87,7 +83,7 @@ body::-webkit-scrollbar {
 .helv-reset {
   text-transform: lowercase;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1.2rem !important;
+  font-size: 12px !important;
   letter-spacing: -0.06rem !important;
   line-height: normal !important;
   text-decoration: none !important;
