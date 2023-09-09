@@ -74,6 +74,10 @@
 
 /* base */
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .helv {
   font-size: 1.2rem;
   letter-spacing: -0.06rem;
