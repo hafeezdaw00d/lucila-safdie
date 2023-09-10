@@ -545,6 +545,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 75%;
 }
 
+.twcss-top-64 {
+  top: 16rem;
+}
+
+.twcss-top-\[30\%\] {
+  top: 30%;
+}
+
 .twcss-row-start-1 {
   grid-row-start: 1;
 }
@@ -583,6 +591,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-mt-4 {
   margin-top: 1rem;
+}
+
+.twcss-mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.twcss-mb-20 {
+  margin-bottom: 5rem;
+}
+
+.twcss-mb-40 {
+  margin-bottom: 10rem;
+}
+
+.twcss-mt-\[-10rem\] {
+  margin-top: -10rem;
+}
+
+.twcss-mt-40 {
+  margin-top: 10rem;
 }
 
 .twcss-block {
@@ -675,6 +703,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-justify-self-center {
   justify-self: center;
+}
+
+.twcss-overflow-hidden {
+  overflow: hidden;
 }
 
 .twcss-p-4 {
