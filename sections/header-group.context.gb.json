@@ -4,5 +4,12 @@
     "market": "gb"
   },
   "sections": {
+    "announcement-bar": {
+      "disabled": true,
+      "settings": {
+      },
+      "blocks": {
+      }
+    }
   }
 }
