@@ -166,7 +166,7 @@
   flex: 0 0 100%;
   padding: 0;
   margin: 0 0 1.2rem 0;
-  max-width: 44rem;
+  max-width: 100%;
   min-width: fit-content;
   border: none;
 }
@@ -288,7 +288,7 @@ fieldset.product-form__input .form__label {
 }
 
 .product-form__input .select {
-  max-width: 25rem;
+  max-width: 100%;
 }
 
 .product-form__submit {
@@ -340,7 +340,7 @@ fieldset.product-form__input .form__label {
 .product__info-container .product-form,
 .product__info-container .product__description,
 .product__info-container .icon-with-text {
-  margin: 2.5rem 0;
+  /* margin: 2.5rem 0; */
 }
 
 .product__text {
@@ -387,7 +387,7 @@ a.product__text {
 }
 
 .product .price__container {
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 }
 
 .product .price dl {

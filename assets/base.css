@@ -1290,11 +1290,10 @@ button.shopify-payment-button__button--unbranded {
   justify-content: center;
   align-items: center;
   border: 0;
-  padding: 0 3rem;
+  padding: 0 1rem;
   cursor: pointer;
-  font: inherit;
-  font-size: 1rem !important;
-  letter-spacing: -0.006rem !important;
+  font-size: 12px;
+  letter-spacing: -0.01px !important;
   text-decoration: none;
   color: rgb(var(--color-button-text));
   transition: box-shadow var(--duration-short) ease;
@@ -1385,9 +1384,11 @@ button.shopify-payment-button__button--unbranded {
 .button-label,
 .shopify-challenge__button,
 .customer button {
-  font-size: 1.5rem;
-  letter-spacing: 0.1rem;
-  line-height: calc(1 + 0.2 / var(--font-body-scale));
+  font-size: 12px;
+  text-transform: uppercase;
+  justify-content: space-between;
+  letter-spacing: -0.1px;
+  /* line-height: calc(1 + 0.2 / var(--font-body-scale)); */
 }
 
 .button--tertiary {
@@ -1767,7 +1768,7 @@ details[open] > .share-button__fallback {
 .customer select {
   cursor: pointer;
   line-height: calc(1 + 0.6 / var(--font-body-scale));
-  padding: 0 calc(var(--inputs-border-width) + 3rem) 0 2rem;
+  padding: 0 calc(var(--inputs-border-width) + 3rem) 0 1rem;
   margin: var(--inputs-border-width);
   min-height: calc(var(--inputs-border-width) * 2);
 }
