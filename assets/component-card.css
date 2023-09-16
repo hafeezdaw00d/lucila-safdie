@@ -8,6 +8,7 @@
 .card {
   text-decoration: none;
   text-align: var(--text-alignment);
+  margin-bottom: 1rem;
 }
 
 .card:not(.ratio) {
@@ -139,7 +140,7 @@
 
 .card__information {
   grid-row-start: 2;
-  padding: 1.3rem 1rem;
+  padding: 0.6rem 1rem;
 }
 
 .card:not(.ratio) > .card__content {

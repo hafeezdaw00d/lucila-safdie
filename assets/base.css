@@ -4,6 +4,16 @@
   --alpha-link: 0.85;
   --alpha-badge-border: 0.1;
   -webkit-tap-highlight-color: transparent;
+  --helv-reset: {
+    text-transform: lowercase;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px !important;
+    letter-spacing: -0.1px !important;
+    line-height: normal !important;
+    text-decoration: none !important;
+    color: black !important;
+    text-transform: lowercase;
+  }
 }
 
 .product-card-wrapper .card,
@@ -92,7 +102,7 @@
 }
 
 .x-image-slider {
-  height: 98svh;
+  /* height: 98svh; */
   display: flex;
   justify-content: center;
 }
@@ -309,7 +319,7 @@ h5,
 .h4,
 .h5 {
   font-family: var(--font-heading-family);
-  font-size: 1rem !important;
+  font-size: 12px !important;
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   letter-spacing: calc(var(--font-heading-scale) * -0.06rem);
@@ -448,9 +458,8 @@ blockquote {
 .field__input,
 .form__label,
 .select__select {
-  font-size: 1.3rem;
-  line-height: calc(1 + 0.5 / var(--font-body-scale));
-  letter-spacing: 0.04rem;
+  @apply --helv-reset;
+  color: black;
 }
 
 .color-foreground {
@@ -536,7 +545,7 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: inherit;
+  font-size: 12px;
   font-family: inherit;
 }
 
@@ -1943,7 +1952,7 @@ input[type='checkbox'] {
 .quantity {
   color: rgba(var(--color-foreground));
   position: relative;
-  width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
+  /* width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2); */
   display: flex;
   border-radius: var(--inputs-radius);
   min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);
