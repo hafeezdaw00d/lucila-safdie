@@ -5,8 +5,11 @@
   },
   "sections": {
     "featured_collection": {
+      "disabled": false,
       "settings": {
-        "products_to_show": 8
+        "products_to_show": 8,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true
       },
       "blocks": {
       }
