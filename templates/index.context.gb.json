@@ -4,5 +4,12 @@
     "market": "gb"
   },
   "sections": {
+    "featured_collection": {
+      "settings": {
+        "products_to_show": 8
+      },
+      "blocks": {
+      }
+    }
   }
 }
