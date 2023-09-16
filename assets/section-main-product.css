@@ -432,6 +432,7 @@ a.product__text {
 }
 
 .product__tax {
+  display: none;
   margin-top: -1.4rem;
 }
 
