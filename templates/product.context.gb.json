@@ -4,5 +4,26 @@
     "market": "gb"
   },
   "sections": {
+    "main": {
+      "disabled": false,
+      "settings": {
+      },
+      "blocks": {
+        "variant_picker": {
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "settings": {
+          }
+        }
+      }
+    }
   }
 }
