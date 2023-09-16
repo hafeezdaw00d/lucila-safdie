@@ -370,7 +370,8 @@ slider-component.slider-component-full-width {
 }
 
 .slider-buttons {
-  display: flex;
+  display: none;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
 }
