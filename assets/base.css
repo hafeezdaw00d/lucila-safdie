@@ -829,6 +829,8 @@ summary::-webkit-details-marker {
 .title,
 .title-wrapper-with-link {
   margin: 3rem 0 2rem;
+  text-align: center;
+  text-transform: lowercase;
 }
 
 .title-wrapper-with-link .title {
