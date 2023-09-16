@@ -82,14 +82,14 @@
               disabled
             {% endif %}
           >
-            <span>
+            <span class=' twcss-leading-none helv-reset twcss-invert'>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
             </span>
-            <span> {% render 'price', product: product %}</span>
+            <span class='twcss-invert'> {% render 'price', product: product %}</span>
             <div class='loading-overlay__spinner hidden'>
               <svg
                 aria-hidden='true'
