@@ -9,11 +9,6 @@
       "settings": {
       },
       "blocks": {
-        "variant_picker": {
-          "settings": {
-            "picker_type": "button"
-          }
-        },
         "quantity_selector": {
           "disabled": true,
           "settings": {
