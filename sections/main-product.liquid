@@ -88,8 +88,8 @@
                 {{- block.settings.text -}}
               </p>
             {%- when 'title' -%}
-              <div class="twcss-lowercase product__title" {{ block.shopify_attributes }}>
-                <h1>{{ product.title | escape }}</h1>
+              <div class="twcss-lowercase helv-reset center product__title" {{ block.shopify_attributes }}>
+                <h1 class="helv-reset">{{ product.title | escape }}</h1>
                 <a href="{{ product.url }}" class="product__title">
                   <h2 class="twcss-lowercase h1">
                     {{ product.title | escape }}
@@ -102,7 +102,7 @@
                   product: product,
                   use_variant: true,
                   show_badges: true,
-                  price_class: 'price--large'
+                  price_class: 'helv-reset'
                 -%}
               </div>
               {%- if product.quantity_price_breaks_configured? -%}
@@ -217,7 +217,7 @@
                 {% # theme-check-disable %}
                 {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
                 {% # theme-check-enable %}
-                <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                <label class="helv-reset quantity__label" for="Quantity-{{ section.id }}">
                   {{ 'products.product.quantity.label' | t }}
                   <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
                     <span class="loading-overlay hidden">

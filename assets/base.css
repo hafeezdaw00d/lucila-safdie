@@ -84,7 +84,7 @@
   text-transform: lowercase;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 12px !important;
-  letter-spacing: -0.06rem !important;
+  letter-spacing: -0.1px !important;
   line-height: normal !important;
   text-decoration: none !important;
   color: black !important;
