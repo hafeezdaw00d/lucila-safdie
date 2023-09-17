@@ -337,11 +337,11 @@ fieldset.product-form__input .form__label {
   max-width: 100%;
 }
 
-.product__info-container .product-form,
+/* .product__info-container .product-form,
 .product__info-container .product__description,
 .product__info-container .icon-with-text {
-  /* margin: 2.5rem 0; */
-}
+  margin: 2.5rem 0;
+} */
 
 .product__text {
   margin-bottom: 0;

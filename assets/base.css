@@ -4,16 +4,7 @@
   --alpha-link: 0.85;
   --alpha-badge-border: 0.1;
   -webkit-tap-highlight-color: transparent;
-  --helv-reset: {
-    text-transform: lowercase;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 12px !important;
-    letter-spacing: -0.1px !important;
-    line-height: normal !important;
-    text-decoration: none !important;
-    color: black !important;
-    text-transform: lowercase;
-  }
+  --l-s: -0.3px !important;
 }
 
 .product-card-wrapper .card,
@@ -94,7 +85,7 @@
   text-transform: lowercase;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 12px !important;
-  letter-spacing: -0.1px !important;
+  letter-spacing: var(--l-s);
   line-height: normal !important;
   text-decoration: none !important;
   color: black !important;
@@ -300,7 +291,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 .text-body {
   font-size: 1rem;
-  letter-spacing: -0.06rem;
+  letter-spacing: var(--l-s);
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
@@ -322,7 +313,7 @@ h5,
   font-size: 12px !important;
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
-  letter-spacing: calc(var(--font-heading-scale) * -0.06rem);
+  letter-spacing: var(--l-s);
   color: rgb(var(--color-foreground));
   line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
   word-break: break-word;
@@ -425,7 +416,7 @@ blockquote {
 
 .caption {
   font-size: 1rem;
-  letter-spacing: 0.07rem;
+  letter-spacing: var(--l-s);
   line-height: calc(1 + 0.7 / var(--font-body-scale));
 }
 
@@ -436,20 +427,20 @@ blockquote {
 }
 
 .caption-with-letter-spacing {
-  font-size: 1rem;
-  letter-spacing: 0.13rem;
+  font-size: 12px;
+  letter-spacing: var(--l-s);
   line-height: calc(1 + 0.2 / var(--font-body-scale));
   text-transform: uppercase;
 }
 
 .caption-with-letter-spacing--medium {
   font-size: 1.2rem;
-  letter-spacing: 0.16rem;
+  letter-spacing: var(--l-s);
 }
 
 .caption-with-letter-spacing--large {
   font-size: 1.4rem;
-  letter-spacing: 0.18rem;
+  letter-spacing: var(--l-s);
 }
 
 .caption-large,
@@ -545,6 +536,7 @@ h6:empty {
   color: rgb(var(--color-link));
   background-color: transparent;
   font-size: 12px;
+  letter-spacing: var(--l-s);
   font-family: inherit;
 }
 
@@ -552,15 +544,15 @@ h6:empty {
   color: rgb(var(--color-foreground));
 }
 
-.link--text:hover {
-  /* color: rgba(var(--color-foreground), 0.75); */
-}
+/* .link--text:hover {
+  color: rgba(var(--color-foreground), 0.75);
+} */
 
 .link-with-icon {
   display: inline-flex;
   font-size: 1.4rem;
   font-weight: 600;
-  letter-spacing: 0.1rem;
+  letter-spacing: var(--l-s);
   text-decoration: none;
   margin-bottom: 4.5rem;
   white-space: nowrap;
@@ -921,18 +913,18 @@ summary::-webkit-details-marker {
 .subtitle {
   font-size: 1.8rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
-  letter-spacing: -0.06rem;
+  letter-spacing: var(--l-s);
   color: rgba(var(--color-foreground), 0.7);
 }
 
 .subtitle--small {
   font-size: 1.4rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: var(--l-s);
 }
 
 .subtitle--medium {
   font-size: 1.6rem;
-  letter-spacing: 0.08rem;
+  letter-spacing: var(--l-s);
 }
 
 /* component-grid */
@@ -1293,7 +1285,7 @@ button.shopify-payment-button__button--unbranded {
   padding: 0 1rem;
   cursor: pointer;
   font-size: 12px;
-  letter-spacing: -0.01px !important;
+  letter-spacing: var(--l-s);
   text-decoration: none;
   color: white;
   transition: box-shadow var(--duration-short) ease;
@@ -1387,7 +1379,7 @@ button.shopify-payment-button__button--unbranded {
   font-size: 12px;
   text-transform: uppercase;
   justify-content: space-between;
-  letter-spacing: -0.1px;
+  letter-spacing: var(--l-s);
   /* line-height: calc(1 + 0.2 / var(--font-body-scale)); */
 }
 
@@ -1810,7 +1802,7 @@ details[open] > .share-button__fallback {
   transition: top var(--duration-short) ease,
     font-size var(--duration-short) ease;
   color: rgba(var(--color-foreground), 0.75);
-  letter-spacing: 0.1rem;
+  letter-spacing: var(--l-s);
   line-height: 1.5;
 }
 
@@ -1823,7 +1815,7 @@ details[open] > .share-button__fallback {
   font-size: 1rem;
   top: calc(var(--inputs-border-width) + 0.5rem);
   left: calc(var(--inputs-border-width) + 2rem);
-  letter-spacing: 0.04rem;
+  letter-spacing: var(--l-s);
 }
 
 .field__input:focus,
@@ -2171,18 +2163,18 @@ product-info .loading-overlay:not(.hidden) ~ *,
 }
 
 .cart-count-bubble {
-  position: absolute;
+  position: relative;
+  margin-top: 5px;
   background-color: rgb(var(--color-button));
   color: rgb(var(--color-button-text));
   height: 1.7rem;
-  width: 1.7rem;
-  border-radius: 100%;
+  /* width: 1.7rem; */
+  /* border-radius: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9rem;
-  bottom: 0.8rem;
-  left: 2.2rem;
+  font-size: 12px;
+  /* bottom: 0.8rem; */
   line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 
@@ -2346,7 +2338,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
   text-align: center;
   padding: 1rem 0;
   margin: 0;
-  letter-spacing: 0.1rem;
+  letter-spacing: var(--l-s);
   min-height: 3.8rem;
 }
 
@@ -2858,7 +2850,7 @@ details[open] > .header__submenu {
 
 /* Header menu */
 .header__inline-menu {
-  letter-spacing: -0.06rem;
+  letter-spacing: var(--l-s);
   /* margin-left: -1.2rem; */
   /* grid-area: navigation; */
   /* display: none; */
@@ -3025,7 +3017,7 @@ details-disclosure > details {
   border-radius: var(--badge-corner-radius);
   display: inline-block;
   font-size: 1.2rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: var(--l-s);
   line-height: 1;
   padding: 0.5rem 1.3rem 0.6rem 1.3rem;
   text-align: center;
@@ -3234,6 +3226,15 @@ details-disclosure > details {
   }
 }
 
+.rte {
+  font-family: Helvetica, Arial, sans-serif;
+  color: black;
+  font-size: 12px;
+  letter-spacing: var(--l-s);
+  line-height: normal;
+  text-transform: lowercase;
+}
+
 .rte:after {
   clear: both;
   content: '';
@@ -3290,6 +3291,7 @@ details-disclosure > details {
   text-underline-offset: 0.3rem;
   text-decoration-thickness: 0.1rem;
   transition: text-decoration-thickness var(--duration-short) ease;
+  color: #00ffc2;
 }
 
 .rte a:hover {

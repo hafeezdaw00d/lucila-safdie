@@ -82,6 +82,7 @@
       }
 
       :root {
+        --l-s: -0.3px !important;
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
@@ -231,7 +232,7 @@
         min-height: 100%;
         margin: 0;
         font-size: 12px;
-        letter-spacing: -0.1px;
+        letter-spacing: var(--l-s);
         line-height: normal;
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
@@ -240,7 +241,7 @@
 
       @media screen and (min-width: 750px) {
         body {
-          font-size: 1.6rem;
+          font-size: 12px;
         }
       }
     {% endstyle %}

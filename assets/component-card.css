@@ -358,9 +358,9 @@
   overflow: hidden;
 }
 
-.card-information > * + * {
-  /* margin-top: 0.5rem; */
-}
+/* .card-information > * + * {
+  margin-top: 0.5rem;
+} */
 
 .card-information {
   width: 100%;
@@ -383,14 +383,14 @@
   margin-top: 0.4rem;
 }
 
-.card-information
+/* .card-information
   > *:not(.visually-hidden:first-child)
   + *:not(.rating):not(.card__information-volume-pricing-note) {
-  /* margin-top: 0.7rem; */
-}
+  margin-top: 0.7rem;
+} */
 
 .card-information .caption {
-  letter-spacing: 0.07rem;
+  letter-spacing: var(--l-s);
 }
 
 .card-article-info {

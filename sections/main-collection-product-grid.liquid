@@ -100,7 +100,11 @@
         </form>
       </facet-filters-form>
     {%- endif -%}
-
+    <div class='helv-reset twcss-px-5 twcss-mb-10 twcss-flex twcss-justify-between twcss-w-[100%]'>
+      {% for collection in collections %}
+        {{- collection.title | link_to: collection.url }}
+      {% endfor %}
+    </div>
     <div class='{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}'>
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src='{{ 'facets.js' | asset_url }}' defer='defer'></script>
@@ -143,7 +147,7 @@
             </div>
           </div>
         {%- else -%}
-          <div class='collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}'>
+          <div class='collection{% if section.settings.filter_type != 'vertical' %}{% endif %}'>
             <div class='loading-overlay gradient'></div>
 
             <ul
