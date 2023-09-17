@@ -112,6 +112,7 @@
         "template--15932363800714__3c21e938-e450-4d14-a7a0-23e682f40eb3-slide-1",
         "template--15932363800714__3c21e938-e450-4d14-a7a0-23e682f40eb3-slide-2"
       ],
+      "disabled": true,
       "settings": {
         "layout": "grid",
         "slide_height": "adapt_image",
