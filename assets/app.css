@@ -568,6 +568,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 390px !important;
 }
 
+.twcss-max-w-\[39rem\] {
+  max-width: 39rem !important;
+}
+
+.twcss-max-w-\[34rem\] {
+  max-width: 34rem !important;
+}
+
+.twcss-max-w-\[36rem\] {
+  max-width: 36rem !important;
+}
+
 .twcss-grid-flow-row {
   grid-auto-flow: row !important;
 }
@@ -578,6 +590,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.twcss-flex-row {
+  flex-direction: row !important;
+}
+
+.twcss-flex-row-reverse {
+  flex-direction: row-reverse !important;
 }
 
 .twcss-justify-between {
@@ -650,6 +670,46 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-p-4 {
   padding: 1rem !important;
+}
+
+.twcss-p-0 {
+  padding: 0px !important;
+}
+
+.twcss-p-2 {
+  padding: 0.5rem !important;
+}
+
+.twcss-p-0 {
+  padding: 0px !important;
+}
+
+.twcss-p-1 {
+  padding: 0.25rem !important;
+}
+
+.twcss-p-0 {
+  padding: 0px !important;
+}
+
+.twcss-p-1 {
+  padding: 0.25rem !important;
+}
+
+.twcss-p-0 {
+  padding: 0px !important;
+}
+
+.twcss-p-1 {
+  padding: 0.25rem !important;
+}
+
+.twcss-p-0 {
+  padding: 0px !important;
+}
+
+.twcss-p-1 {
+  padding: 0.25rem !important;
 }
 
 .twcss-px-5 {
