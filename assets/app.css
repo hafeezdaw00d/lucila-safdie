@@ -524,6 +524,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.25rem !important;
 }
 
+.twcss-my-10 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
 .twcss-mt-10 {
   margin-top: 2.5rem !important;
 }
@@ -710,6 +715,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-p-1 {
   padding: 0.25rem !important;
+}
+
+.twcss-p-0 {
+  padding: 0px !important;
 }
 
 .twcss-px-5 {
