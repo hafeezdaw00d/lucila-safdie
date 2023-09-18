@@ -1,5 +1,6 @@
 module.exports = {
   prefix: 'twcss-',
+  important: true,
   content: [
     './layout/*.liquid',
     './templates/*.liquid',

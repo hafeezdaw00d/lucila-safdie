@@ -92,7 +92,7 @@ html {
   font-size: 1.2rem !important;
   letter-spacing: var(--l-s);
   line-height: normal !important;
-  text-decoration: none !important;
+  /* text-decoration: none; */
   color: black !important;
 }
 
@@ -115,7 +115,7 @@ html {
   max-width: 39rem;
   width: 36rem;
   margin: 0 auto;
-  z-index: 2000;
+  z-index: 10;
 }
 
 .mySlides {
@@ -2902,7 +2902,7 @@ details[open] > .header__submenu {
 .header__menu-item {
   padding: 1.2rem;
   padding-top: 0;
-  text-decoration: none;
+  text-decoration: none !important;
   color: rgba(var(--color-foreground), 0.75);
 }
 
@@ -2914,10 +2914,10 @@ details[open] > .header__submenu {
   transition: text-decoration var(--duration-short) ease;
 }
 
-.header__menu-item:hover span {
+/* .header__menu-item:hover span {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
-}
+} */
 
 details[open] > .header__menu-item {
   text-decoration: underline;
