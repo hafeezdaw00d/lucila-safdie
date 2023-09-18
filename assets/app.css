@@ -557,6 +557,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1.25rem !important;
 }
 
+.twcss-mb-5 {
+  margin-bottom: 1.25rem !important;
+}
+
 .twcss-block {
   display: block !important;
 }
@@ -591,6 +595,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-max-w-\[36rem\] {
   max-width: 36rem !important;
+}
+
+.twcss-max-w-\[44rem\] {
+  max-width: 44rem !important;
 }
 
 .twcss-grid-flow-row {
@@ -765,6 +773,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .twcss-text-black {
   --tw-text-opacity: 1 !important;
   color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+}
+
+.twcss-text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
 .twcss-underline {
