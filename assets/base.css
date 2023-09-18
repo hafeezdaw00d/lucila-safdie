@@ -75,21 +75,25 @@
 
 /* base */
 
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
 .helv {
   font-size: 12px !important;
-  letter-spacing: -0.06rem;
+  letter-spacing: var(--l-s);
   line-height: normal;
 }
 
 .helv-reset {
   text-transform: lowercase;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 12px !important;
+  font-size: 1.2rem !important;
   letter-spacing: var(--l-s);
   line-height: normal !important;
   text-decoration: none !important;
   color: black !important;
-  text-transform: lowercase;
 }
 
 .x-image-slider {
@@ -98,8 +102,20 @@
   justify-content: center;
 }
 
+.svg-wrap {
+  width: calc(100% - 2.5rem);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 2rem;
+}
+
 .home-svg {
-  max-width: 390px;
+  max-width: 39rem;
+  width: 36rem;
+  margin: 0 auto;
+  z-index: 2000;
 }
 
 .mySlides {
@@ -1255,7 +1271,7 @@ button.shopify-payment-button__button--unbranded,
   --border-opacity: calc(1 - var(--buttons-border-opacity));
   border-radius: var(--buttons-radius-outset);
   position: relative;
-  font-family: 'Helvetica';
+  font-family: 'Helvetica', Arial, sans-serif;
 }
 
 .button,
@@ -3016,14 +3032,16 @@ details-disclosure > details {
   border: 1px solid transparent;
   border-radius: var(--badge-corner-radius);
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.2px;
   letter-spacing: var(--l-s);
-  line-height: 1;
+  @apply twcss-leading-none;
   padding: 0.5rem 1.3rem 0.6rem 1.3rem;
   text-align: center;
-  background-color: rgb(var(--color-badge-background));
+  background-color: black;
+  /* background-color: rgb(var(--color-badge-background)); */
   border-color: rgba(var(--color-badge-border), var(--alpha-badge-border));
-  color: rgb(var(--color-badge-foreground));
+  /* color: rgb(var(--color-badge-foreground)); */
+  color: white !important;
   word-break: break-word;
 }
 
@@ -3475,7 +3493,7 @@ details-disclosure > details {
   }
 
   .animate--hover-3d-lift .deferred-media:hover .deferred-media__poster-button {
-    transform: translate(-50%, -50%) scale(1.05); /* Apply a specialized transform to the video play button. */
+    transform: none; /* Apply a specialized transform to the video play button. */
   }
 
   .animate--hover-3d-lift .collage__item .card-wrapper:hover .card--card,
@@ -3558,8 +3576,8 @@ details-disclosure > details {
     left: 0;
     opacity: 0;
     pointer-events: none;
-    transition: background-position calc(2 * var(--duration-extended)) ease,
-      opacity var(--duration-default) ease;
+    /* transition: background-position calc(2 * var(--duration-extended)) ease,
+      opacity var(--duration-default) ease; */
     mix-blend-mode: overlay;
     background-size: 400% 100%;
     background-position: 90% 0;
@@ -3584,8 +3602,9 @@ details-disclosure > details {
   }
 
   :root {
-    --easter-egg: none;
+    --easter-egg: url('./sparkle.gif');
     --sparkle: url('./sparkle.gif');
+    background: #00ffc2;
   }
 
   .animate--hover-vertical-lift .button:not(.button--tertiary),
@@ -3649,4 +3668,8 @@ details-disclosure > details {
     .button:not([disabled]).button--secondary:hover:after {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
+}
+
+.card-wrapper:hover .media.media--hover-effect > img + img {
+  transition: transform 1s ease, opacity 1s ease !important;
 }

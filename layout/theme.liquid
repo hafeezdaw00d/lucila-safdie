@@ -282,36 +282,52 @@
     <a class='skip-to-content-link button visually-hidden' href='#MainContent'>
       {{ 'accessibility.skip_to_text' | t }}
     </a>
+
     {%- if template == 'index' -%}
-    <div>
-      <div class="home-svg">
-        {% render icon-girls-dont-cry %}
-      </div>
-      <div class='x-image-slider'>
-        <img
-          class='mySlides'
-          src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_02_258_V2_LR_oVY7_5wX7z.jpg?updatedAt=1693515666462'
-        >
-        <img
-          class='mySlides'
-          src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_06_777_V2_LR_2CyLxoigE.jpg?updatedAt=1693507469107'
-        >
-        <img
-          class='mySlides'
-          src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_05_557_V2_LR_xyl8clhmo.jpg?updatedAt=1693508260607'
-        >
-        <img
-          class='mySlides'
-          src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_04_529_V1_LR_Y-grBdiv2E.jpg?updatedAt=1693514762433'
-        >
-        <img
-          class='mySlides'
-          src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_03_340-1_V1_LR_gOVDOfTEe.jpg?updatedAt=1693515387944'
-        >
-        <img
-          class='mySlides'
-          src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_01_103_V2_HR_YzTd-ptDV.jpg?updatedAt=1693506221330'
-        >
+      <div>
+        <div class='twcss-mx-5 svg-wrap twcss-gap-5 '>
+          <div class='twcss-mx-auto twcss-grid twcss-gap-20 twcss-justify-between twcss-grid-cols-2 twcss-w-[320px] twcss-max-w-[390px]'>
+            <a
+              href='/pages/girlsdontcry-lookbook'
+              class='twcss-justify-self-start twcss-bg-black twcss-text-white twcss-p-4 center'
+              >view lookbook</a
+            >
+            <a
+              href='/pages/girlsdontcry-lookbook'
+              class='twcss-justify-self-end twcss-bg-black twcss-text-white twcss-p-4 center twcss-border-white twcss-border twcss-rounded-full'
+              >view campaign</a
+            >
+          </div>
+          <div class='home-svg'>
+            {% render 'icon-girls-dont-cry' %}
+          </div>
+        </div>
+        <div class='x-image-slider'>
+          <img
+            class='mySlides'
+            src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_02_258_V2_LR_oVY7_5wX7z.jpg?updatedAt=1693515666462'
+          >
+          <img
+            class='mySlides'
+            src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_06_777_V2_LR_2CyLxoigE.jpg?updatedAt=1693507469107'
+          >
+          <img
+            class='mySlides'
+            src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_05_557_V2_LR_xyl8clhmo.jpg?updatedAt=1693508260607'
+          >
+          <img
+            class='mySlides'
+            src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_04_529_V1_LR_Y-grBdiv2E.jpg?updatedAt=1693514762433'
+          >
+          <img
+            class='mySlides'
+            src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_03_340-1_V1_LR_gOVDOfTEe.jpg?updatedAt=1693515387944'
+          >
+          <img
+            class='mySlides'
+            src='https://ik.imagekit.io/ljqwnqnom/LivLiberg_LucilaSafdie_01_103_V2_HR_YzTd-ptDV.jpg?updatedAt=1693506221330'
+          >
+        </div>
       </div>
     {%- endif -%}
 
