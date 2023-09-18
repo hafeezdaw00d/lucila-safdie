@@ -519,6 +519,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto !important;
 }
 
+.twcss-my-5 {
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
 .twcss-mt-10 {
   margin-top: 2.5rem !important;
 }
@@ -533,6 +538,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-mt-5 {
   margin-top: 1.25rem !important;
+}
+
+.twcss-mb-5 {
+  margin-bottom: 1.25rem !important;
 }
 
 .twcss-block {
@@ -615,6 +624,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-left-width: 1px !important;
 }
 
+.twcss-border-solid {
+  border-style: solid !important;
+}
+
 .twcss-border-white {
   --tw-border-opacity: 1 !important;
   border-color: rgb(255 255 255 / var(--tw-border-opacity)) !important;
@@ -660,6 +673,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .twcss-text-black {
   --tw-text-opacity: 1 !important;
   color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+}
+
+.twcss-text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
 .twcss-underline {
