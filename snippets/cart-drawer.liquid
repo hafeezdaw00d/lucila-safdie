@@ -38,10 +38,6 @@
                 aria-label='{{ 'accessibility.close' | t }}'
               >
                 {% render 'icon-close' %}
-              </button>
-              <a href='{{ routes.all_products_collection_url }}' class='button'>
-                {{ 'general.continue_shopping' | t }}
-              </a>
 
               {%- if shop.customer_accounts_enabled and customer == null -%}
                 <p class='cart__login-title h3'>{{ 'sections.cart.login.title' | t }}</p>
@@ -51,11 +47,6 @@
               {%- endif -%}
             </div>
           </div>
-          {%- if settings.cart_drawer_collection != blank -%}
-            <div class='cart-drawer__collection'>
-              {% render 'card-collection', card_collection: settings.cart_drawer_collection, columns: 1 %}
-            </div>
-          {%- endif -%}
         </div>
       {%- endif -%}
       <div class='helv-reset lowercase drawer__header'>
