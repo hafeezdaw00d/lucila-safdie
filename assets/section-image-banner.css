@@ -441,6 +441,7 @@
 
 .banner__buttons {
   display: inline-flex;
+  text-align: center;
   flex-wrap: wrap;
   gap: 1rem;
   max-width: 45rem;

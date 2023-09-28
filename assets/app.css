@@ -583,6 +583,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-direction: row-reverse !important;
 }
 
+.twcss-justify-center {
+  justify-content: center !important;
+}
+
 .twcss-justify-between {
   justify-content: space-between !important;
 }
