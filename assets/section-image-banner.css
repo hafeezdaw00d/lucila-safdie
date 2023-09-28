@@ -346,13 +346,14 @@
 }
 
 .banner__box {
-  padding: 4rem 3.5rem;
+  padding: 1.5rem 3.5rem;
   position: relative;
   height: fit-content;
   align-items: center;
   text-align: center;
   width: 100%;
   word-wrap: break-word;
+  background: transparent;
   z-index: 1;
 }
 

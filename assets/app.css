@@ -509,6 +509,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.twcss-absolute {
+  position: absolute !important;
+}
+
+.twcss-bottom-0 {
+  bottom: 0px !important;
+}
+
 .twcss-mx-5 {
   margin-left: 1.25rem !important;
   margin-right: 1.25rem !important;
