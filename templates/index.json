@@ -178,18 +178,11 @@
     "b30cbc5e-4621-428d-ad27-449e34834a7f": {
       "type": "image-banner",
       "blocks": {
-        "template--15932363800714__b30cbc5e-4621-428d-ad27-449e34834a7f-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "h1"
-          }
-        },
         "template--15932363800714__b30cbc5e-4621-428d-ad27-449e34834a7f-buttons-1": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "shop accessories",
-            "button_link_1": "",
+            "button_label_1": "shop bottoms",
+            "button_link_1": "shopify:\/\/collections\/shop",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -198,14 +191,14 @@
         }
       },
       "block_order": [
-        "template--15932363800714__b30cbc5e-4621-428d-ad27-449e34834a7f-heading-1",
         "template--15932363800714__b30cbc5e-4621-428d-ad27-449e34834a7f-buttons-1"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Look_05_035_Large_077e50db-7e99-4f6c-9605-5b2291c64faf.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "adapt",
         "desktop_content_position": "middle-center",
-        "show_text_box": true,
+        "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
