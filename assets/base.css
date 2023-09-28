@@ -97,7 +97,7 @@ html {
 }
 
 .x-image-slider {
-  /* height: 98svh; */
+  height: 100svh;
   display: flex;
   justify-content: center;
 }
@@ -119,9 +119,11 @@ html {
 }
 
 .mySlides {
-  height: 100svh;
+  height: 150vh;
+  /* width: 100vw; */
   /* padding: 1rem; */
   object-fit: cover;
+  /* transform: scale(3); */
 }
 
 .no-js:not(html) {

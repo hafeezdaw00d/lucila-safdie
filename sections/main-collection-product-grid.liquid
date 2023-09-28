@@ -100,7 +100,7 @@
         </form>
       </facet-filters-form>
     {%- endif -%}
-    <div class='twcss-underline twcss-underline-offset-[3px] helv-reset twcss-px-5 twcss-mt-10 twcss-mb-5 twcss-flex twcss-justify-between twcss-w-[100%]'>
+    <div class='hidden twcss-underline twcss-underline-offset-[3px] helv-reset twcss-px-5 twcss-mt-10 twcss-mb-5 twcss-flex twcss-justify-between twcss-w-[100%]'>
       {% for collection in collections %}
         {{- collection.title | link_to: collection.url }}
       {% endfor %}
