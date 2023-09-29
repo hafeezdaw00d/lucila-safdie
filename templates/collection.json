@@ -6,7 +6,7 @@
         "template--15932364325002__0be67e9d-173c-4493-940b-6ee684efeb14-featured_collection-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "frontpage"
+            "collection": ""
           }
         },
         "template--15932364325002__0be67e9d-173c-4493-940b-6ee684efeb14-featured_collection-2": {
@@ -29,9 +29,9 @@
       ],
       "disabled": true,
       "settings": {
-        "title": "Collections",
+        "title": "",
         "heading_size": "h1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "columns_desktop": 3,
         "color_scheme": "",
         "show_view_all": false,
@@ -61,7 +61,7 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": false,
+        "enable_filtering": true,
         "filter_type": "drawer",
         "enable_sorting": false,
         "columns_mobile": "1",
