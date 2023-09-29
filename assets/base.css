@@ -108,7 +108,7 @@ html {
   flex-direction: column-reverse;
   justify-content: space-between;
   position: absolute;
-  bottom: 2rem;
+  bottom: 1.5rem;
 }
 
 .home-svg {
@@ -681,7 +681,7 @@ details > * {
 
 .icon-arrow {
   width: 1.5rem;
-  color: white;
+  /* color: white; */
 }
 
 h3 .icon-arrow,
@@ -1273,6 +1273,7 @@ button.shopify-payment-button__button--unbranded,
     --buttons-border-offset
   ); /* reduce radius edge artifacts */
   --border-opacity: calc(1 - var(--buttons-border-opacity));
+  border: 1px solid white;
   border-radius: var(--buttons-radius-outset);
   position: relative;
   font-family: 'Helvetica', Arial, sans-serif;
@@ -1396,7 +1397,7 @@ button.shopify-payment-button__button--unbranded {
 .button-label,
 .shopify-challenge__button,
 .customer button {
-  font-size: 12px;
+  font-size: 1.2rem;
   text-transform: uppercase;
   justify-content: space-between;
   letter-spacing: var(--l-s);
@@ -3232,7 +3233,7 @@ details-disclosure > details {
   .shopify-payment-button [role='button']:focus-visible,
   .shopify-payment-button__button--unbranded:focus,
   .shopify-payment-button [role='button']:focus {
-    outline: solid transparent 1px;
+    /* outline: solid transparent 1px; */
   }
 
   .field__input:focus,

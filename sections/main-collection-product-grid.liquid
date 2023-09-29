@@ -100,9 +100,13 @@
         </form>
       </facet-filters-form>
     {%- endif -%}
-    <div class='hidden twcss-underline twcss-underline-offset-[3px] helv-reset twcss-px-5 twcss-mt-10 twcss-mb-5 twcss-flex twcss-justify-between twcss-w-[100%]'>
+    <div class='helv-reset twcss-mb-10 twcss-flex twcss-justify-between twcss-w-[100%]'>
       {% for collection in collections %}
-        {{- collection.title | link_to: collection.url }}
+        {{-
+          collection.title
+          | link_to: collection.url
+          | replace: '<a', '<a class="twcss-p-2 twcss-border twcss-border-black twcss-text-black"'
+        }}
       {% endfor %}
     </div>
     <div class='{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}'>
