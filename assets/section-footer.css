@@ -26,6 +26,7 @@
 
   .footer-block.grid__item:first-child {
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   .footer__content-top {
@@ -129,6 +130,7 @@
   border-top: 0.1rem solid black;
   border-bottom: 0.1rem solid black;
   padding: 2rem 0;
+  text-wrap: balance;
 }
 
 .footer-block--newsletter:only-child {

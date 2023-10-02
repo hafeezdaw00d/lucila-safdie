@@ -517,6 +517,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: 0px !important;
 }
 
+.twcss-right-\[1\.5rem\] {
+  right: 1.5rem !important;
+}
+
 .twcss-mx-5 {
   margin-left: 1.25rem !important;
   margin-right: 1.25rem !important;
