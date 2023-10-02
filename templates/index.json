@@ -161,6 +161,7 @@
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-text-1",
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-buttons-1"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Look_07_195_Large_a83e0f56-dcbc-47ec-beb7-7823e89b5481.jpg",
         "image_overlay_opacity": 0,
@@ -193,6 +194,7 @@
       "block_order": [
         "template--15932363800714__b30cbc5e-4621-428d-ad27-449e34834a7f-buttons-1"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Look_05_035_Large_077e50db-7e99-4f6c-9605-5b2291c64faf.jpg",
         "image_overlay_opacity": 0,
