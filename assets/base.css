@@ -125,6 +125,19 @@ html {
   object-fit: cover;
 }
 
+.lickthestar-scroll {
+  position: relative;
+  overflow: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.lickthestar-scroll img {
+  position: relative;
+  max-width: none !important;
+  height: 100vh !important;
+  width: auto;
+}
+
 @media screen and (min-width: 750px) {
   .mySlides {
     width: 100vw;
@@ -3067,9 +3080,8 @@ details-disclosure > details {
   border: 1px solid transparent;
   border-radius: var(--badge-corner-radius);
   display: inline-block;
-  font-size: 1.2px;
+  font-size: 1.3rem;
   letter-spacing: var(--l-s);
-  @apply twcss-leading-none;
   padding: 0.5rem 1.3rem 0.6rem 1.3rem;
   text-align: center;
   background-color: black;
