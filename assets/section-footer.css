@@ -131,6 +131,8 @@
   border-bottom: 0.1rem solid black;
   padding: 2rem 0;
   text-wrap: balance;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .footer-block--newsletter:only-child {

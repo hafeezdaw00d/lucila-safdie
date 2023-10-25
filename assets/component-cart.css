@@ -17,12 +17,13 @@ cart-items.is-empty .title-wrapper-with-link,
 
 .cart__warnings {
   display: none;
+  text-transform: lowercase;
   text-align: center;
   padding: 3rem 0 1rem;
 }
 
 .cart__empty-text {
-  margin: 4.5rem 0 2rem;
+  margin: 8rem 0 2rem;
 }
 
 .cart__contents > * + * {

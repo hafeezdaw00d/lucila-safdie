@@ -1,10 +1,11 @@
 .page-title {
-  margin-top: 64px;
+  margin-top: 8rem;
 }
 
 .main-page-title {
-  margin-bottom: 3rem;
+  margin-bottom: 1.3rem;
   text-align: center;
+  display: none;
 }
 
 @media screen and (min-width: 750px) {
