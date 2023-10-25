@@ -114,6 +114,12 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "shop",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo-web.png",
+    "checkout_logo_position": "center",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#121212",
+    "checkout_button_color": "#121212",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
