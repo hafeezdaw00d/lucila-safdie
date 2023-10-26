@@ -14,11 +14,11 @@
   }
 {%- endstyle -%}
 
-<div class='{% if template contains 'lookbook' %} twcss-m-0 twcss-max-w-none twcss-p-0 {% else %} page-width page-width--narrow {% endif %} section-{{ section.id }}-padding'>
-  <h1 class='main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in {% endif %}'>
+<div class='{% if template contains 'lookbook' %}twcss-m-0 twcss-max-w-none twcss-p-0{% else %} twcss-min-h-screen twcss-flex twcss-flex-col page-width page-width--narrow{% endif %}section-{{ section.id }}-padding'>
+  <h1 class='{% if template contains 'lookbook' %} hidden {% else %} hidden {% endif %} main-page-title page-title h0{% if settings.animations_reveal_on_scroll %}scroll-trigger animate--fade-in{% endif %}'>
     {{ page.title | escape }}
   </h1>
-  <div class='{% if template contains 'lookbook' %} twcss-m-0 {% else %}  rte {% endif %} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'>
+  <div class='{% if template contains 'lookbook' %}twcss-m-0{% else %}rte twcss-my-auto{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'>
     {{ page.content }}
   </div>
 </div>

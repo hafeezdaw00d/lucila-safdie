@@ -5,7 +5,25 @@
 .main-page-title {
   margin-bottom: 1.3rem;
   text-align: center;
-  display: none;
+  /* display: none; */
+}
+
+.coll-block {
+  display: flex;
+  min-height: 40%;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10rem !important;
+  text-align: center;
+}
+
+.coll-block h6 {
+  margin-bottom: 4rem;
+}
+
+.coll-block a {
+  color: black;
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 750px) {

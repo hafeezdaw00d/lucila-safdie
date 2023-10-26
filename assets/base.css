@@ -435,10 +435,11 @@ h5,
 h6,
 .h6 {
   color: rgba(var(--color-foreground), 1);
-  /* margin-block-start: 1.3rem; */
+  margin-block-start: 1.6rem;
   margin-block-end: 1rem;
   font-size: 1.3rem;
   text-transform: uppercase;
+  /* text-align: center; */
 }
 
 blockquote {
@@ -3302,6 +3303,7 @@ details-disclosure > details {
   margin: 0 auto;
   max-width: 320px;
   margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .rte:after {
