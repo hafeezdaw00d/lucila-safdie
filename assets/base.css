@@ -3339,6 +3339,11 @@ details-disclosure > details {
     padding-left: 1.2rem;
     padding-right: 1.2rem;
   }
+
+  .rte table th {
+    width: unset;
+    height: 32px;
+  }
 }
 
 .rte img {

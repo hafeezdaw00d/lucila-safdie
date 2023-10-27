@@ -596,21 +596,21 @@ a.product__text {
 }
 
 .product__media-icon .icon {
-  width: 1.2rem;
-  height: 1.4rem;
+  /* width: 1.2rem; */
+  /* height: 1.4rem; */
 }
 
 .product__media-icon,
 .thumbnail__badge {
-  background-color: rgb(var(--color-background));
-  border-radius: 50%;
+  background-color: black;
+  /* border-radius: 50%; */
   border: 0.1rem solid rgba(var(--color-foreground), 0.1);
   color: rgb(var(--color-foreground));
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3rem;
-  width: 3rem;
+  height: 2.4rem;
+  width: 2.4rem;
   position: absolute;
   left: 1.2rem;
   top: 1.2rem;
@@ -847,19 +847,19 @@ a.product__text {
 }
 
 .product-media-modal__toggle {
-  background-color: rgb(var(--color-background));
-  border: 0.1rem solid rgba(var(--color-foreground), 0.1);
-  border-radius: 50%;
-  color: rgba(var(--color-foreground), 0.55);
+  background-color: black;
+  /* border: 0.1rem solid rgba(var(--color-foreground), 0.1); */
+  /* border-radius: 50%; */
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  right: 2rem;
+  right: 1.6rem;
   padding: 1.2rem;
   position: fixed;
   z-index: 2;
-  top: 2rem;
+  top: 1.6rem;
   width: 4rem;
 }
 
