@@ -118,7 +118,7 @@
       "settings": {
         "enable_sticky_info": true,
         "media_size": "medium",
-        "constrain_to_viewport": true,
+        "constrain_to_viewport": false,
         "media_fit": "contain",
         "gallery_layout": "stacked",
         "media_position": "left",
@@ -127,7 +127,7 @@
         "hide_variants": true,
         "enable_video_looping": true,
         "padding_top": 100,
-        "padding_bottom": 12
+        "padding_bottom": 40
       }
     },
     "related-products": {
