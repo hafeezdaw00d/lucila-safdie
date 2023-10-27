@@ -598,6 +598,7 @@ a.product__text {
 .product__media-icon .icon {
   /* width: 1.2rem; */
   /* height: 1.4rem; */
+  padding-bottom: 0.2rem;
 }
 
 .product__media-icon,
