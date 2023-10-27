@@ -2966,6 +2966,10 @@ details[open] > .header__menu-item .icon-caret {
   transform: rotate(180deg);
 }
 
+.menuu-item:active {
+  text-shadow: 0 0 5px #00ffc2;
+}
+
 .header__active-menu-item {
   /* transition: text-decoration-thickness var(--duration-short) ease; */
   color: rgb(var(--color-foreground));
