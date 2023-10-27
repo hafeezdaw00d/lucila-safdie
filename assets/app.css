@@ -521,6 +521,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 1.5rem !important;
 }
 
+.twcss-col-span-3 {
+  grid-column: span 3 / span 3 !important;
+}
+
 .twcss-m-0 {
   margin: 0px !important;
 }
@@ -719,6 +723,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 }
 
+.twcss-grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
 .twcss-flex-row {
   flex-direction: row !important;
 }
@@ -761,6 +769,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-gap-6 {
   gap: 1.5rem !important;
+}
+
+.twcss-gap-4 {
+  gap: 1rem !important;
 }
 
 .twcss-justify-self-start {

@@ -139,9 +139,9 @@
         </div>
       </div>
       <div class='card__content'>
-        <div class='twcss-grid twcss-grid-flow-row twcss-grid-cols-2 twcss-gap-4 card__information'>
+        <div class='twcss-grid twcss-grid-flow-row twcss-grid-cols-4 twcss-gap-4 card__information'>
           <h3
-            class='helv-reset card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}'
+            class=' twcss-col-span-3 helv-reset card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}'
             {% if card_product.featured_media or settings.card_style == 'card' %}
               id='title-{{ section_id }}-{{ card_product.id }}'
             {% endif %}
