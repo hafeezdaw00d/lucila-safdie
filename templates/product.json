@@ -99,6 +99,7 @@
         },
         "f181deb7-dc24-4c82-b74f-77593878ce63": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Collapsible row",
             "icon": "none",
