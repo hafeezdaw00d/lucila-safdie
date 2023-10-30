@@ -1744,7 +1744,7 @@ details[open] > .share-button__fallback {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: rgba(var(--color-foreground), 0.75);
 }
 
@@ -2114,7 +2114,7 @@ input[type='checkbox'] {
 .quantity__rules {
   margin-top: 0.5rem;
   position: relative;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .quantity__rules .caption {

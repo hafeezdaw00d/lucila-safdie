@@ -317,7 +317,7 @@ cart-drawer-items {
 }
 
 .cart-drawer .tax-note {
-  margin: 1.2rem 0 1rem auto;
+  margin: 1.2rem 0 1.2rem 0;
   text-align: left;
 }
 
