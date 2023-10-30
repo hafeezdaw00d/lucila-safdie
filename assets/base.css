@@ -1300,7 +1300,7 @@ button.shopify-payment-button__button--unbranded,
     --buttons-border-offset
   ); /* reduce radius edge artifacts */
   --border-opacity: calc(1 - var(--buttons-border-opacity));
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: var(--buttons-radius-outset);
   position: relative;
   font-family: 'Helvetica', Arial, sans-serif;
