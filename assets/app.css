@@ -517,31 +517,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: 0px !important;
 }
 
-.twcss-right-\[1\.5rem\] {
-  right: 1.5rem !important;
-}
-
 .twcss-col-span-3 {
   grid-column: span 3 / span 3 !important;
 }
 
 .twcss-m-0 {
   margin: 0px !important;
-}
-
-.twcss-mx-5 {
-  margin-left: 1.25rem !important;
-  margin-right: 1.25rem !important;
-}
-
-.twcss-mx-auto {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.twcss-my-10 {
-  margin-top: 2.5rem !important;
-  margin-bottom: 2.5rem !important;
 }
 
 .twcss-mx-auto {
@@ -563,8 +544,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.25rem !important;
 }
 
-.twcss-mt-10 {
-  margin-top: 2.5rem !important;
+.twcss-mb-12 {
+  margin-bottom: 3rem !important;
 }
 
 .twcss-ml-\[-1\.25rem\] {
@@ -575,84 +556,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1.25rem !important;
 }
 
-.twcss-mb-5 {
-  margin-bottom: 1.25rem !important;
-}
-
 .twcss-mb-10 {
   margin-bottom: 2.5rem !important;
-}
-
-.twcss-mb-5 {
-  margin-bottom: 1.25rem !important;
-}
-
-.twcss-mb-10 {
-  margin-bottom: 2.5rem !important;
-}
-
-.twcss-mt-5 {
-  margin-top: 1.25rem !important;
-}
-
-.twcss-mt-8 {
-  margin-top: 2rem !important;
-}
-
-.twcss-mb-10 {
-  margin-bottom: 2.5rem !important;
-}
-
-.twcss-mt-5 {
-  margin-top: 1.25rem !important;
-}
-
-.twcss-mb-10 {
-  margin-bottom: 2.5rem !important;
-}
-
-.twcss-mt-5 {
-  margin-top: 1.25rem !important;
-}
-
-.twcss-mb-10 {
-  margin-bottom: 2.5rem !important;
-}
-
-.twcss-mt-5 {
-  margin-top: 1.25rem !important;
-}
-
-.twcss-mb-12 {
-  margin-bottom: 3rem !important;
-}
-
-.twcss-mt-5 {
-  margin-top: 1.25rem !important;
-}
-
-.twcss-mb-14 {
-  margin-bottom: 3.5rem !important;
-}
-
-.twcss-mt-5 {
-  margin-top: 1.25rem !important;
-}
-
-.twcss-mb-14 {
-  margin-bottom: 3.5rem !important;
-}
-
-.twcss-mt-4 {
-  margin-top: 1rem !important;
-}
-
-.twcss-mb-10 {
-  margin-bottom: 2.5rem !important;
-}
-
-.twcss-mt-2 {
-  margin-top: 0.5rem !important;
 }
 
 .twcss-block {
@@ -671,40 +576,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-height: 100vh !important;
 }
 
-.twcss-w-\[320px\] {
-  width: 320px !important;
-}
-
 .twcss-w-\[100\%\] {
   width: 100% !important;
-}
-
-.twcss-max-w-\[390px\] {
-  max-width: 390px !important;
 }
 
 .twcss-max-w-\[44rem\] {
   max-width: 44rem !important;
 }
 
-.twcss-max-w-md {
-  max-width: 28rem !important;
-}
-
-.twcss-max-w-lg {
-  max-width: 32rem !important;
+.twcss-max-w-xl {
+  max-width: 36rem !important;
 }
 
 .twcss-max-w-none {
   max-width: none !important;
-}
-
-.twcss-max-w-3xl {
-  max-width: 48rem !important;
-}
-
-.twcss-max-w-2xl {
-  max-width: 42rem !important;
 }
 
 .twcss-max-w-xl {
@@ -719,10 +604,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-auto-flow: column !important;
 }
 
-.twcss-grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-}
-
 .twcss-grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 }
@@ -731,16 +612,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-direction: row !important;
 }
 
-.twcss-flex-row-reverse {
-  flex-direction: row-reverse !important;
-}
-
 .twcss-flex-col {
   flex-direction: column !important;
-}
-
-.twcss-flex-col-reverse {
-  flex-direction: column-reverse !important;
 }
 
 .twcss-justify-center {
@@ -755,18 +628,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-items: center !important;
 }
 
-.twcss-gap-5 {
-  gap: 1.25rem !important;
-}
-
-.twcss-gap-20 {
-  gap: 5rem !important;
-}
-
-.twcss-gap-4 {
-  gap: 1rem !important;
-}
-
 .twcss-gap-6 {
   gap: 1.5rem !important;
 }
@@ -775,28 +636,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 1rem !important;
 }
 
-.twcss-justify-self-start {
-  justify-self: start !important;
-}
-
-.twcss-justify-self-end {
-  justify-self: end !important;
-}
-
 .twcss-justify-self-center {
   justify-self: center !important;
 }
 
-.twcss-border {
-  border-width: 1px !important;
-}
-
 .twcss-border-l {
   border-left-width: 1px !important;
-}
-
-.twcss-border-b {
-  border-bottom-width: 1px !important;
 }
 
 .twcss-border-black {
@@ -804,69 +649,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
 }
 
-.twcss-bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
-}
-
 .twcss-bg-\[\#00ffc2\] {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(0 255 194 / var(--tw-bg-opacity)) !important;
 }
 
-.twcss-bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-p-4 {
-  padding: 1rem !important;
-}
-
 .twcss-p-0 {
   padding: 0px !important;
 }
 
-.twcss-p-2 {
-  padding: 0.5rem !important;
-}
-
-.twcss-p-0 {
-  padding: 0px !important;
+.twcss-px-6 {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
 }
 
 .twcss-px-5 {
   padding-left: 1.25rem !important;
   padding-right: 1.25rem !important;
-}
-
-.twcss-px-6 {
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
-}
-
-.twcss-px-4 {
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-}
-
-.twcss-px-6 {
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
-}
-
-.twcss-px-0 {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-}
-
-.twcss-font-bold {
-  font-weight: 700 !important;
 }
 
 .twcss-lowercase {
@@ -875,31 +674,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-leading-none {
   line-height: 1 !important;
-}
-
-.twcss-text-white {
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-white {
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-red-50 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(254 242 242 / var(--tw-text-opacity)) !important;
 }
 
 .twcss-text-black {
@@ -925,14 +699,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .twcss-no-underline {
   -webkit-text-decoration-line: none !important;
   text-decoration-line: none !important;
-}
-
-.twcss-underline-offset-\[3px\] {
-  text-underline-offset: 3px !important;
-}
-
-.twcss-mix-blend-difference {
-  mix-blend-mode: difference !important;
 }
 
 .twcss-invert {
