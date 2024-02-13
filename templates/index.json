@@ -83,10 +83,27 @@
         "stack_images_on_mobile": true,
         "show_text_below": false
       }
+    },
+    "video_JfCRAg": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify:\/\/files\/videos\/trim.mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify:\/\/shop_images\/Camcorder_Footage_Alana.00_00_06_19.Still002.jpg",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4",
-    "b30cbc5e-4621-428d-ad27-449e34834a7f"
+    "b30cbc5e-4621-428d-ad27-449e34834a7f",
+    "video_JfCRAg"
   ]
 }
