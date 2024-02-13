@@ -51,6 +51,15 @@
         "show_text_below": false
       }
     },
+    "custom_liquid_mWXzdx": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.video-container{\n  \n  position: absolute;\n  margin: auto;\n  width: 100%;\n  height: 100%;\n  \n  background: red;\n  \n  overflow: hidden;\n  clip-path: 0 0;\n  transform: translatez(0);\n}\n\nvideo{\n  transform: translatez(0);\n  position: absolute;\n  top: -100%;\n  bottom: -100%;\n  left: -100%;\n  right: -100%;    \n\n  margin: auto;\n\n  min-width: 100%;\n  min-height: 100vh;\n}\n<\/style>\n<div class=\"video-container\">\n<video muted autoplay playsinline loop>\n    <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/94a1a23ec6ae4fc087b6a9a88040ffff.mp4\"          type=\"video\/mp4\">\n<\/video>\n<\/div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "b30cbc5e-4621-428d-ad27-449e34834a7f": {
       "type": "image-banner",
       "blocks": {
@@ -86,6 +95,7 @@
     },
     "video_JfCRAg": {
       "type": "video",
+      "disabled": true,
       "settings": {
         "heading": "",
         "heading_size": "h1",
@@ -103,6 +113,7 @@
   },
   "order": [
     "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4",
+    "custom_liquid_mWXzdx",
     "b30cbc5e-4621-428d-ad27-449e34834a7f",
     "video_JfCRAg"
   ]
