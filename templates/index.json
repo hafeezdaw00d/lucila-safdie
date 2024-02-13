@@ -51,42 +51,26 @@
         "show_text_below": false
       }
     },
-    "b30cbc5e-4621-428d-ad27-449e34834a7f": {
-      "type": "image-banner",
-      "blocks": {
-        "template--15932363800714__b30cbc5e-4621-428d-ad27-449e34834a7f-buttons-1": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "shop bottoms",
-            "button_link_1": "shopify:\/\/collections\/shop",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "template--15932363800714__b30cbc5e-4621-428d-ad27-449e34834a7f-buttons-1"
-      ],
+    "video_AWj6fa": {
+      "type": "video",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Look_05_035_Large_077e50db-7e99-4f6c-9605-5b2291c64faf.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify:\/\/files\/videos\/trim.mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify:\/\/shop_images\/Camcorder_Footage_Alana.00_00_06_19.Still002.jpg",
+        "description": "",
+        "full_width": true,
         "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": false
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
     "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4",
-    "b30cbc5e-4621-428d-ad27-449e34834a7f"
+    "video_AWj6fa"
   ]
 }
