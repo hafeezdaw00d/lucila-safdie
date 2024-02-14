@@ -1,5 +1,14 @@
 {
   "sections": {
+    "custom_liquid_mWXzdx": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<video id=\"background-video\" muted autoplay playsinline loop>\n    <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/94a1a23ec6ae4fc087b6a9a88040ffff.mp4\"          type=\"video\/mp4\">\n<\/video>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4": {
       "type": "image-banner",
       "blocks": {
@@ -49,15 +58,6 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": false
-      }
-    },
-    "custom_liquid_mWXzdx": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<video id=\"background-video\" muted autoplay playsinline loop>\n    <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/94a1a23ec6ae4fc087b6a9a88040ffff.mp4\"          type=\"video\/mp4\">\n<\/video>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
       }
     },
     "b30cbc5e-4621-428d-ad27-449e34834a7f": {
@@ -112,8 +112,8 @@
     }
   },
   "order": [
-    "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4",
     "custom_liquid_mWXzdx",
+    "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4",
     "b30cbc5e-4621-428d-ad27-449e34834a7f",
     "video_JfCRAg"
   ]
