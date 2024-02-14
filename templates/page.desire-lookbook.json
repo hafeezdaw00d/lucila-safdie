@@ -374,10 +374,98 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collage_eyFxxN": {
+      "type": "collage",
+      "blocks": {
+        "image_88eAgW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucila_Safdie2041.jpg"
+          }
+        },
+        "image_zWQG6c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucila_Safdie2071.jpg"
+          }
+        },
+        "image_NaQpWe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucila_Safdie1957.jpg"
+          }
+        },
+        "image_Dfpp7a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucila_Safdie1965.jpg"
+          }
+        },
+        "image_CeyaER": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucila_Safdie2180.jpg"
+          }
+        },
+        "image_KyqFcf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucila_Safdie2218.jpg"
+          }
+        },
+        "image_BH3Awn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucila_Safdie0590.jpg"
+          }
+        },
+        "image_DgjnKP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucila_Safdie0624.jpg"
+          }
+        },
+        "image_9BTztD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucila_Safdie0701.jpg"
+          }
+        },
+        "image_DpBJLN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lucila_Safdie0744.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_88eAgW",
+        "image_zWQG6c",
+        "image_NaQpWe",
+        "image_Dfpp7a",
+        "image_CeyaER",
+        "image_KyqFcf",
+        "image_BH3Awn",
+        "image_DgjnKP",
+        "image_9BTztD",
+        "image_DpBJLN"
+      ],
+      "settings": {
+        "heading": "Multimedia collage",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "efbf6637-635a-44e8-8833-251e79e22a0d"
+    "efbf6637-635a-44e8-8833-251e79e22a0d",
+    "collage_eyFxxN"
   ]
 }
