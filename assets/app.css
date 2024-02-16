@@ -689,6 +689,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 0px !important;
 }
 
+.twcss-top-\[14\%\] {
+  top: 14% !important;
+}
+
+.twcss-left-0 {
+  left: 0px !important;
+}
+
+.twcss-right-0 {
+  right: 0px !important;
+}
+
 .twcss-z-40 {
   z-index: 40 !important;
 }
