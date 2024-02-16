@@ -32,7 +32,7 @@
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-buttons-1": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "shop tops",
+            "button_label_1": "",
             "button_link_1": "shopify:\/\/collections\/shop",
             "button_style_secondary_1": false,
             "button_label_2": "",
