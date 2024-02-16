@@ -46,10 +46,11 @@
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-text-1",
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-buttons-1"
       ],
+      "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Lucila-Safdie0674.jpg",
+        "image": "shopify:\/\/shop_images\/Lucila_Safdie0674.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "large",
+        "image_height": "adapt",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
         "desktop_content_alignment": "center",
