@@ -2,6 +2,7 @@
   "sections": {
     "custom_liquid_mWXzdx": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<video id=\"background-video\" muted autoplay playsinline loop>\n    <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/886f861f1891401ea0ab488d023ab201.mp4\"          type=\"video\/mp4\">\n<\/video>",
         "color_scheme": "",
@@ -45,9 +46,8 @@
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-text-1",
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-buttons-1"
       ],
-      "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Look_07_195_Large_a83e0f56-dcbc-47ec-beb7-7823e89b5481.jpg",
+        "image": "shopify:\/\/shop_images\/Lucila-Safdie0674.jpg",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "middle-center",
