@@ -278,9 +278,17 @@
   </head>
 
   <body class='gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}'>
-    <a class='skip-to-content-link button visually-hidden' href='#MainContent'>
+    <a class='skip-to-content-link button hidden' href='#MainContent'>
       {{ 'accessibility.skip_to_text' | t }}
     </a>
+
+    {%- if template == 'index' -%}
+      <a
+        href='pages/desire-loo'
+        class=' twcss-text-white twcss-underline twcss-absolute twcss-z-40 twcss-top-[50%] twcss-w-auto twcss-mx-auto twcss-w-30 twcss-mx-auto twcss-text-center twcss-left-0 twcss-right-0'
+        >view collection</a
+      >
+    {%- endif -%}
 
     {% comment %}
       {%- if template == 'index' -%}
