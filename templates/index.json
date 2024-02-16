@@ -10,6 +10,15 @@
         "padding_bottom": 0
       }
     },
+    "custom_liquid_47xaye": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<img id=\"background-video\" src='https:\/\/cdn.shopify.com\/s\/files\/1\/0619\/9446\/7466\/files\/Lucila-Safdie0674.jpg?v=1708100184'>\n<\/video>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4": {
       "type": "image-banner",
       "blocks": {
@@ -110,22 +119,13 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
-    },
-    "custom_liquid_47xaye": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<img id=\"background-video\" src=\"\">\n<\/video>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "custom_liquid_mWXzdx",
+    "custom_liquid_47xaye",
     "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4",
     "b30cbc5e-4621-428d-ad27-449e34834a7f",
-    "video_JfCRAg",
-    "custom_liquid_47xaye"
+    "video_JfCRAg"
   ]
 }
