@@ -6,7 +6,7 @@
 }
 
 .price > * {
-  display: inline-block;
+  display: block;
   vertical-align: top;
 }
 
@@ -61,6 +61,7 @@
 .price--on-sale .price__regular,
 .price--on-sale .price__availability {
   display: none;
+  margin-top: 1.4rem;
 }
 
 .price--sold-out .price__badge-sold-out,
