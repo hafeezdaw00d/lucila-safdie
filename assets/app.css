@@ -513,8 +513,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: absolute !important;
 }
 
+.twcss-top-\[14\%\] {
+  top: 14% !important;
+}
+
+.twcss-left-0 {
+  left: 0px !important;
+}
+
+.twcss-right-0 {
+  right: 0px !important;
+}
+
 .twcss-bottom-0 {
   bottom: 0px !important;
+}
+
+.twcss-z-40 {
+  z-index: 40 !important;
 }
 
 .twcss-col-span-3 {
@@ -535,17 +551,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: auto !important;
 }
 
-.twcss-mx-auto {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 .twcss-mb-5 {
   margin-bottom: 1.25rem !important;
 }
 
-.twcss-mb-12 {
-  margin-bottom: 3rem !important;
+.twcss-mb-10 {
+  margin-bottom: 2.5rem !important;
 }
 
 .twcss-ml-\[-1\.25rem\] {
@@ -554,10 +565,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-mt-5 {
   margin-top: 1.25rem !important;
-}
-
-.twcss-mb-10 {
-  margin-bottom: 2.5rem !important;
 }
 
 .twcss-block {
@@ -576,6 +583,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-height: 100vh !important;
 }
 
+.twcss-w-auto {
+  width: auto !important;
+}
+
 .twcss-w-\[100\%\] {
   width: 100% !important;
 }
@@ -590,10 +601,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-max-w-none {
   max-width: none !important;
-}
-
-.twcss-max-w-xl {
-  max-width: 36rem !important;
 }
 
 .twcss-grid-flow-row {
@@ -668,17 +675,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.25rem !important;
 }
 
+.twcss-text-center {
+  text-align: center !important;
+}
+
 .twcss-lowercase {
   text-transform: lowercase !important;
 }
 
 .twcss-leading-none {
   line-height: 1 !important;
-}
-
-.twcss-text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 
 .twcss-text-white {

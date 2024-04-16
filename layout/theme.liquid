@@ -1,6 +1,7 @@
 <!doctype html>
 <html class='no-js' lang='{{ request.locale.iso_code }}'>
   <head>
+    <meta name="facebook-domain-verification" content="c36mbqj7m1njr9x0t5h1nhl4dg10jw" />
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
@@ -249,10 +250,10 @@
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
-      <link rel='preload' as='font' href='{{ settings.type_body_font | font_url }}' type='font/woff2' crossorigin>
+      <link rel='preload_tag' as='font' href='{{ settings.type_body_font | font_url }}' type='font/woff2' crossorigin>
     {%- endunless -%}
     {%- unless settings.type_header_font.system? -%}
-      <link rel='preload' as='font' href='{{ settings.type_header_font | font_url }}' type='font/woff2' crossorigin>
+      <link rel='preload_tag' as='font' href='{{ settings.type_header_font | font_url }}' type='font/woff2' crossorigin>
     {%- endunless -%}
 
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
@@ -278,42 +279,52 @@
   </head>
 
   <body class='gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}'>
-    <a class='skip-to-content-link button visually-hidden' href='#MainContent'>
+    <a class='skip-to-content-link button hidden' href='#MainContent'>
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
     {%- if template == 'index' -%}
-      <div>
-        <div class='x-image-slider'>
-          <img
-            class='mySlides'
-            src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0003_3_mgO6bxv9mm.jpeg?updatedAt=1696204733708'
-          >
-          <img
-            class='mySlides'
-            src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0005_1_V2duZ8AdAu.jpeg?updatedAt=1696204733645'
-          >
-          <img
-            class='mySlides'
-            src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0004_2_9lJCkl4RSW.jpeg?updatedAt=1696204733392'
-          >
-
-          <img
-            class='mySlides'
-            src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0000_6_MjgMPVQhEM.jpeg?updatedAt=1696204733663'
-          >
-          <img
-            class='mySlides'
-            src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0002_4_ApTgGWyaX.jpeg?updatedAt=1696204733359'
-          >
-
-          <img
-            class='mySlides'
-            src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0001_5_4mEV7_dIH.jpeg?updatedAt=1696204733168'
-          >
-        </div>
-      </div>
+      <a
+        href='pages/desire'
+        class=' twcss-text-white twcss-underline twcss-absolute twcss-z-40 twcss-top-[14%] twcss-w-auto twcss-w-30 twcss-mx-auto twcss-text-center twcss-left-0 twcss-right-0'
+        >view collection 03</a
+      >
     {%- endif -%}
+
+    {% comment %}
+      {%- if template == 'index' -%}
+        <div>
+          <div class='x-image-slider'>
+            <img
+              class='mySlides'
+              src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0003_3_mgO6bxv9mm.jpeg?updatedAt=1696204733708'
+            >
+            <img
+              class='mySlides'
+              src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0005_1_V2duZ8AdAu.jpeg?updatedAt=1696204733645'
+            >
+            <img
+              class='mySlides'
+              src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0004_2_9lJCkl4RSW.jpeg?updatedAt=1696204733392'
+            >
+
+            <img
+              class='mySlides'
+              src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0000_6_MjgMPVQhEM.jpeg?updatedAt=1696204733663'
+            >
+            <img
+              class='mySlides'
+              src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0002_4_ApTgGWyaX.jpeg?updatedAt=1696204733359'
+            >
+
+            <img
+              class='mySlides'
+              src='https://ik.imagekit.io/ljqwnqnom/compressed/LivLiberg_LucilaSafdie_02_258_V2_HR_0001_5_4mEV7_dIH.jpeg?updatedAt=1696204733168'
+            >
+          </div>
+        </div>
+      {%- endif -%}
+    {% endcomment %}
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}

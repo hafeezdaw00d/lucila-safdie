@@ -1,5 +1,24 @@
 {
   "sections": {
+    "custom_liquid_mWXzdx": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<video id=\"background-video\" muted autoplay playsinline loop>\n    <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/886f861f1891401ea0ab488d023ab201.mp4\"          type=\"video\/mp4\">\n<\/video>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_47xaye": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<img id=\"background-video\" src='https:\/\/cdn.shopify.com\/s\/files\/1\/0619\/9446\/7466\/files\/Lucila-Safdie0674.jpg?v=1708100184'>\n<\/video>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4": {
       "type": "image-banner",
       "blocks": {
@@ -22,7 +41,7 @@
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-buttons-1": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "shop tops",
+            "button_label_1": "",
             "button_link_1": "shopify:\/\/collections\/shop",
             "button_style_secondary_1": false,
             "button_label_2": "",
@@ -38,9 +57,9 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Look_07_195_Large_a83e0f56-dcbc-47ec-beb7-7823e89b5481.jpg",
+        "image": "shopify:\/\/shop_images\/Lucila_Safdie0674.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "large",
+        "image_height": "adapt",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
         "desktop_content_alignment": "center",
@@ -51,14 +70,45 @@
         "show_text_below": false
       }
     },
-    "video_AWj6fa": {
+    "b30cbc5e-4621-428d-ad27-449e34834a7f": {
+      "type": "image-banner",
+      "blocks": {
+        "template--15932363800714__b30cbc5e-4621-428d-ad27-449e34834a7f-buttons-1": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "shop bottoms",
+            "button_link_1": "shopify:\/\/collections\/shop",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15932363800714__b30cbc5e-4621-428d-ad27-449e34834a7f-buttons-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Look_05_035_Large_077e50db-7e99-4f6c-9605-5b2291c64faf.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "video_JfCRAg": {
       "type": "video",
       "disabled": true,
       "settings": {
         "heading": "",
         "heading_size": "h1",
         "enable_video_looping": true,
-        "video": "shopify:\/\/files\/videos\/trim.mp4",
+        "video": "shopify:\/\/files\/videos\/Sequence 01.mp4",
         "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "cover_image": "shopify:\/\/shop_images\/Camcorder_Footage_Alana.00_00_06_19.Still002.jpg",
         "description": "",
@@ -70,7 +120,10 @@
     }
   },
   "order": [
+    "custom_liquid_mWXzdx",
+    "custom_liquid_47xaye",
     "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4",
-    "video_AWj6fa"
+    "b30cbc5e-4621-428d-ad27-449e34834a7f",
+    "video_JfCRAg"
   ]
 }

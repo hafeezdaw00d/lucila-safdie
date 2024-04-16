@@ -6,8 +6,8 @@
 }
 
 .price > * {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
+  /* vertical-align: top; */
 }
 
 .price.price--unavailable {
@@ -20,7 +20,7 @@
 
 .price .price-item {
   display: inline-block;
-  margin: 0 1rem 0 0;
+  /* margin: 0 1rem 0 0; */
 }
 
 .price__regular .price-item--regular {
@@ -61,6 +61,7 @@
 .price--on-sale .price__regular,
 .price--on-sale .price__availability {
   display: none;
+  margin-top: 1.4rem;
 }
 
 .price--sold-out .price__badge-sold-out,
