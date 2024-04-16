@@ -1,7 +1,7 @@
 <!doctype html>
 <html class='no-js' lang='{{ request.locale.iso_code }}'>
   <head>
-    <meta name="facebook-domain-verification" content="c36mbqj7m1njr9x0t5h1nhl4dg10jw" />
+    <meta name='facebook-domain-verification' content='c36mbqj7m1njr9x0t5h1nhl4dg10jw'>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
@@ -105,7 +105,7 @@
         --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
         --media-shadow-visible: {% if settings.media_shadow_opacity > 0 %}1{% else %}0{% endif %};
 
-        --page-width: {{ settings.page_width | divided_by: 10 }}rem;
+        --page-width: {% if template =='product' %} 100 {% else %} 90{% endif %}%;
         --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
 
         --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;

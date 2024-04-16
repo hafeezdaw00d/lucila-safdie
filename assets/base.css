@@ -166,7 +166,7 @@ html.no-js .no-js-hidden {
 }
 
 .page-width {
-  max-width: 90%;
+  max-width: var(--page-width);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
