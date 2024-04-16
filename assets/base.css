@@ -985,6 +985,13 @@ summary::-webkit-details-marker {
   row-gap: var(--grid-mobile-vertical-spacing);
 }
 
+@media screen and (max-width: 749px) {
+  .grid--1-col-mobile .grid__item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 @media screen and (min-width: 750px) {
   .grid {
     column-gap: var(--grid-desktop-horizontal-spacing);
