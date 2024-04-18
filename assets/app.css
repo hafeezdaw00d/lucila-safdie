@@ -513,6 +513,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: absolute !important;
 }
 
+.twcss-relative {
+  position: relative !important;
+}
+
 .twcss-top-\[14\%\] {
   top: 14% !important;
 }
@@ -527,6 +531,50 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-bottom-0 {
   bottom: 0px !important;
+}
+
+.twcss-top-\[20\%\] {
+  top: 20% !important;
+}
+
+.twcss-left-0 {
+  left: 0px !important;
+}
+
+.twcss-right-0 {
+  right: 0px !important;
+}
+
+.twcss-top-\[15\%\] {
+  top: 15% !important;
+}
+
+.twcss-left-0 {
+  left: 0px !important;
+}
+
+.twcss-right-0 {
+  right: 0px !important;
+}
+
+.twcss-top-\[15\%\] {
+  top: 15% !important;
+}
+
+.twcss-left-0 {
+  left: 0px !important;
+}
+
+.twcss-right-0 {
+  right: 0px !important;
+}
+
+.twcss-left-0 {
+  left: 0px !important;
+}
+
+.twcss-right-0 {
+  right: 0px !important;
 }
 
 .twcss-z-40 {
@@ -554,6 +602,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .twcss-mx-\[5\%\] {
   margin-left: 5% !important;
   margin-right: 5% !important;
+}
+
+.twcss-mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .twcss-mb-5 {
@@ -593,6 +646,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .twcss-w-\[100\%\] {
+  width: 100% !important;
+}
+
+.twcss-w-auto {
+  width: auto !important;
+}
+
+.twcss-w-full {
   width: 100% !important;
 }
 
@@ -705,6 +766,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .twcss-text-black {
   --tw-text-opacity: 1 !important;
   color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+}
+
+.twcss-text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
 .twcss-underline {

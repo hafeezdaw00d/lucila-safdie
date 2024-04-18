@@ -200,6 +200,14 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
+    {%- if template == 'index' -%}
+      <a
+        href='pages/desire'
+        class=' twcss-block twcss-text-black twcss-underline twcss-relative twcss-text-center twcss-z-40 twcss-w-full twcss-mx-auto'
+      >
+        view collection 03
+      </a>
+    {%- endif -%}
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
