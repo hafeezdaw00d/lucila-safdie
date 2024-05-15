@@ -2976,6 +2976,14 @@ details[open] > .header__menu-item .icon-caret {
 .menuu-item:active {
   text-shadow: 0 0 5px #00ffc2;
 }
+.collections-list {
+  list-style: none;
+}
+
+.active {
+  text-shadow: 0 0 5px #00ffc2;
+  list-style: none;
+}
 
 .header__active-menu-item {
   /* transition: text-decoration-thickness var(--duration-short) ease; */
