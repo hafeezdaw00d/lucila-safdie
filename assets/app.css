@@ -743,6 +743,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 
+.twcss-text-red-900 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(127 29 29 / var(--tw-text-opacity)) !important;
+}
+
 .twcss-underline {
   -webkit-text-decoration-line: underline !important;
   text-decoration-line: underline !important;
