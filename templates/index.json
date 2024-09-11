@@ -22,7 +22,7 @@
     "custom_liquid_47xaye": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<img id=\"background-video\" src='https:\/\/cdn.shopify.com\/s\/files\/1\/0619\/9446\/7466\/files\/farewell-princess-lucila-safdie-100.jpg?v=1726053204'>\n<\/video>",
+        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: contain;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<img id=\"background-video\" src='https:\/\/cdn.shopify.com\/s\/files\/1\/0619\/9446\/7466\/files\/farewell-princess-lucila-safdie-100.jpg?v=1726053204'>\n<\/video>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
