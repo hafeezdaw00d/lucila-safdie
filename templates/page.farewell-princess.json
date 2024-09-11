@@ -20,12 +20,6 @@
     "collage_yyQLNM": {
       "type": "collage",
       "blocks": {
-        "image_i33k9x": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/marketing.jpg"
-          }
-        },
         "image_YjjepK": {
           "type": "image",
           "settings": {
@@ -43,7 +37,6 @@
         }
       },
       "block_order": [
-        "image_i33k9x",
         "image_YjjepK",
         "image_DxzRmR",
         "image_9cq3AT"
