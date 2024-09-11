@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "custom_liquid_mWXzdx": {
@@ -13,7 +22,7 @@
     "custom_liquid_47xaye": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<img id=\"background-video\" src='https:\/\/cdn.shopify.com\/s\/files\/1\/0619\/9446\/7466\/files\/Lucila-Safdie0674.jpg?v=1708100184'>\n<\/video>",
+        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<img id=\"background-video\" src='https:\/\/cdn.shopify.com\/s\/files\/1\/0619\/9446\/7466\/files\/farewell-princess-lucila-safdie-100.jpg?v=1726053204'>\n<\/video>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -97,8 +106,10 @@
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "video_JfCRAg": {
