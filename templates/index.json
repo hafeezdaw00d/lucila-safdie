@@ -1,19 +1,19 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "custom_liquid_mWXzdx": {
       "type": "custom-liquid",
       "disabled": true,
       "settings": {
-        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<video id=\"background-video\" muted autoplay playsinline loop>\n    <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/886f861f1891401ea0ab488d023ab201.mp4\"          type=\"video\/mp4\">\n<\/video>",
+        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n</style>\n<video id=\"background-video\" muted autoplay playsinline loop>\n    <source src=\"https://cdn.shopify.com/videos/c/o/v/886f861f1891401ea0ab488d023ab201.mp4\"          type=\"video/mp4\">\n</video>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -22,7 +22,7 @@
     "custom_liquid_47xaye": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: contain;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n<\/style>\n<img id=\"background-video\" src='https:\/\/cdn.shopify.com\/s\/files\/1\/0619\/9446\/7466\/files\/farewell-princess-lucila-safdie-100.jpg?v=1726053204'>\n<\/video>",
+        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: contain;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n</style>\n<img id=\"background-video\" src='https://cdn.shopify.com/s/files/1/0619/9446/7466/files/default_1.20.1.png?v=1733741200'>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -51,7 +51,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "",
-            "button_link_1": "shopify:\/\/collections\/shop",
+            "button_link_1": "shopify://collections/shop",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -66,7 +66,7 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Lucila_Safdie0674.jpg",
+        "image": "shopify://shop_images/Lucila_Safdie0674.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -86,7 +86,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "shop bottoms",
-            "button_link_1": "shopify:\/\/collections\/shop",
+            "button_link_1": "shopify://collections/shop",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -99,7 +99,7 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Look_05_035_Large_077e50db-7e99-4f6c-9605-5b2291c64faf.jpg",
+        "image": "shopify://shop_images/Look_05_035_Large_077e50db-7e99-4f6c-9605-5b2291c64faf.jpg",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "middle-center",
@@ -119,9 +119,9 @@
         "heading": "",
         "heading_size": "h1",
         "enable_video_looping": true,
-        "video": "shopify:\/\/files\/videos\/Sequence 01.mp4",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "cover_image": "shopify:\/\/shop_images\/Camcorder_Footage_Alana.00_00_06_19.Still002.jpg",
+        "video": "shopify://files/videos/Sequence 01.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify://shop_images/Camcorder_Footage_Alana.00_00_06_19.Still002.jpg",
         "description": "",
         "full_width": true,
         "color_scheme": "",
