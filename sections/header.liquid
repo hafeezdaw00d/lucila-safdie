@@ -200,14 +200,14 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
-    {%- if template == 'index' -%}
+    {% comment %} {%- if template == 'index' -%}
       <a
-        href='collections/sale'
+        href='collections/farewell-'
         class='twcss-bg-black twcss-w-16 twcss-top-40 twcss-block twcss-text-white twcss-underline twcss-relative twcss-text-center twcss-z-40 twcss-mx-auto'
       >
-      sale
+      
       </a>
-    {%- endif -%}
+    {%- endif -%} {% endcomment %}
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
