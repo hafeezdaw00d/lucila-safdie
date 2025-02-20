@@ -68,7 +68,7 @@
                               </a>
                             </li>
                             <li>
-                              {% render 'icon-cart' %}
+                              <span>cart</span>
                             </li>
                           {%- endfor -%}
                         </ul>
@@ -125,7 +125,6 @@
                     </option>
                   {%- endfor -%}
                 </select>
-                {% render 'icon-caret.svg' %}
               </div>
               <button class='button button--tertiary'>{{ 'localization.update_country' | t }}</button>
             {%- endform -%}
@@ -165,7 +164,6 @@
                     </option>
                   {%- endfor -%}
                 </select>
-                {% render 'icon-caret' %}
               </div>
               <button class='button button--tertiary'>{{ 'localization.update_language' | t }}</button>
             {%- endform -%}
@@ -187,7 +185,6 @@
           href='{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}'
           class='header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}'
         >
-          {% render 'icon-account' %}
           <span class='visually-hidden'>
             {%- liquid
               if customer

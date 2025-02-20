@@ -3,6 +3,8 @@
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
   padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-transform: lowercase m !important;
 }
 
 .active-facets-mobile {

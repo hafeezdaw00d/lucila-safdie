@@ -381,9 +381,9 @@ a.product__text {
   margin-bottom: 1.2rem;
 }
 
-.product-form__buttons {
+/* .product-form__buttons {
   max-width: 44rem;
-}
+} */
 
 .product--no-media .product__info-container > modal-opener {
   display: block;
@@ -481,8 +481,8 @@ a.product__text {
 }
 
 .product__media-icon .icon {
-  /* width: 1.2rem; */
-  /* height: 1.4rem; */
+  width: 1.2rem;
+  height: 1.4rem;
   padding-bottom: 0.2rem;
 }
 
@@ -491,7 +491,7 @@ a.product__text {
   background-color: black;
   /* border-radius: 50%; */
   border: 0.1rem solid rgba(var(--color-foreground), 0.1);
-  color: rgb(var(--color-foreground));
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
