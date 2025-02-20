@@ -2,6 +2,8 @@
   display: flex;
   position: relative;
   flex-direction: column;
+  z-index: auto;
+  isolation: isolate;
 }
 
 .banner__box {
@@ -341,7 +343,7 @@
   }
 
   .banner:not(.banner--mobile-bottom) .field__input,
-  .banner--mobile-bottom:not(.banner--stacked) .banner__box.color-background-1 {
+  .banner--mobile-bottom:not(.banner--stacked) .banner__box.color-scheme-1 {
     background: transparent;
   }
 }
@@ -358,8 +360,17 @@
   z-index: 1;
 }
 
+.banner--mobile-bottom .banner__box {
+  padding: 4rem 3.5rem;
+}
+
 @media screen and (min-width: 750px) {
+  .banner__box {
+    padding: 4rem 3.5rem;
+  }
+
   .banner--desktop-transparent .banner__box {
+    padding: 4rem 0;
     background: transparent;
     max-width: 89rem;
     border: none;

@@ -20,7 +20,7 @@
                 >
                   {{- link.title | escape -}}
                 </span>
-                {% render 'icon-caret' %}
+                {{- 'icon-caret.svg' | inline_asset_content -}}
               </summary>
               <ul
                 id='HeaderMenu-MenuList-{{ forloop.index }}'
@@ -48,7 +48,7 @@
                           class='header__menu-item link link--text list-menu__item focus-inset caption-large'
                         >
                           <span>{{ childlink.title | escape }}</span>
-                          {% render 'icon-caret' %}
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
                         </summary>
                         <ul
                           id='HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}'
@@ -125,7 +125,7 @@
                     </option>
                   {%- endfor -%}
                 </select>
-                {% render 'icon-caret' %}
+                {% render 'icon-caret.svg' %}
               </div>
               <button class='button button--tertiary'>{{ 'localization.update_country' | t }}</button>
             {%- endform -%}
@@ -212,13 +212,7 @@
         class=' twcss-no-underline helv-reset link focus-inset'
         id='cart-icon-bubble'
       >
-        {%- liquid
-          if cart == empty
-            render 'icon-cart-empty'
-          else
-            render 'icon-cart'
-          endif
-        -%}
+        <span>cart</span>
         <span class='visually-hidden'>{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class='cart-count-bubble'>
