@@ -11,8 +11,9 @@
   "sections": {
     "custom_liquid_mWXzdx": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
-        "custom_liquid": "<style>\n#background-video {\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n\n#video--container {\n\n}\n</style>\n<div id=\"video--container\">\n<video id=\"background-video\" muted autoplay playsinline loop>\n    <source src=\"https://cdn.shopify.com/videos/c/o/v/95f07d479c9c49a19c7b934a9da606ab.mp4\"          type=\"video/mp4\">\n</video></div>",
+        "custom_liquid": "<style>\n#background-video {\nheight: 100vh;\nwidth: auto;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n\n#video--container {\n  height: 100vh;\n  width: 100vw;\n}\n</style>\n<video id=\"background-video\" muted autoplay playsinline loop>\n    <source src=\"https://cdn.shopify.com/videos/c/o/v/95f07d479c9c49a19c7b934a9da606ab.mp4\"          type=\"video/mp4\">\n</video>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -21,7 +22,7 @@
     "custom_liquid_47xaye": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: contain;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n</style>\n<img id=\"background-video\" src='https://cdn.shopify.com/videos/c/o/v/95f07d479c9c49a19c7b934a9da606ab.mp4'>",
+        "custom_liquid": "<style>\n#background-video {\n  height: 100vh;\n  width: 100vw;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n}\n</style>\n<img id=\"background-video\" src='https://cdn.shopify.com/s/files/1/0619/9446/7466/files/Untitled-3.jpg?v=1733755779'>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
