@@ -3,6 +3,7 @@
 
   Accepts:
   - product: {Object} Product Liquid object (optional)
+  - placeholder: {Boolean} Renders a placeholder price (optional)
   - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
   - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
   - price_class: {String} Adds a price class to the price element (optional)
@@ -14,6 +15,8 @@
 {%- liquid
   if use_variant
     assign target = product.selected_or_first_available_variant
+  elsif placeholder
+    assign target = null
   else
     assign target = product
   endif
@@ -40,12 +43,8 @@
 <div
   class='
     helv-reset
-    price
-    {% if template.name == 'product'%}
-      center
-    {% else %}
-    right
-    {% endif %}
+    price {% if template.name == 'product'%}center{% else %}
+    right {% endif %}
     {%- if price_class %} {{ price_class }}{% endif -%}
     {%- if available == false %} price--sold-out{% endif -%}
     {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} price--on-sale{% endif -%}

@@ -14,7 +14,7 @@
   }
 {%- endstyle -%}
 
-<div class='animate-in {% if template contains 'lookbook' %}twcss-m-0 twcss-max-w-none twcss-p-0{% else %} twcss-min-h-screen twcss-flex twcss-flex-col page-width page-width--narrow{% endif %}section-{{ section.id }}-padding'>
+<div class='animate-in {% if template contains 'lookbook' %}twcss-m-0 twcss-max-w-none twcss-p-0{% else %} twcss-mt-28 twcss-min-h-screen twcss-flex twcss-flex-col page-width page-width--narrow{% endif %}section-{{ section.id }}-padding'>
   <h1 class='{% if template contains 'lookbook' %} hidden {% else %} hidden {% endif %} main-page-title page-title h0{% if settings.animations_reveal_on_scroll %}scroll-trigger animate--fade-in{% endif %}'>
     {{ page.title | escape }}
   </h1>

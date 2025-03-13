@@ -18,6 +18,8 @@
           "type": "announcement",
           "settings": {
             "text": "Welcome to our store",
+            "text_alignment": "center",
+            "color_scheme": "scheme-1",
             "link": ""
           }
         }

@@ -120,12 +120,16 @@
                         id='Subscribe'
                         aria-label='{{ 'newsletter.button_label' | t }}'
                       >
-                        {% render 'icon-arrow' %}
+                        <span class='svg-wrapper'>
+                          {{- 'icon-arrow.svg' | inline_asset_content -}}
+                        </span>
                       </button>
                     </div>
                     {%- if form.errors -%}
                       <small class='newsletter-form__message form__message' id='ContactFooter-error'>
-                        {%- render 'icon-error' -%}
+                        <span class='svg-wrapper'>
+                          {{- 'icon-error.svg' | inline_asset_content -}}
+                        </span>
                         {{- form.errors.translated_fields.email | capitalize }}
                         {{ form.errors.messages.email -}}
                       </small>
@@ -138,7 +142,9 @@
                       tabindex='-1'
                       autofocus
                     >
-                      {% render 'icon-success' -%}
+                      <span class='svg-wrapper'>
+                        {{- 'icon-success.svg' | inline_asset_content -}}
+                      </span>
                       {{- 'newsletter.success' | t }}
                     </h3>
                   {%- endif -%}
@@ -194,7 +200,7 @@
                               href='{{ link.url }}'
                               class='twcss-p-0 helv-reset link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}'
                             >
-                              {{ link.title }}
+                              {{ link.title | escape }}
                             </a>
                           </li>
                         {%- endfor -%}
@@ -295,7 +301,7 @@
         {
           "type": "inline_richtext",
           "id": "heading",
-          "default": "Quick links",
+          "default": "t:sections.footer.blocks.link_list.settings.heading.default",
           "label": "t:sections.footer.blocks.link_list.settings.heading.label"
         },
         {
@@ -335,13 +341,13 @@
         {
           "type": "inline_richtext",
           "id": "heading",
-          "default": "Heading",
+          "default": "t:sections.footer.blocks.text.settings.heading.default",
           "label": "t:sections.footer.blocks.text.settings.heading.label"
         },
         {
           "type": "richtext",
           "id": "subtext",
-          "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
+          "default": "t:sections.footer.blocks.text.settings.subtext.default",
           "label": "t:sections.footer.blocks.text.settings.subtext.label"
         }
       ]
@@ -393,7 +399,7 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
-      "default": "background-1"
+      "default": "scheme-1"
     },
     {
       "type": "header",
@@ -409,7 +415,7 @@
     {
       "type": "inline_richtext",
       "id": "newsletter_heading",
-      "default": "Subscribe to our emails",
+      "default": "t:sections.footer.settings.newsletter_heading.default",
       "label": "t:sections.footer.settings.newsletter_heading.label"
     },
     {
@@ -474,7 +480,7 @@
     {
       "type": "checkbox",
       "id": "show_policy",
-      "default": false,
+      "default": true,
       "label": "t:sections.footer.settings.show_policy.label"
     },
     {

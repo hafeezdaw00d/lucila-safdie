@@ -22,9 +22,6 @@ module.exports = {
         heading: 'var(--font-heading-family)',
       },
     },
-    color: {
-      black: '#000000',
-    },
   },
   plugins: [],
 };
