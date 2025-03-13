@@ -1,17 +1,17 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/LucilaSafdie_Logotype_Digital_logotype-black-rgb-512w.jpg",
+    "logo": "shopify://shop_images/LucilaSafdie_Logotype_Digital_logotype-black-rgb-512w.jpg",
     "logo_width": 90,
-    "favicon": "shopify:\/\/shop_images\/LS-monogram-32w.png",
+    "favicon": "shopify://shop_images/LS-monogram-32w.png",
     "type_header_font": "sans-serif",
     "heading_scale": 100,
     "type_body_font": "sans-serif",
@@ -123,7 +123,7 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "shop",
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo-web.png",
+    "checkout_logo_image": "shopify://shop_images/logo-web.png",
     "checkout_logo_position": "center",
     "checkout_heading_font": "Helvetica Neue",
     "checkout_body_font": "Helvetica Neue",
@@ -143,9 +143,7 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "color_schemes": {
       "background-1": {
         "settings": {
