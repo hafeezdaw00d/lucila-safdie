@@ -183,6 +183,8 @@ product-info {
   max-width: 100%;
   min-width: fit-content;
   border: none;
+  display: flex;
+  justify-content: center;
 }
 
 .product-form__input .form__label {
