@@ -54,6 +54,14 @@
             "show_gift_card_recipient": true
           }
         },
+        "inventory_UqYPVG": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -122,6 +130,7 @@
         "73f98019-15f5-490c-8ea3-f833b416c180",
         "quantity_selector",
         "buy_buttons",
+        "inventory_UqYPVG",
         "description",
         "collapsible-row-0",
         "collapsible-row-1",
