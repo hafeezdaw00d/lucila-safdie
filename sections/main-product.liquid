@@ -243,7 +243,6 @@
     Only {{ product.selected_or_first_available_variant.inventory_quantity }} left in stock!
   </p>
 {% endif %}
-
                   <label class='quantity__label form__label' for='Quantity-{{ section.id }}'>
                     {{ 'products.product.quantity.label' | t }}
                     <span class='quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}'>
