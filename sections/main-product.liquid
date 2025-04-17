@@ -239,11 +239,11 @@
                     | item_count_for_variant: product.selected_or_first_available_variant.id
                   -%}
                   {% # theme-check-enable %}
-{% if product.selected_or_first_available_variant.inventory_quantity < 3 and product.selected_or_first_available_variant.inventory_quantity > 0 %}
-  <p class="low-stock-message" style="color: red; font-weight: bold; margin-bottom: 10px;">
-    Only {{ product.selected_or_first_available_variant.inventory_quantity }} left in stock!
-  </p>
-{% endif %}
+                    {% if product.selected_or_first_available_variant.inventory_quantity < 3 and product.selected_or_first_available_variant.inventory_quantity > 0 %}
+                      <p class="low-stock-message" style="color: red; font-weight: bold; margin-bottom: 10px;">
+                        Only {{ product.selected_or_first_available_variant.inventory_quantity }} left in stock!
+                      </p>
+                      {% endif %}
                   <label class='quantity__label form__label' for='Quantity-{{ section.id }}'>
                     {{ 'products.product.quantity.label' | t }}
                     <span class='quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}'>
