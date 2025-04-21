@@ -142,7 +142,7 @@
                 </div>
                 {%- when 'inventory' -%}
                   {%- assign qty = product.selected_or_first_available_variant.inventory_quantity -%}
-                  {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' and qty > 0 and qty <= 3 -%}
+                  {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' and qty > 0 and qty <= 2 -%}
                     <p
                       class='helv-reset product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}'
                       {{ block.shopify_attributes }}
