@@ -139,42 +139,29 @@
                     <input type='hidden' name='id' value='{{ product.selected_or_first_available_variant.id }}'>
                     {{ form | payment_terms }}
                   {%- endform -%}
-{%- when 'price' -%}
-  <!-- price code -->
-
-{%- when 'inventory' -%}
-  {%- assign qty = product.selected_or_first_available_variant.inventory_quantity -%}
-  {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
-    <p
-      id='Inventory-{{ section.id }}'
-      class='helv-reset product__inventory{% if qty > 3 or qty == 0 %} visibility-hidden{% endif %}{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}'
-      {{ block.shopify_attributes }}
-      role='status'
-    >
-      {%- if qty > 0 and qty <= 3 -%}
-        <span class='svg-wrapper' style='color: rgb(238, 148, 65)'>
-          {{ 'icon-inventory-status.svg' | inline_asset_content }}
-        </span>
-        {%- if block.settings.show_inventory_quantity -%}
-          Only {{ qty }} left in stock!
-        {%- else -%}
-          Low stock
-        {%- endif -%}
-      {%- endif -%}
-    </p>
-  {%- endif -%}
-
-{%- when 'sku' -%}
-  <p
-    class='product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}'
-    id='Sku-{{ section.id }}'
-    role='status'
-    {{ block.shopify_attributes }}
-  >
-    <span class='visually-hidden'>{{ 'products.product.sku' | t }}:</span>
-    {{- product.selected_or_first_available_variant.sku -}}
-  </p>
-
+                </div>
+                  {%- when 'inventory' -%}
+                    {%- assign qty = product.selected_or_first_available_variant.inventory_quantity -%}
+                    {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' and qty > 0 -%}
+                      <p
+                        class='helv-reset product__inventory{% if qty > 3 %} visibility-hidden{% endif %}{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}'
+                        {{ block.shopify_attributes }}
+                        id='Inventory-{{ section.id }}'
+                        role='status'
+                      >
+                        {%- if qty <= 3 -%}
+                          <span class='svg-wrapper' style='color: rgb(238, 148, 65)'>
+                            {{ 'icon-inventory-status.svg' | inline_asset_content }}
+                          </span>
+                          {%- if block.settings.show_inventory_quantity -%}
+                            Only {{ qty }} left in stock!
+                          {%- else -%}
+                            Low stock
+                          {%- endif -%}
+                        {%- endif -%}
+                      </p>
+                    {%- endif -%}
+                <p
                   class='product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}'
                   id='Sku-{{ section.id }}'
                   role='status'
