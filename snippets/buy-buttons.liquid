@@ -70,29 +70,25 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-          <button
-            id='ProductSubmitButton-{{ section_id }}'
-            type='submit'
-            name='add'
-            class='product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}'
-            {% if product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-              or product.selected_or_first_available_variant == null
-            %}
-              disabled
-            {% endif %}
-          >
-            <span class=' twcss-leading-none helv-reset twcss-invert'>
-              {%- if product.selected_or_first_available_variant == null -%}
-                {{ 'products.product.unavailable' | t }}
-              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
-              {%- endif -%}
-            </span>
-            {%- render 'loading-spinner' -%}
-          </button>
+{% if product.selected_or_first_available_variant.available and quantity_rule_soldout != true and product.selected_or_first_available_variant != null %}
+  <button
+    id='ProductSubmitButton-{{ section_id }}'
+    type='submit'
+    name='add'
+    class='product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}'
+  >
+    {{ 'products.product.add_to_cart' | t }}
+  </button>
+{% else %}
+  </form> <!-- close Shopify's form first -->
+  <form method="post" action="/contact#contact_form" class="notify-form" style="margin-top: 1rem;">
+    <input type="hidden" name="contact[body]" value="Please notify me when {{ product.title }} is back in stock." />
+    <input type="email" name="contact[email]" placeholder="Enter your email" required class="input" />
+    <button type="submit" class="button button--full-width">
+      Notify Me
+    </button>
+  </form>
+{% endif %}
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}
