@@ -145,7 +145,7 @@
                     {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
                       <p
                         id='Inventory-{{ section.id }}'
-                        class='helv-reset product__inventory{% if qty > 2 or qty == 0 %} visibility-hidden{% endif %}{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}'
+                        class='helv-reset product__inventory{% if qty > 0 or qty == 0 %} visibility-hidden{% endif %}{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}'
                         {{ block.shopify_attributes }}
                         role='status'
                       >
