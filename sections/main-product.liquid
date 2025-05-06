@@ -630,10 +630,10 @@
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
 <!-- styled with section -->
-{%- assign shuffled_products = collections.all.products | sample: 10 -%}
+{%- assign styled_with_products = collections['styled-with'].products | sample: 10 -%}
 {%- assign shown_count = 0 -%}
 
-{%- for related_product in shuffled_products -%}
+{%- for related_product in styled_with_products -%}
   {%- if related_product.available and related_product.id != product.id -%}
     {%- if shown_count == 0 -%}
       <div style="margin-top: 3rem;">
