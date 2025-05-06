@@ -631,9 +631,9 @@
           </a>
 <!-- You Might Also Like -->
 <div class="product__related-products" style="margin-top: 3rem;">
-  <h3 class="h4" style="margin-bottom: 1.5rem;">You might also like</h3>
+  <h3 class="h4" style="margin-bottom: 1.5rem;">you might also like</h3>
   <div class="related-products-grid" style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
-    {% for related_product in collections.all.products limit: 4 %}
+    {% for related_product in collections.all.products limit: 2 %}
       {% if related_product.id != product.id %}
         <div class="related-product-card">
           <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
