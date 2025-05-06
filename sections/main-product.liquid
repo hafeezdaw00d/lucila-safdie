@@ -630,28 +630,28 @@
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
         </section>
-{% for related_product in recommendations.products %}
-  {% if related_product.available and related_product.id != product.id %}
-    {% assign show_recommendations = true %}
-    {% break %}
-  {% endif %}
-{% endfor %}
-
-{% if show_recommendations %}
-  <div style="margin-top: 3rem;">
-    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">you might also like</h3>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-      {% assign count = 0 %}
+{% if recommendations.products and recommendations.products.size > 0 %}
+  <div class="product__related-products" style="margin-top: 3rem;">
+    <h3 class="h4" style="margin-bottom: 1.5rem;">you might also like</h3>
+    <div class="related-products-grid" style="display: grid; gap: 1.5rem; grid-template-columns: 1fr 1fr;">
+      {% assign shown = 0 %}
       {% for related_product in recommendations.products %}
         {% if related_product.available and related_product.id != product.id %}
-          <div style="text-align: center;">
-            <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
-              <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title }}" style="width: 100%; height: auto; border-radius: 0;">
-              <p style="font-size: 1.15rem; margin-top: 0.5rem;">{{ related_product.title }}</p>
-            </a>
+          <div class="related-product-card" style="text-align: center;">
+            {% if related_product.featured_image %}
+              <a href="{{ related_product.url | escape }}" style="text-decoration: none; color: inherit;">
+                <img
+                  src="{{ related_product.featured_image | image_url: width: 400 }}"
+                  alt="{{ related_product.title | escape }}"
+                  style="width: 100%; height: auto; border-radius: 0;" />
+                <p style="margin-top: 0.75rem; font-size: 1.2rem; font-weight: 600;">
+                  {{ related_product.title | escape }}
+                </p>
+              </a>
+            {% endif %}
           </div>
-          {% assign count = count | plus: 1 %}
-          {% if count == 2 %}
+          {% assign shown = shown | plus: 1 %}
+          {% if shown == 2 %}
             {% break %}
           {% endif %}
         {% endif %}
@@ -659,6 +659,8 @@
     </div>
   </div>
 {% endif %}
+
+
 
       </div>
     </div>
