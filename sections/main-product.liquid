@@ -661,7 +661,7 @@
         {%- assign rp = all_products[id] -%}
         <div style="text-align: center;">
           <a href="{{ rp.url }}" style="text-decoration: none; color: inherit;">
-            <img src="{{ rp.featured_image | image_url: width: 400 }}" alt="{{ rp.title | escape }}" style="width: 100%; height: auto; border-radius: 0;">
+            <img src="{{ rp.featured_image | image_url: width: 400 }}" alt="{{ rp.title | escape }}" style="width: 100%; height: auto; border-radius: 0;" />
             <p style="font-size: 1.15rem; margin-top: 0.5rem; text-transform: lowercase;">{{ rp.title }}</p>
           </a>
         </div>
