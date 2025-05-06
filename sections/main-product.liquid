@@ -632,20 +632,21 @@
 <!-- START styled with section -->
 {%- assign related_count = 0 -%}
 {%- assign styled_with_products = collections['styled-with'].products -%}
-{%- assign current_collections = product.collections | map: 'handle' -%}
+{%- assign current_handles = product.collections | map: 'handle' -%}
 
 {%- for related_product in styled_with_products -%}
   {%- if related_product.available and related_product.id != product.id -%}
-    {%- assign overlap = false -%}
+
+    {%- assign show = true -%}
     {%- for c in related_product.collections -%}
       {%- unless c.handle == 'all' or c.handle == 'styled-with' -%}
-        {%- if current_collections contains c.handle -%}
-          {%- assign overlap = true -%}
-          {%- break -%}
+        {%- if current_handles contains c.handle -%}
+          {%- assign show = false -%}
         {%- endif -%}
       {%- endunless -%}
     {%- endfor -%}
-    {%- unless overlap -%}
+
+    {%- if show -%}
       {%- if related_count == 0 -%}
         <div style="margin-top: 3rem;">
           <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-transform: lowercase;">
@@ -667,10 +668,11 @@
         </div>
         {%- break -%}
       {%- endif -%}
-    {%- endunless -%}
+    {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
 <!-- END styled with section -->
+
 
 </section>
 
