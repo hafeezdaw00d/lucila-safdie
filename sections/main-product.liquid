@@ -629,6 +629,22 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
+          <!-- You Might Also Like -->
+<div class="product__related-products" style="margin-top: 3rem;">
+  <h3 class="h4" style="margin-bottom: 1rem;">You might also like</h3>
+  <div class="related-products-grid" style="display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+    {% for related_product in collections.all.products limit: 4 %}
+      {% if related_product.id != product.id %}
+        <div class="related-product-card">
+          <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
+            <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title }}" style="width: 100%; border-radius: 6px;" />
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">{{ related_product.title }}</p>
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
         </section>
       </div>
     </div>
