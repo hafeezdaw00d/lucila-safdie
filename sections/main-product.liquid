@@ -629,8 +629,7 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
-</section> 
-{%- assign styled_products = collections['styled-with'].products -%}
+          {%- assign styled_products = collections['styled-with'].products -%}
 
 {%- if styled_products.size > 1 -%}
   {%- assign offset = product.id | modulo: styled_products.size -%}
@@ -661,7 +660,7 @@
     </div>
   </div>
 {%- endif -%}
-
+</section> 
       </div>
     </div>
 
