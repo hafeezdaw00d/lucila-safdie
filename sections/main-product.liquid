@@ -629,46 +629,7 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
-<!-- styled with section -->
-{%- assign excluded_collections = product.collections | map: 'handle' -%}
-{%- assign valid_products = '' -%}
-
-{%- for p in collections['styled-with'].products -%}
-  {%- if p.available and p.id != product.id -%}
-    {%- assign p_handles = p.collections | map: 'handle' -%}
-    {%- assign overlap = false -%}
-
-    {%- for handle in p_handles -%}
-      {%- if excluded_collections contains handle and handle != 'all' and handle != 'styled-with' -%}
-        {%- assign overlap = true -%}
-      {%- endif -%}
-    {%- endfor -%}
-
-    {%- unless overlap -%}
-      {%- assign valid_products = valid_products | append: p.id | append: ',' -%}
-    {%- endunless -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- assign valid_ids = valid_products | split: ',' | uniq | reject: '' -%}
-{%- assign shuffled_ids = valid_ids | sample: 2 -%}
-
-{%- if shuffled_ids.size > 0 -%}
-  <div style="margin-top: 3rem;">
-    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-transform: lowercase;">styled with</h3>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-      {%- for id in shuffled_ids -%}
-        {%- assign rp = all_products[id] -%}
-        <div style="text-align: center;">
-          <a href="{{ rp.url }}" style="text-decoration: none; color: inherit;">
-            <img src="{{ rp.featured_image | image_url: width: 400 }}" alt="{{ rp.title | escape }}" style="width: 100%; height: auto; border-radius: 0;" />
-            <p style="font-size: 1.15rem; margin-top: 0.5rem; text-transform: lowercase;">{{ rp.title }}</p>
-          </a>
-        </div>
-      {%- endfor -%}
-    </div>
-  </div>
-{%- endif -%}
+<img src="{{ rp.featured_image | image_url: width: 400 }}" alt="{{ rp.title | escape }}" style="width: 100%; height: auto; border-radius: 0;" />
 <!-- END styled with section -->
 </section>
 
