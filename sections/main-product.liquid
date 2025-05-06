@@ -139,6 +139,34 @@
                     <input type='hidden' name='id' value='{{ product.selected_or_first_available_variant.id }}'>
                     {{ form | payment_terms }}
                   {%- endform -%}
+              {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+  <input type='hidden' name='id' value='{{ product.selected_or_first_available_variant.id }}'>
+  {{ form | payment_terms }}
+{%- endform -%}
+</div>
+
+<!-- You Might Also Like Section -->
+{%- assign current_product = product -%}
+{%- assign related_collection = product.collections.first -%}
+
+{%- if related_collection and related_collection.products_count > 1 -%}
+  <div class="you-might-also-like">
+    <h2 class="you-might-also-like__title">You Might Also Like</h2>
+    <div class="related-products">
+      {%- for related_product in related_collection.products -%}
+        {%- if related_product.handle != current_product.handle -%}
+          <div class="related-product">
+            <a href="{{ related_product.url }}">
+              <img src="{{ related_product.featured_image | img_url: 'medium' }}" alt="{{ related_product.title }}" />
+              <p class="related-product__title">{{ related_product.title }}</p>
+              <p class="related-product__price">{{ related_product.price | money }}</p>
+            </a>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
                 </div>
                  {%- when 'inventory' -%}
                     {%- assign qty = product.selected_or_first_available_variant.inventory_quantity -%}
