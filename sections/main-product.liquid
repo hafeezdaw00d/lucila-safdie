@@ -632,35 +632,7 @@
         </section>
       </div>
     </div>
-
-<!-- You Might Also Like Section -->
-{%- assign current_product = product -%}
-{%- assign related_collection = product.collections.first -%}
-
-{%- if related_collection and related_collection.products_count > 1 -%}
-  <div class="you-might-also-like page-width">
-    <h2 class="h2">You Might Also Like</h2>
-    <div class="grid grid--2-col-tablet grid--4-col-desktop">
-      {%- assign shown = 0 -%}
-      {%- for related_product in related_collection.products -%}
-        {%- if related_product.handle != current_product.handle -%}
-          <div class="grid__item">
-            <a href="{{ related_product.url }}">
-              <img src="{{ related_product.featured_image | img_url: '400x' }}" alt="{{ related_product.title }}">
-              <p>{{ related_product.title }}</p>
-              <p>{{ related_product.price | money }}</p>
-            </a>
-          </div>
-          {%- assign shown = shown | plus: 1 -%}
-          {%- if shown == 4 -%}
-            {%- break -%}
-          {%- endif -%}
-        {%- endif -%}
-      {%- endfor -%}
-    </div>
-  </div>
-{%- endif -%}
-
+  
 
     {% render 'product-media-modal', variant_images: variant_images %}
 
