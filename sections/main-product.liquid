@@ -630,7 +630,14 @@
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
         </section>
-{% if recommendations.products %}
+{% for related_product in recommendations.products %}
+  {% if related_product.available and related_product.id != product.id %}
+    {% assign show_recommendations = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if show_recommendations %}
   <div style="margin-top: 3rem;">
     <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">you might also like</h3>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
@@ -652,6 +659,7 @@
     </div>
   </div>
 {% endif %}
+
       </div>
     </div>
   
