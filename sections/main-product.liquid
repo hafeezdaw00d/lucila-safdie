@@ -629,38 +629,36 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
-          {%- assign styled_products = collections['styled-with'].products -%}
 
-{%- if styled_products.size > 1 -%}
-  {%- assign offset = product.id | modulo: styled_products.size -%}
-  {%- assign shown = 0 -%}
-  <div style="margin-top: 3rem;">
-    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-transform: lowercase;">styled with</h3>
-    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-      {%- for i in (0..styled_products.size) -%}
-        {%- assign index = offset | plus: i -%}
-        {%- assign related = styled_products[index] -%}
-        {%- if related and related.available and related.id != product.id -%}
-          <div style="width: 220px; text-align: center;">
-            <a href="{{ related.url }}" style="text-decoration: none; color: inherit;">
-              <img
-                src="{{ related.featured_image | image_url: width: 400 }}"
-                alt="{{ related.title | escape }}"
-                style="width: 100%; height: auto; border-radius: 0;"
-              >
-              <p style="font-size: 1.1rem; margin-top: 0.5rem;">{{ related.title }}</p>
-            </a>
-          </div>
-          {%- assign shown = shown | plus: 1 -%}
-          {%- if shown == 2 -%}
-            {%- break -%}
-          {%- endif -%}
-        {%- endif -%}
-      {%- endfor -%}
+<!-- END OF product info blocks like title, price, buy buttons etc -->
+
+{%- assign related_count = 0 -%}
+{%- assign shuffled_products = collections.all.products | sample: 8 -%}
+{%- for related_product in shuffled_products -%}
+  {%- if related_product.available and related_product.id != product.id -%}
+    {%- if related_count == 0 -%}
+      <div style="margin-top: 3rem;">
+        <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">styled with</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+    {%- endif -%}
+    <div style="text-align: center;">
+      <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
+        <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title }}" style="width: 100%; height: auto; border-radius: 0;">
+        <p style="font-size: 1.15rem; margin-top: 0.5rem;">{{ related_product.title }}</p>
+      </a>
     </div>
-  </div>
-{%- endif -%}
-</section> 
+    {%- assign related_count = related_count | plus: 1 -%}
+    {%- if related_count == 2 -%}
+        </div>
+      </div>
+      {%- break -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+</section>
+
+        
       </div>
     </div>
 
