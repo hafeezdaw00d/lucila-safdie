@@ -631,21 +631,19 @@
 </a>
 <!-- START styled with section -->
 {%- assign related_count = 0 -%}
-{%- assign styled_with_products = collections.styled-with.products -%}
-{%- assign current_handles = product.collections | map: 'handle' -%}
-{%- assign backup_products = '' -%}
+{%- assign fallback_products = '' -%}
+{%- assign current_collections = product.collections | map: 'handle' -%}
 
-{%- for related_product in styled_with_products -%}
-  {%- assign shared_handles = false -%}
-  {%- for col in related_product.collections -%}
-    {%- if col.handle != 'all' and col.handle != 'styled-with' and current_handles contains col.handle -%}
-      {%- assign shared_handles = true -%}
-      {%- break -%}
-    {%- endif -%}
-  {%- endfor -%}
-
+{%- for related_product in collections['styled-with'].products -%}
   {%- if related_product.available and related_product.id != product.id -%}
-    {%- if shared_handles == false and related_count < 2 -%}
+    {%- assign skip = false -%}
+    {%- for col in related_product.collections -%}
+      {%- if col.handle != 'all' and col.handle != 'styled-with' and current_collections contains col.handle -%}
+        {%- assign skip = true -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- unless skip -%}
       {%- if related_count == 0 -%}
         <div style="margin-top: 3rem;">
           <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-transform: lowercase;">
@@ -667,19 +665,19 @@
         </div>
         {%- break -%}
       {%- endif -%}
-    {%- endif -%}
+    {%- endunless -%}
   {%- endif -%}
 {%- endfor -%}
 
 {%- if related_count == 0 -%}
-  <!-- Fallback if nothing passed the filter -->
+  <!-- Fallback: show any two from styled-with if all were excluded -->
   <div style="margin-top: 3rem;">
     <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-transform: lowercase;">
       styled with
     </h3>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
       {%- assign fallback_count = 0 -%}
-      {%- for product in styled_with_products -%}
+      {%- for product in collections['styled-with'].products -%}
         {%- if product.available and product.id != product.id -%}
           <div style="text-align: center;">
             <a href="{{ product.url }}" style="text-decoration: none; color: inherit;">
@@ -700,7 +698,6 @@
 {%- endif -%}
 <!-- END styled with section -->
 </section>
-
 
 
         
