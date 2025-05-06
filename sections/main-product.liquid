@@ -633,8 +633,12 @@
 <!-- END OF product info blocks like title, price, buy buttons etc -->
 
 {%- assign related_count = 0 -%}
-{%- assign shuffled_products = collections.all.products | sample: 8 -%}
-{%- for related_product in shuffled_products -%}
+{%- assign product_index = product.id | modulo: collections.all.products.size -%}
+{%- assign offset_products = collections.all.products | slice: product_index, collections.all.products.size -%}
+{%- assign fallback_products = collections.all.products | slice: 0, product_index -%}
+{%- assign combined_products = offset_products | concat: fallback_products -%}
+
+{%- for related_product in combined_products -%}
   {%- if related_product.available and related_product.id != product.id -%}
     {%- if related_count == 0 -%}
       <div style="margin-top: 3rem;">
@@ -657,6 +661,7 @@
 {%- endfor -%}
 
 </section>
+
 
         
       </div>
