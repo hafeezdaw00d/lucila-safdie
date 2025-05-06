@@ -633,42 +633,74 @@
 {%- assign related_count = 0 -%}
 {%- assign styled_with_products = collections.styled-with.products -%}
 {%- assign current_handles = product.collections | map: 'handle' -%}
+{%- assign backup_products = '' -%}
 
 {%- for related_product in styled_with_products -%}
-  {%- assign shared_handles = '' -%}
+  {%- assign shared_handles = false -%}
   {%- for col in related_product.collections -%}
     {%- if col.handle != 'all' and col.handle != 'styled-with' and current_handles contains col.handle -%}
-      {%- assign shared_handles = 'yes' -%}
+      {%- assign shared_handles = true -%}
       {%- break -%}
     {%- endif -%}
   {%- endfor -%}
 
-  {%- if related_product.available and related_product.id != product.id and shared_handles != 'yes' -%}
-    {%- if related_count == 0 -%}
-      <div style="margin-top: 3rem;">
-        <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-transform: lowercase;">
-          styled with
-        </h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-    {%- endif -%}
-    <div style="text-align: center;">
-      <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
-        <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title | escape }}" style="width: 100%; height: auto; border-radius: 0;">
-        <p style="font-size: 1.15rem; margin-top: 0.5rem; text-transform: lowercase;">
-          {{ related_product.title }}
-        </p>
-      </a>
-    </div>
-    {%- assign related_count = related_count | plus: 1 -%}
-    {%- if related_count == 2 -%}
-        </div>
+  {%- if related_product.available and related_product.id != product.id -%}
+    {%- if shared_handles == false and related_count < 2 -%}
+      {%- if related_count == 0 -%}
+        <div style="margin-top: 3rem;">
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-transform: lowercase;">
+            styled with
+          </h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+      {%- endif -%}
+      <div style="text-align: center;">
+        <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
+          <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title | escape }}" style="width: 100%; height: auto; border-radius: 0;">
+          <p style="font-size: 1.15rem; margin-top: 0.5rem; text-transform: lowercase;">
+            {{ related_product.title }}
+          </p>
+        </a>
       </div>
-      {%- break -%}
+      {%- assign related_count = related_count | plus: 1 -%}
+      {%- if related_count == 2 -%}
+          </div>
+        </div>
+        {%- break -%}
+      {%- endif -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
+
+{%- if related_count == 0 -%}
+  <!-- Fallback if nothing passed the filter -->
+  <div style="margin-top: 3rem;">
+    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-transform: lowercase;">
+      styled with
+    </h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+      {%- assign fallback_count = 0 -%}
+      {%- for product in styled_with_products -%}
+        {%- if product.available and product.id != product.id -%}
+          <div style="text-align: center;">
+            <a href="{{ product.url }}" style="text-decoration: none; color: inherit;">
+              <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.title | escape }}" style="width: 100%; height: auto; border-radius: 0;">
+              <p style="font-size: 1.15rem; margin-top: 0.5rem; text-transform: lowercase;">
+                {{ product.title }}
+              </p>
+            </a>
+          </div>
+          {%- assign fallback_count = fallback_count | plus: 1 -%}
+          {%- if fallback_count == 2 -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
 <!-- END styled with section -->
 </section>
+
 
 
         
