@@ -630,7 +630,7 @@
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
         </section>
-{% if recommendations.products.size > 0 %}
+{% if recommendations.products %}
   <div style="margin-top: 3rem;">
     <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">you might also like</h3>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
@@ -638,13 +638,13 @@
       {% for related_product in recommendations.products %}
         {% if related_product.available and related_product.id != product.id %}
           <div style="text-align: center;">
-            <a href="{{ related_product.url }}">
-              <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title }}" style="width: 100%; border-radius: 0;">
-              <p style="font-size: 1.2rem; margin-top: 0.5rem;">{{ related_product.title }}</p>
+            <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
+              <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title }}" style="width: 100%; height: auto; border-radius: 0;">
+              <p style="font-size: 1.15rem; margin-top: 0.5rem;">{{ related_product.title }}</p>
             </a>
           </div>
           {% assign count = count | plus: 1 %}
-          {% if count >= 2 %}
+          {% if count == 2 %}
             {% break %}
           {% endif %}
         {% endif %}
@@ -652,10 +652,6 @@
     </div>
   </div>
 {% endif %}
-
-
-
-
       </div>
     </div>
   
