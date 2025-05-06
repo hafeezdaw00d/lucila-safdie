@@ -630,26 +630,26 @@
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
 </section> 
-        {%- assign styled_products = collections['styled-with'].products -%}
+{%- assign styled_products = collections['styled-with'].products -%}
 
 {%- if styled_products.size > 1 -%}
   {%- assign offset = product.id | modulo: styled_products.size -%}
   {%- assign shown = 0 -%}
   <div style="margin-top: 3rem;">
     <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-transform: lowercase;">styled with</h3>
-    <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
       {%- for i in (0..styled_products.size) -%}
         {%- assign index = offset | plus: i -%}
         {%- assign related = styled_products[index] -%}
         {%- if related and related.available and related.id != product.id -%}
-          <div style="max-width: 160px; text-align: center;">
+          <div style="width: 220px; text-align: center;">
             <a href="{{ related.url }}" style="text-decoration: none; color: inherit;">
               <img
-                src="{{ related.featured_image | image_url: width: 300 }}"
+                src="{{ related.featured_image | image_url: width: 400 }}"
                 alt="{{ related.title | escape }}"
                 style="width: 100%; height: auto; border-radius: 0;"
               >
-              <p style="font-size: 1rem; margin-top: 0.5rem;">{{ related.title }}</p>
+              <p style="font-size: 1.1rem; margin-top: 0.5rem;">{{ related.title }}</p>
             </a>
           </div>
           {%- assign shown = shown | plus: 1 -%}
@@ -661,6 +661,7 @@
     </div>
   </div>
 {%- endif -%}
+
       </div>
     </div>
 
