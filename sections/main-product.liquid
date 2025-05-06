@@ -479,7 +479,7 @@
                   data-section-id='{{ section.id }}'
                   data-product-id='{{ product.id }}'
                 >
-                  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+                  {%- if recommendations.performed and recommendations.products_count > 0 -%} 
                     <aside
                       aria-label='{{ 'accessibility.complementary_products' | t }}'
                       {{ block.shopify_attributes -}}
@@ -629,38 +629,40 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
+        </section>
+{% for related_product in recommendations.products %}
+  {% if related_product.available and related_product.id != product.id %}
+    {% assign show_recommendations = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 
-<!-- END OF product info blocks like title, price, buy buttons etc -->
-
-{%- assign related_count = 0 -%}
-{%- assign shuffled_products = collections.all.products | sample: 8 -%}
-{%- for related_product in shuffled_products -%}
-  {%- if related_product.available and related_product.id != product.id -%}
-    {%- if related_count == 0 -%}
-      <div style="margin-top: 3rem;">
-        <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">styled with</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-    {%- endif -%}
-    <div style="text-align: center;">
-      <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
-        <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title }}" style="width: 100%; height: auto; border-radius: 0;">
-        <p style="font-size: 1.15rem; margin-top: 0.5rem;">{{ related_product.title }}</p>
-      </a>
+{% if show_recommendations %}
+  <div style="margin-top: 3rem;">
+    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">you might also like</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+      {% assign count = 0 %}
+      {% for related_product in recommendations.products %}
+        {% if related_product.available and related_product.id != product.id %}
+          <div style="text-align: center;">
+            <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
+              <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title }}" style="width: 100%; height: auto; border-radius: 0;">
+              <p style="font-size: 1.15rem; margin-top: 0.5rem;">{{ related_product.title }}</p>
+            </a>
+          </div>
+          {% assign count = count | plus: 1 %}
+          {% if count == 2 %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
     </div>
-    {%- assign related_count = related_count | plus: 1 -%}
-    {%- if related_count == 2 -%}
-        </div>
-      </div>
-      {%- break -%}
-    {%- endif -%}
-  {%- endif -%}
-{%- endfor -%}
+  </div>
+{% endif %}
 
-</section>
-
-        
       </div>
     </div>
+  
 
     {% render 'product-media-modal', variant_images: variant_images %}
 
@@ -713,6 +715,7 @@
     <script type='application/ld+json'>
       {{ product | structured_data }}
     </script>
+    {% section 'product-recommendations' %}
   </div>
 </product-info>
 
