@@ -630,32 +630,32 @@
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
 
-<!-- END OF product info blocks like title, price, buy buttons etc -->
-
-{%- assign related_count = 0 -%}
-{%- for related_product in collections.all.products -%}
-  {%- if related_product.available and related_product.id != product.id -%}
-    {%- if related_count == 0 -%}
-      <div style="margin-top: 3rem;">
-        <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">styled with</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-    {%- endif -%}
-    <div style="text-align: center;">
-      <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
-        <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title }}" style="width: 100%; height: auto; border-radius: 0;">
-        <p style="font-size: 1.15rem; margin-top: 0.5rem;">{{ related_product.title }}</p>
-      </a>
-    </div>
-    {%- assign related_count = related_count | plus: 1 -%}
-    {%- if related_count == 2 -%}
+<!-- START styled with section -->
+<div style="margin-top: 3rem;">
+  <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">styled with</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+    {% assign count = 0 %}
+    {% for product in collections.all.products %}
+      {% if product.available and product.id != product.id %}
+        <div style="text-align: center;">
+          <a href="{{ product.url }}" style="text-decoration: none; color: inherit;">
+            <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.title }}" style="width: 100%; height: auto; border-radius: 0;">
+            <p style="font-size: 1.15rem; margin-top: 0.5rem;">{{ product.title }}</p>
+          </a>
         </div>
-      </div>
-      {%- break -%}
-    {%- endif -%}
-  {%- endif -%}
-{%- endfor -%}
+        {% assign count = count | plus: 1 %}
+        {% if count == 2 %}
+          {% break %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+<!-- END styled with section -->
+
 
 </section>
+
 
         
       </div>
