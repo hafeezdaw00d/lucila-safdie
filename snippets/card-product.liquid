@@ -133,32 +133,6 @@
                 {{- 'products.product.sold_out' | t -}}
               </span>
             {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-              <div class='card__badge {{ settings.badge_position }}'>
-  {%- if card_product.available == false -%}
-    <span
-      id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
-      class='helv-reset badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}'
-    >
-      {{- 'products.product.sold_out' | t -}}
-    </span>
-
-  {%- elsif card_product.variants.first.inventory_management == 'shopify' and card_product.variants.first.inventory_quantity == 1 -%}
-    <span
-      id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
-      class='helv-reset badge badge--bottom-left color-accent-2'
-    >
-      only 1 left
-    </span>
-
-  {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-    <span
-      id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
-      class='helv-reset badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
-    >
-      {{- 'products.product.on_sale' | t -}}
-    </span>
-  {%- endif -%}
-</div>
               <span
                 id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
                 class='helv-reset badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
