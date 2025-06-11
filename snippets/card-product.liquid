@@ -125,7 +125,8 @@
             </h3>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
-  {%- assign first_variant = card_product.variants.first -%}
+  {%- assign available_variants = card_product.variants | where: "available", true -%}
+  {%- assign first_available = available_variants.first -%}
 
   {%- if card_product.available == false -%}
     <span
@@ -135,7 +136,7 @@
       {{- 'products.product.sold_out' | t -}}
     </span>
 
-  {%- elsif first_variant.inventory_management == 'shopify' and first_variant.inventory_quantity == 1 -%}
+  {%- elsif available_variants.size == 1 and first_available.inventory_management == 'shopify' and first_available.inventory_quantity == 1 -%}
     <span
       id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
       class="helv-reset badge badge--bottom-left color-accent-2"
