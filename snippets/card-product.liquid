@@ -124,20 +124,20 @@
               </a>
             </h3>
           </div>
-          <div style="position: absolute; top: 0.5rem; left: 0.5rem;">
+          <div style="position: absolute; bottom: 0.5rem; right: 0.5rem; padding: 0.25rem;">
   {%- assign available_variants = card_product.variants | where: "available", true -%}
   {%- assign first_available = available_variants.first -%}
 
   {%- if card_product.available == false -%}
-    <span style="color: black; font-weight: normal;">
+    <span style="color: black; font-size: 0.9rem; text-transform: lowercase;">
       {{- 'products.product.sold_out' | t -}}
     </span>
   {%- elsif available_variants.size == 1 and first_available.inventory_management == 'shopify' and first_available.inventory_quantity == 1 -%}
-    <span style="color: black; font-weight: normal;">
+    <span style="color: black; font-size: 0.9rem; text-transform: lowercase;">
       only 1 left
     </span>
   {%- elsif card_product.compare_at_price > card_product.price -%}
-    <span style="color: black; font-weight: normal;">
+    <span style="color: black; font-size: 0.9rem; text-transform: lowercase;">
       {{ 'products.product.on_sale' | t }}
     </span>
   {%- endif -%}
