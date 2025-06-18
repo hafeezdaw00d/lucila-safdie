@@ -154,6 +154,12 @@ html {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+@media screen and (min-width: 1024px) {
+  .page-width {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
 
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   max-width: 100%;
