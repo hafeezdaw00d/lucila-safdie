@@ -108,7 +108,7 @@ html {
 }
 
 .svg-wrap {
-  width: calc(100% - 15 rem);
+  width: calc(100% - 2.5rem);
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
