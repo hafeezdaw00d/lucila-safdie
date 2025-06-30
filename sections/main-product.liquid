@@ -140,27 +140,27 @@
                     {{ form | payment_terms }}
                   {%- endform -%}
                 </div>
-                 {%- when 'inventory' -%}
-                    {%- assign qty = product.selected_or_first_available_variant.inventory_quantity -%}
-                    {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
-                      <p
-                        id='Inventory-{{ section.id }}'
-                        class='helv-reset product__inventory{% if qty > 2 or qty == 0 %} visibility-hidden{% endif %}{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}'
-                        {{ block.shopify_attributes }}
-                        role='status'
-                      >
-                        {%- if qty > 0 and qty <= 2 -%}
-                          <span class='svg-wrapper' style='color: rgb(244, 182, 183)'>
-                            {{ 'icon-inventory-status.svg' | inline_asset_content }}
-                          </span>
-                          {%- if block.settings.show_inventory_quantity -%}
-                            Only {{ qty }} left in stock!
-                          {%- else -%}
-                            Low stock
-                          {%- endif -%}
-                        {%- endif -%}
-                      </p>
+              {%- when 'inventory' -%}
+                {%- assign qty = product.selected_or_first_available_variant.inventory_quantity -%}
+                {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
+                  <p
+                    id='Inventory-{{ section.id }}'
+                    class='helv-reset product__inventory{% if qty > 2 or qty == 0 %} visibility-hidden{% endif %}{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %} center'
+                    {{ block.shopify_attributes }}
+                    role='status'
+                  >
+                    {%- if qty > 0 and qty <= 2 -%}
+                      <span class='svg-wrapper' style='color: rgb(244, 182, 183)'>
+                        {{ 'icon-inventory-status.svg' | inline_asset_content }}
+                      </span>
+                      {%- if block.settings.show_inventory_quantity -%}
+                        Only {{ qty }} left in stock!
+                      {%- else -%}
+                        Low stock
+                      {%- endif -%}
                     {%- endif -%}
+                  </p>
+                {%- endif -%}
                 <p
                   class='product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}'
                   id='Sku-{{ section.id }}'
@@ -629,39 +629,38 @@
             {{ 'products.product.view_full_details' | t }}
             {{- 'icon-arrow.svg' | inline_asset_content -}}
           </a>
-<!-- START styled with section -->
-{%- assign related_count = 0 -%}
-{%- assign styled_with_products = collections.styled-with.products -%}
-{%- for related_product in styled_with_products -%}
-  {%- if related_product.available and related_product.id != product.id -%}
-    {%- if related_count == 0 -%}
-      <div style="margin-top: 3rem;">
-        <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-transform: lowercase;">
-          styled with
-        </h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-    {%- endif -%}
-    <div style="text-align: center;">
-      <a href="{{ related_product.url }}" style="text-decoration: none; color: inherit;">
-        <img src="{{ related_product.featured_image | image_url: width: 400 }}" alt="{{ related_product.title | escape }}" style="width: 100%; height: auto; border-radius: 0;">
-        <p style="font-size: 1.15rem; margin-top: 0.5rem; text-transform: lowercase;">
-          {{ related_product.title }}
-        </p>
-      </a>
-    </div>
-    {%- assign related_count = related_count | plus: 1 -%}
-    {%- if related_count == 2 -%}
-        </div>
-      </div>
-      {%- break -%}
-    {%- endif -%}
-  {%- endif -%}
-{%- endfor -%}
-<!-- END styled with section -->
-</section>
-
-
-        
+          <!-- START styled with section -->
+          {%- assign related_count = 0 -%}
+          {%- assign styled_with_products = collections['styled-with'].products -%}
+          {%- for related_product in styled_with_products -%}
+            {%- if related_product.available and related_product.id != product.id -%}
+              {%- if related_count == 0 -%}
+                <div style='margin-top: 3rem;'>
+                  <h3 style='margin-bottom: 1.5rem; font-size: 13px;'>STYLED WITH:</h3>
+                  <div style='display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;'>
+              {%- endif -%}
+              <div style='text-align: center;'>
+                <a href='{{ related_product.url }}' style='text-decoration: none; color: inherit;'>
+                  <img
+                    src='{{ related_product.featured_image | image_url: width: 400 }}'
+                    alt='{{ related_product.title | escape }}'
+                    style='width: 100%; height: auto; border-radius: 0;'
+                  >
+                  <p style='font-size: 13px; margin-top: 0.5rem; text-transform: lowercase;'>
+                    {{ related_product.title }}
+                  </p>
+                </a>
+              </div>
+              {%- assign related_count = related_count | plus: 1 -%}
+              {%- if related_count == 2 -%}
+                </div>
+                </div>
+                {%- break -%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+          <!-- END styled with section -->
+        </section>
       </div>
     </div>
 

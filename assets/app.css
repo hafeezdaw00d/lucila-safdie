@@ -697,6 +697,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-align: center !important;
 }
 
+.twcss-uppercase {
+  text-transform: uppercase !important;
+}
+
 .twcss-lowercase {
   text-transform: lowercase !important;
 }
