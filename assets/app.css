@@ -517,10 +517,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: 0px !important;
 }
 
-.twcss-z-40 {
-  z-index: 40 !important;
-}
-
 .twcss-col-span-3 {
   grid-column: span 3 / span 3 !important;
 }
@@ -539,8 +535,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: auto !important;
 }
 
+.twcss-mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .twcss-mb-5 {
   margin-bottom: 1.25rem !important;
+}
+
+.twcss-mt-\[100px\] {
+  margin-top: 100px !important;
 }
 
 .twcss-mb-10 {
@@ -557,6 +562,30 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-mt-5 {
   margin-top: 1.25rem !important;
+}
+
+.twcss-mt-\[40px\] {
+  margin-top: 40px !important;
+}
+
+.twcss-mb-10 {
+  margin-bottom: 2.5rem !important;
+}
+
+.twcss-mt-\[60px\] {
+  margin-top: 60px !important;
+}
+
+.twcss-mb-10 {
+  margin-bottom: 2.5rem !important;
+}
+
+.twcss-mt-\[56px\] {
+  margin-top: 56px !important;
+}
+
+.twcss-mb-10 {
+  margin-bottom: 2.5rem !important;
 }
 
 .twcss-block {
@@ -579,6 +608,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100% !important;
 }
 
+.twcss-w-\[4\.4rem\] {
+  width: 4.4rem !important;
+}
+
+.twcss-w-\[100\%\] {
+  width: 100% !important;
+}
+
 .twcss-max-w-\[44rem\] {
   max-width: 44rem !important;
 }
@@ -589,6 +626,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-max-w-none {
   max-width: none !important;
+}
+
+.twcss-max-w-sm {
+  max-width: 24rem !important;
+}
+
+.twcss-max-w-md {
+  max-width: 28rem !important;
 }
 
 .twcss-grid-flow-row {
@@ -675,8 +720,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-decoration-line: none !important;
 }
 
+.twcss-grayscale {
+  --tw-grayscale: grayscale(100%) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
 .twcss-invert {
   --tw-invert: invert(100%) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
+.twcss-filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
     var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
     var(--tw-sepia) var(--tw-drop-shadow) !important;
