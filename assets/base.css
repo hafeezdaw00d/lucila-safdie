@@ -583,7 +583,7 @@ h6:empty {
 }
 
 a:hover {
-  text-shadow: 0 0 4px #00ffc2;
+  text-shadow: 0 0 5px #f0f;
 }
 
 .link--text {
@@ -2980,14 +2980,14 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .menuu-item:active {
-  text-shadow: 0 0 5px #00ffc2;
+  text-shadow: 0 0 5px #ff00ff;
 }
 .collections-list {
   list-style: none;
 }
 
 .active {
-  text-shadow: 0 0 5px #00ffc2;
+  text-shadow: 0 0 5px #ff00ff;
   list-style: none;
 }
 
@@ -2996,7 +2996,7 @@ details[open] > .header__menu-item .icon-caret {
   color: rgb(var(--color-foreground));
   /* text-decoration: underline; */
   /* text-underline-offset: 0.3rem; */
-  text-shadow: 0 0 5px #00ffc2;
+  text-shadow: 0 0 5px #ff00ff;
 }
 
 .header__menu-item:hover .header__active-menu-item {
@@ -3407,7 +3407,7 @@ details-disclosure > details {
   text-underline-offset: 0.3rem;
   text-decoration-thickness: 0.1rem;
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: #00ffc2;
+  color: #ff00ff;
 }
 
 .rte a:hover {
@@ -3703,7 +3703,7 @@ details-disclosure > details {
   :root {
     --easter-egg: url('./sparkle.gif');
     --sparkle: url('./sparkle.gif');
-    background: #00ffc2;
+    background: #f0f;
   }
 
   .animate--hover-vertical-lift .button:not(.button--tertiary),
