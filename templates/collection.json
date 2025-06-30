@@ -69,7 +69,6 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "enable_quick_add": false,
         "enable_filtering": false,
         "filter_type": "drawer",
         "enable_sorting": false,

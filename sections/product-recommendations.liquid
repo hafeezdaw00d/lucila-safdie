@@ -1,0 +1,28 @@
+{% if recommendations.products_count > 0 %}
+  <div class="page-width" style="margin-top: 4rem;">
+    <h3 class="h4" style="margin-bottom: 2rem;">you might also like</h3>
+    <div class="grid grid--2-col">
+      {% assign shown = 0 %}
+      {% for product in recommendations.products %}
+        {% if product.available and product.id != product.id %}
+          <div class="grid__item">
+            <a href="{{ product.url }}" style="text-decoration: none; color: inherit;">
+              <img
+                src="{{ product.featured_image | image_url: width: 400 }}"
+                alt="{{ product.title }}"
+                style="width: 100%; border-radius: 0;"
+              />
+              <p style="margin-top: 0.5rem; font-size: 1.15rem; font-weight: 600;">
+                {{ product.title }}
+              </p>
+            </a>
+          </div>
+          {% assign shown = shown | plus: 1 %}
+          {% if shown >= 2 %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

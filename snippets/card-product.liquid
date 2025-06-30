@@ -68,6 +68,7 @@
             <div class='media media--transparent media--hover-effect'>
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
+                style='{% if card_product.available == false %}filter: grayscale(60%) opacity(0.7);{% endif %}'
                 srcset='
                   {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
                   {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
@@ -130,21 +131,23 @@
               </a>
             </h3>
           </div>
-          <div class='card__badge {{ settings.badge_position }}'>
+          <div style='position: absolute; bottom: 0.5rem; right: 0.5rem;'>
+            {%- assign available_variants = card_product.variants | where: 'available', true -%}
+            {%- assign first_available = available_variants.first -%}
+
             {%- if card_product.available == false -%}
-              <span
-                id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
-                class='helv-reset hidden badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}'
-              >
-                {{- 'products.product.sold_out' | t -}}
-              </span>
-            {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-              <span
-                id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
-                class='helv-reset badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
-              >
-                {{- 'products.product.on_sale' | t -}}
-              </span>
+              <div style='color: black; text-transform: lowercase; padding: 0.4rem 0.6rem;'>
+                {{ 'products.product.sold_out' | t }}
+              </div>
+            {%- elsif available_variants.size == 1
+              and first_available.inventory_management == 'shopify'
+              and first_available.inventory_quantity == 1
+            -%}
+              <div style='color: black; text-transform: lowercase; padding: 0.4rem 0.6rem;'>only 1 left</div>
+            {%- elsif card_product.compare_at_price > card_product.price -%}
+              <div style='color: black; text-transform: lowercase; padding: 0.4rem 0.6rem;'>
+                {{ 'products.product.on_sale' | t }}
+              </div>
             {%- endif -%}
           </div>
         </div>
