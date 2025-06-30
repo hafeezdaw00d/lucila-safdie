@@ -188,7 +188,9 @@
           </localization-form>
         {%- endif -%}
       </div>
+      {% if template contains 'collection' %}
       {% render 'header-search', input_id: 'Search-In-Modal' %}
+      {% endif %}
 
       {%- if shop.customer_accounts_enabled -%}
         <a

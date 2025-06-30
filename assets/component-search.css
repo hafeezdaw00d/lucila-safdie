@@ -2,10 +2,10 @@
   padding-right: 9.8rem;
 }
 
-.search__button {
+/* .search__button {
   right: var(--inputs-border-width);
   top: var(--inputs-border-width);
-}
+} */
 
 .reset__button {
   right: calc(var(--inputs-border-width) + 4.4rem);
@@ -54,13 +54,13 @@
 }
 
 .search__button .icon {
-  height: 1.8rem;
-  width: 1.8rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .reset__button .icon.icon-close {
-  height: 1.8rem;
-  width: 1.8rem;
+  height: 1.4rem;
+  width: 1.4rem;
   stroke-width: 0.1rem;
 }
 
