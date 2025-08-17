@@ -213,7 +213,7 @@
               </p>
             {%- endif -%}
             {%- if card_product.available == false -%}
-              <span class='right'>SOLD OUT</span>
+              <span class='right'> </span>
             {%- else -%}
               {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
 
