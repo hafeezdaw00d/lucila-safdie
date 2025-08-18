@@ -68,7 +68,7 @@
             <div class='media media--transparent media--hover-effect'>
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
-                style='{% if card_product.available == false %}filter: grayscale(60%) opacity(0.7);{% endif %}'
+                style="object-fit: cover; object-position: center top; width: 100%; height: 100%; {% if card_product.available == false %}filter: grayscale(60%) opacity(0.7);{% endif %}"
                 srcset='
                   {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
                   {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
