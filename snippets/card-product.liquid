@@ -30,14 +30,14 @@
 {%- endunless -%}
 {%- if card_product and card_product != empty -%}
   {%- liquid
-    assign ratio = 0.63
+    assign ratio = 0.67
     if card_product.featured_media and media_aspect_ratio == 'portrait'
-      assign ratio = 0.63
+      assign ratio = 0.67
     elsif card_product.featured_media and media_aspect_ratio == 'adapt'
-      assign ratio = 0.63
+      assign ratio = 0.67
     endif
     if ratio == 0 or ratio == null
-      assign ratio = 0.63
+      assign ratio = 0.67
     endif
   -%}
   <div
