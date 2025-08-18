@@ -34,10 +34,10 @@
     if card_product.featured_media and media_aspect_ratio == 'portrait'
       assign ratio = 2
     elsif card_product.featured_media and media_aspect_ratio == 'adapt'
-      assign ratio = 1
+      assign ratio = 2
     endif
     if ratio == 0 or ratio == null
-      assign ratio = 1
+      assign ratio = 2
     endif
   -%}
   <div
