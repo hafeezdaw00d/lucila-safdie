@@ -30,14 +30,14 @@
 {%- endunless -%}
 {%- if card_product and card_product != empty -%}
   {%- liquid
-    assign ratio = 2
+    assign ratio = 0.6
     if card_product.featured_media and media_aspect_ratio == 'portrait'
-      assign ratio = 2
+      assign ratio = 0.6
     elsif card_product.featured_media and media_aspect_ratio == 'adapt'
-      assign ratio = 2
+      assign ratio = card_product.featured_media.aspect_ratio
     endif
     if ratio == 0 or ratio == null
-      assign ratio = 2
+      assign ratio = 0.6
     endif
   -%}
   <div
@@ -68,7 +68,7 @@
             <div class='media media--transparent media--hover-effect'>
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
-                style="object-fit: cover; object-position: center top; width: 100%; height: 100%; {% if card_product.available == false %}filter: grayscale(60%) opacity(0.7);{% endif %}"
+                style='{% if card_product.available == false %}filter: grayscale(60%) opacity(0.7);{% endif %}'
                 srcset='
                   {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
                   {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
@@ -597,10 +597,10 @@
         {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
         {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
       '
-      style='--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;' 
+      style='--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;'
     >
       <div
-        class='card__inner{% if settings.card_style == 'standard' %} color-{{ settings.card_color_scheme }} gradient{% endif %} ratio' 
+        class='card__inner{% if settings.card_style == 'standard' %} color-{{ settings.card_color_scheme }} gradient{% endif %} ratio'
       >
         <div
           class='card__media {% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}'
