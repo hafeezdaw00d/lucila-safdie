@@ -605,7 +605,9 @@
         <div
           class='card__media {% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}'
         >
-          <div class='media media--portrait'>
+          <div
+            class='media media--portrait'
+          >
             {% if card_product.available == false %} twcss-filter twcss-grayscale{% endif %}
             {%- if placeholder_image -%}
               {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
