@@ -3871,3 +3871,23 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+.custom-aspect-ratio-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.custom-aspect-ratio {
+  position: relative;
+  width: 100%;
+  padding-top: 133.33%; /* 3:4 portrait ratio – change to 100% for square */
+}
+
+.custom-aspect-ratio img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
