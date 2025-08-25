@@ -264,9 +264,11 @@
                     -%}
                     {%- if product.quantity_price_breaks_configured? -%}
                       <price-per-item
-                        id='Price-Per-Item-{{ section.id }}'
-                        data-section-id='{{ section.id }}'
-                        data-variant-id='{{ product.selected_or_first_available_variant.id }}'
+                        <price-per-item
+                        id="Price-Per-Item-{{ section.id }}"
+                        data-section-id="{{ section.id }}"
+                        data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                        data-compare-at="{{ product.selected_or_first_available_variant.compare_at_price | default: 0 }}"
                       >
                         {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
                           {%- assign variant_price_compare = product.selected_or_first_available_variant.compare_at_price -%}
