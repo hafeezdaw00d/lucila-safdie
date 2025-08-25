@@ -159,3 +159,71 @@ if (!customElements.get('price-per-item')) {
     },
   );
 }
+updatePricePerItem(updatedCartQuantity) {
+  // read inputs safely
+  if (this.input) {
+    this.enteredQty = parseInt(this.input.value || '0', 10);
+    this.step = parseInt(this.input.step || '1', 10);
+  }
+
+  // cart qty logic (unchanged)
+  this.currentQtyForVolumePricing =
+    updatedCartQuantity === undefined
+      ? this.getCartQuantity(updatedCartQuantity) + (this.enteredQty || 0)
+      : this.getCartQuantity(updatedCartQuantity) + (this.step || 1);
+
+  if (this.classList.contains('variant-item__price-per-item')) {
+    this.currentQtyForVolumePricing = this.getCartQuantity(updatedCartQuantity);
+  }
+
+  // pick the right tier text; we keep using your existing list text
+  let unitText = null;
+  for (let pair of this.qtyPricePairs) {
+    if (this.currentQtyForVolumePricing >= pair[0]) {
+      unitText = pair[1]; // already localized "price at each …"
+      break;
+    }
+  }
+
+  // Fallbacks: if there were no pairs, reuse whatever is already on the page
+  if (unitText === null) {
+    const existing = this.querySelector('.price-per-item--current');
+    unitText = existing ? existing.innerHTML : '';
+  }
+
+  // target the container INSIDE this element (not document-wide)
+  const container = this.querySelector('.price-per-item') || this;
+  if (!container) return;
+
+  // read compare-at cents from data attribute; if missing, try to infer from current DOM
+  let compareAtCents = parseInt(this.dataset.compareAt || '0', 10);
+  if (!compareAtCents) {
+    // if Liquid rendered an <s> initially, honor it even without cents
+    const hadStrike = this.querySelector('s.variant-item__old-price');
+    if (hadStrike) compareAtCents = 1; // sentinel: "show strike"
+  }
+
+  // Quick Order List has a special "each" string; keep your behavior
+  const eachText = this.classList.contains('variant-item__price-per-item') && window.quickOrderListStrings?.each
+    ? window.quickOrderListStrings.each.replace('[money]', (unitText.match(/(?:€|\$|£).+/) || [unitText])[0])
+    : unitText;
+
+  // If we have ANY compare-at value, show old + new in the same <dl>
+  if (compareAtCents > 0) {
+    // If we actually know the money string for compare-at, try to format it;
+    // otherwise reuse whatever Liquid may have rendered (keeps currency/locale right)
+    const existingOld = this.querySelector('s.variant-item__old-price');
+    const oldPriceHTML = existingOld ? existingOld.innerHTML : ''; // empty is ok
+
+    container.innerHTML = `
+      <dl class="price-per-item--current">
+        <dt class="visually-hidden">${window.accessibilityStrings?.regularPrice || 'Regular price'}</dt>
+        <dd><s class="variant-item__old-price">${oldPriceHTML}</s></dd>
+        <dt class="visually-hidden">${window.accessibilityStrings?.salePrice || 'Sale price'}</dt>
+        <dd><span class="price-per-item--current">${eachText}</span></dd>
+      </dl>
+    `;
+  } else {
+    container.innerHTML = `<span class="price-per-item--current">${eachText}</span>`;
+  }
+}
