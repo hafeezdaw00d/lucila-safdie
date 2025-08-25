@@ -337,51 +337,6 @@
                             {%- endif -%}
                           </div>
                         {%- endif -%}
-                        {%- liquid
-  assign variant = product.selected_or_first_available_variant
-  assign unit_price_number = variant.price
-  assign breaks = variant.quantity_price_breaks | sort: 'quantity' | reverse
--%}
-
-{%- if breaks and breaks.size > 0 and current_qty_for_volume_pricing >= breaks.last.minimum_quantity -%}
-  {%- for price_break in breaks -%}
-    {%- if current_qty_for_volume_pricing >= price_break.minimum_quantity -%}
-      {%- assign unit_price_number = price_break.price -%}
-      {%- break -%}
-    {%- endif -%}
-  {%- endfor -%}
-{%- endif -%}
-
-{%- assign unit_price_string = unit_price_number | money_with_currency -%}
-
-<div class="price-per-item">
-  {%- if variant.compare_at_price -%}
-    <dl class="price-per-item--current">
-      <dt class="visually-hidden">
-        {{ 'products.product.price.regular_price' | t }}
-      </dt>
-      <dd>
-        <s class="variant-item__old-price">
-          {{ variant.compare_at_price | money_with_currency }}
-        </s>
-      </dd>
-
-      <dt class="visually-hidden">
-        {{ 'products.product.price.sale_price' | t }}
-      </dt>
-      <dd>
-        <span class="price-per-item--current">
-          {{ 'products.product.volume_pricing.price_at_each' | t: price: unit_price_string }}
-        </span>
-      </dd>
-    </dl>
-  {%- else -%}
-    <span class="price-per-item--current">
-      {{ 'products.product.volume_pricing.price_at_each' | t: price: unit_price_string }}
-    </span>
-  {%- endif -%}
-</div>
-
                       </price-per-item>
                     {%- endif -%}
                   </div>
