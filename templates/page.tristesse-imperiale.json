@@ -25,25 +25,10 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2025-09-22_at_17.31.08.png"
           }
-        },
-        "product_FhCDaB": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection_8gdTJh": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
         }
       },
       "block_order": [
-        "image_TK39UR",
-        "product_FhCDaB",
-        "collection_8gdTJh"
+        "image_TK39UR"
       ],
       "name": "t:sections.collage.presets.name",
       "settings": {
