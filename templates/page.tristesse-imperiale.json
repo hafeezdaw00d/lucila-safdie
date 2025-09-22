@@ -122,10 +122,10 @@
             "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135020_bf532020-5eb8-4f69-9fee-710619c1892c.jpg"
           }
         },
-        "image_GtAaVW": {
+        "image_V9AGhe": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135015_8c2d01f5-9357-4fe0-8b45-85b85e585483.jpg"
+            "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135022_6f4e2936-e89c-40c8-a431-7bf4eda336ee.jpg"
           }
         },
         "image_tc3fwN": {
@@ -134,16 +134,16 @@
             "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135019_b24d37bd-6b4e-449e-afac-abd5cd6472e5.jpg"
           }
         },
-        "image_TkKKRB": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135023_5e309f67-76a4-4a91-84ec-4b74890a1ecb.jpg"
-          }
-        },
         "image_DKf7FU": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135018_c547d5bd-2a0b-4488-b6ca-375adaaf397b.jpg"
+          }
+        },
+        "image_TkKKRB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135023_5e309f67-76a4-4a91-84ec-4b74890a1ecb.jpg"
           }
         },
         "image_QMGJXT": {
@@ -152,10 +152,10 @@
             "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135017_13c3d672-53c0-41fe-b1b7-37c7632ee614.jpg"
           }
         },
-        "image_V9AGhe": {
+        "image_GtAaVW": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135022_6f4e2936-e89c-40c8-a431-7bf4eda336ee.jpg"
+            "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135015_8c2d01f5-9357-4fe0-8b45-85b85e585483.jpg"
           }
         },
         "image_3redw9": {
@@ -195,12 +195,12 @@
         "image_efEEbL",
         "image_4Nxi8m",
         "image_3amXTq",
-        "image_GtAaVW",
-        "image_tc3fwN",
-        "image_TkKKRB",
-        "image_DKf7FU",
-        "image_QMGJXT",
         "image_V9AGhe",
+        "image_tc3fwN",
+        "image_DKf7FU",
+        "image_TkKKRB",
+        "image_QMGJXT",
+        "image_GtAaVW",
         "image_3redw9",
         "image_3gWCLL",
         "image_UVbE4L"
