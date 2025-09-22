@@ -110,16 +110,16 @@
             "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135021_826cd6af-7fb2-4103-bc81-f33123aea652.jpg"
           }
         },
-        "image_4Nxi8m": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135026_67585d55-7536-43b0-ad72-c0523be97c2b.jpg"
-          }
-        },
         "image_3amXTq": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135020_bf532020-5eb8-4f69-9fee-710619c1892c.jpg"
+          }
+        },
+        "image_4Nxi8m": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/LS12_SS26_PRESENTATION_LOOKBOOK_1080x135026_67585d55-7536-43b0-ad72-c0523be97c2b.jpg"
           }
         },
         "image_V9AGhe": {
@@ -193,8 +193,8 @@
         "image_YtY8ND",
         "image_37yKeL",
         "image_efEEbL",
-        "image_4Nxi8m",
         "image_3amXTq",
+        "image_4Nxi8m",
         "image_V9AGhe",
         "image_tc3fwN",
         "image_DKf7FU",
