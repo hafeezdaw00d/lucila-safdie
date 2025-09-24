@@ -10,12 +10,44 @@
 
 .coll-block {
   display: flex;
-  min-height: 10vh;
+  min-height: 5vh;
   justify-content: center;
   flex-direction: column;
   /* margin-bottom: 10rem; */
   text-align: center;
   /* border-bottom: 1px solid black; */
+}
+.coll-block-link {
+  display: flex;
+  min-height: 5vh;
+  border-bottom: 1px solid black;
+  text-decoration: underline;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-bottom: 10rem; */
+  text-align: center;
+  /* border-bottom: 1px solid black; */
+}
+
+.coll-block-last {
+  display: flex;
+  min-height: 5vh;
+  border-bottom: 1px solid black;
+  text-decoration: underline;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-bottom: 10rem; */
+  text-align: center;
+  /* border-bottom: 1px solid black; */
+  border-bottom: none;
+}
+
+.coll-block-last a {
+  color: black !important;
+}
+
+.coll-block-link a {
+  color: black !important;
 }
 
 .coll-block h6 {

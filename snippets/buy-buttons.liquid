@@ -82,7 +82,7 @@
               disabled
             {% endif %}
           >
-            <span class=' twcss-leading-none helv-reset twcss-invert'>
+            <span class=' twcss-leading-none helv-reset'>
               {%- if product.selected_or_first_available_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}

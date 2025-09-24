@@ -97,7 +97,7 @@ html {
   letter-spacing: var(--l-s);
   line-height: normal !important;
   /* text-decoration: none; */
-  color: black !important;
+  /* color: black !important; */
 }
 
 .x-image-slider {
@@ -583,7 +583,7 @@ h6:empty {
 }
 
 a:hover {
-  text-shadow: 0 0 5px #f0f;
+  text-shadow: 0 0 5px rgb(255, 2, 141);
 }
 
 .link--text {
@@ -2951,7 +2951,7 @@ details[open] > .header__submenu {
   padding: 1.2rem;
   padding-top: 0;
   text-decoration: none !important;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
 }
 
 .header__menu-item:hover {
@@ -2980,14 +2980,14 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .menuu-item:active {
-  text-shadow: 0 0 5px #ff00ff;
+  text-shadow: 0 0 5px rgb(255, 2, 141);
 }
 .collections-list {
   list-style: none;
 }
 
 .active {
-  text-shadow: 0 0 5px #ff00ff;
+  text-shadow: 0 0 5px rgb(255, 2, 141);
   list-style: none;
 }
 
@@ -2996,7 +2996,7 @@ details[open] > .header__menu-item .icon-caret {
   color: rgb(var(--color-foreground));
   /* text-decoration: underline; */
   /* text-underline-offset: 0.3rem; */
-  text-shadow: 0 0 5px #ff00ff;
+  text-shadow: 0 0 5px rgb(255, 2, 141);
 }
 
 .header__menu-item:hover .header__active-menu-item {
@@ -3703,7 +3703,7 @@ details-disclosure > details {
   :root {
     --easter-egg: url('./sparkle.gif');
     --sparkle: url('./sparkle.gif');
-    background: #f0f;
+    background: black;
   }
 
   .animate--hover-vertical-lift .button:not(.button--tertiary),

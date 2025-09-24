@@ -95,7 +95,7 @@
         </form>
       </facet-filters-form>
     {%- endif -%}
-    <div class='helv-reset twcss-mb-10 twcss-flex twcss-flex-wrap twcss-grid-rows-auto twcss-justify-between twcss-w-[100%] twcss-max-w-xl twcss-mx-auto twcss-text-center'>
+    <div class='helv-reset twcss-text-black twcss-mb-10 twcss-flex twcss-flex-wrap twcss-grid-rows-auto twcss-justify-between twcss-w-[100%] twcss-max-w-xl twcss-mx-auto twcss-text-center'>
       {% for link in linklists.collections.links %}
         <li class='{% if link.active %}active{% endif %} collections-list'>
           <a href='{{ link.url }}'>

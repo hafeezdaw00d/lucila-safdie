@@ -14,9 +14,9 @@
 }
 
 @media screen and (max-width: 749px) {
-  .footer .grid {
-    display: block;
-  }
+  /* .footer .grid {
+    display: ;
+  } */
 
   .footer-block.grid__item {
     padding: 0;
