@@ -40,7 +40,7 @@
     "custom_liquid_9dihyb": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\n#background-white {\nheight: 100vh;\nwidth: 100%;\nbackground: white;\npadding: 45vh 0;\n}\n\n#video--container {\n  height: 100vh;\n  width: 100%;\n}\n#link-wrap {\nz-index: 10;\nwidth: 200px;\nheight: 50px;\ntext-align: center !important;\nborder: 1px solid black;\npadding: 10px;\nmargin: 0 auto;\nheight: auto;\n}\n</style>\n<div id=\"background-white\">\n<div id=\"link-wrap\">\n<a class=\"link helv-reset center\" href=\"pages/somewhere-nowhere\">view ss26 lookbook</a>\n</div>\n</div>",
+        "custom_liquid": "<style>\n#background-white {\nheight: 100vh;\nwidth: 100%;\nbackground: white;\npadding: 45vh 0;\n}\n\n#video--container {\n  height: 100vh;\n  width: 100%;\n}\n#link-wrap {\nz-index: 10;\nwidth: 200px;\nheight: 50px;\ntext-align: center !important;\nborder: 1px solid black;\npadding: 10px;\nmargin: 0 auto;\nheight: auto;\n}\n</style>\n<div id=\"background-white\">\n<div id=\"link-wrap\">\n<a class=\"link helv-reset center\" href=\"pages/tristesse-imperiale\">view ss26 lookbook</a>\n</div>\n</div>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
