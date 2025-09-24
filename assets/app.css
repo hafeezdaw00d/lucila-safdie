@@ -513,34 +513,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: absolute !important;
 }
 
-.twcss-relative {
-  position: relative !important;
-}
-
-.twcss-bottom-0 {
-  bottom: 0px !important;
-}
-
-.twcss-bottom-2 {
-  bottom: 0.5rem !important;
-}
-
-.twcss-left-0 {
-  left: 0px !important;
-}
-
-.twcss-bottom-2 {
-  bottom: 0.5rem !important;
-}
-
-.twcss-left-0 {
-  left: 0px !important;
-}
-
-.twcss-right-0 {
-  right: 0px !important;
-}
-
 .twcss-bottom-0 {
   bottom: 0px !important;
 }
@@ -558,18 +530,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto !important;
 }
 
+.twcss-my-28 {
+  margin-top: 7rem !important;
+  margin-bottom: 7rem !important;
+}
+
 .twcss-my-auto {
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
 
-.twcss-mx-auto {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 .twcss-mb-5 {
   margin-bottom: 1.25rem !important;
+}
+
+.twcss-mt-8 {
+  margin-top: 2rem !important;
 }
 
 .twcss-mt-\[56px\] {
@@ -578,10 +554,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-mb-10 {
   margin-bottom: 2.5rem !important;
-}
-
-.twcss-mt-28 {
-  margin-top: 7rem !important;
 }
 
 .twcss-ml-\[-1\.25rem\] {
@@ -590,26 +562,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-mt-5 {
   margin-top: 1.25rem !important;
-}
-
-.twcss-mb-5 {
-  margin-bottom: 1.25rem !important;
-}
-
-.twcss-mt-\[56px\] {
-  margin-top: 56px !important;
-}
-
-.twcss-mb-10 {
-  margin-bottom: 2.5rem !important;
-}
-
-.twcss-mt-\[56px\] {
-  margin-top: 56px !important;
-}
-
-.twcss-mb-10 {
-  margin-bottom: 2.5rem !important;
 }
 
 .twcss-block {
@@ -624,14 +576,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: grid !important;
 }
 
-.twcss-h-2 {
-  height: 0.5rem !important;
-}
-
-.twcss-h-4 {
-  height: 1rem !important;
-}
-
 .twcss-h-auto {
   height: auto !important;
 }
@@ -644,48 +588,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100% !important;
 }
 
-.twcss-w-\[4\.4rem\] {
-  width: 4.4rem !important;
-}
-
 .twcss-w-full {
   width: 100% !important;
 }
 
-.twcss-w-\[100\%\] {
-  width: 100% !important;
+.twcss-w-\[4\.4rem\] {
+  width: 4.4rem !important;
 }
 
 .twcss-max-w-\[44rem\] {
   max-width: 44rem !important;
 }
 
-.twcss-max-w-md {
-  max-width: 28rem !important;
+.twcss-max-w-xl {
+  max-width: 36rem !important;
 }
 
 .twcss-max-w-none {
   max-width: none !important;
 }
 
-.twcss-max-w-\[18rem\] {
-  max-width: 18rem !important;
-}
-
 .twcss-max-w-\[19rem\] {
   max-width: 19rem !important;
-}
-
-.twcss-max-w-\[44rem\] {
-  max-width: 44rem !important;
-}
-
-.twcss-max-w-lg {
-  max-width: 32rem !important;
-}
-
-.twcss-max-w-xl {
-  max-width: 36rem !important;
 }
 
 .twcss-grid-flow-row {
@@ -698,10 +622,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .twcss-grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-}
-
-.twcss-flex-row {
-  flex-direction: row !important;
 }
 
 .twcss-flex-col {
@@ -736,135 +656,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 1rem !important;
 }
 
-.twcss-gap-6 {
-  gap: 1.5rem !important;
-}
-
-.twcss-gap-4 {
-  gap: 1rem !important;
-}
-
-.twcss-gap-6 {
-  gap: 1.5rem !important;
-}
-
 .twcss-justify-self-center {
   justify-self: center !important;
 }
 
-.twcss-bg-red-500 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-teal-400 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(45 212 191 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-red-500 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-blue-300 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-teal-400 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(45 212 191 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-red-500 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-blue-300 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-teal-400 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(45 212 191 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-red-500 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-blue-300 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-teal-400 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(45 212 191 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-red-500 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-blue-300 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-teal-400 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(45 212 191 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-blue-300 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-teal-400 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(45 212 191 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-slate-300 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-teal-400 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(45 212 191 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-gray-400 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity)) !important;
-}
-
-.twcss-bg-teal-400 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(45 212 191 / var(--tw-bg-opacity)) !important;
+.twcss-border-black {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
 }
 
 .twcss-bg-black {
@@ -891,27 +689,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.5rem !important;
 }
 
-.twcss-py-1 {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
-}
-
-.twcss-py-4 {
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
-}
-
 .twcss-py-2 {
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
 }
 
-.twcss-text-center {
-  text-align: center !important;
+.twcss-px-5 {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
 }
 
-.twcss-align-middle {
-  vertical-align: middle !important;
+.twcss-text-center {
+  text-align: center !important;
 }
 
 .twcss-lowercase {
@@ -930,41 +719,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .twcss-text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-white {
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-white {
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-white {
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-.twcss-text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 
 .twcss-underline {
@@ -995,4 +749,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
     var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
     var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
+@media (min-width: 750px) {
+  .md\:twcss-px-20 {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+  }
 }
