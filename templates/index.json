@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "custom_liquid_JFPrCG": {
       "type": "custom-liquid",
@@ -25,12 +25,22 @@
     },
     "custom_liquid_mWXzdx": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         ".link-wrap {position: absolute !important; z-index: 100; left: 0; right: 0; bottom: 0; top: 0; width: fit-content; border: 1px solid black; height: fit-content; padding: 16px; background: white; margin: auto; display: flex; flex-direction: column; gap: 24px; justify-content: center;}",
         "a {text-align: center !important;}"
       ],
       "settings": {
         "custom_liquid": "<style>\n#background-video {\nheight: 100vh;\nwidth: 100%;\n  object-fit: cover;\n  position: relative;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  z-index: 0;\n\n#video--container {\n  height: 100vh;\n  width: 100%;\n}\n</style>\n<div class=\"link-wrap\">\n<a class=\"link helv-reset center\" href=\"pages/somewhere-nowhere \">view fw25 lookbook</a>\n<a class=\"link helv-reset center\" href=\"https://www.youtube.com/watch?v=bsE1j61evGk\">view fw25 video</a>\n</div>\n<video id=\"background-video\" muted autoplay playsinline loop>\n    <source src=\"https://cdn.shopify.com/videos/c/o/v/95f07d479c9c49a19c7b934a9da606ab.mp4\"          type=\"video/mp4\">\n</video>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_9dihyb": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n#background-white {\nheight: 100vh;\nwidth: 100%;\nbackground: white;\npadding: 45vh 0;\n}\n\n#video--container {\n  height: 100vh;\n  width: 100%;\n}\n#link-wrap {\nz-index: 10;\nwidth: 200px;\nheight: 50px;\ntext-align: center !important;\nborder: 1px solid black;\npadding: 10px;\nmargin: 0 auto;\nheight: auto;\n}\n</style>\n<div id=\"background-white\">\n<div id=\"link-wrap\">\n<a class=\"link helv-reset center\" href=\"pages/tristesse-imperiale\">view ss26 lookbook</a>\n</div>\n</div>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -154,6 +164,7 @@
   "order": [
     "custom_liquid_JFPrCG",
     "custom_liquid_mWXzdx",
+    "custom_liquid_9dihyb",
     "custom_liquid_47xaye",
     "a5e8ff74-ebb4-410d-88fd-8b56208bbbd4",
     "b30cbc5e-4621-428d-ad27-449e34834a7f",
