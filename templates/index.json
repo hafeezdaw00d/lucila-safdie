@@ -39,6 +39,7 @@
     },
     "custom_liquid_9dihyb": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "<style>\n#background-white {\nheight: 100vh;\nwidth: 100%;\nbackground: white;\npadding: 45vh 0;\n}\n\n#video--container {\n  height: 100vh;\n  width: 100%;\n}\n#link-wrap {\nz-index: 10;\nwidth: 200px;\nheight: 50px;\ntext-align: center !important;\nborder: 1px solid black;\npadding: 10px;\nmargin: 0 auto;\nheight: auto;\n}\n</style>\n<div id=\"background-white\">\n<div id=\"link-wrap\">\n<a class=\"link helv-reset center\" href=\"pages/tristesse-imperiale\">view ss26 lookbook</a>\n</div>\n</div>",
         "color_scheme": "",
@@ -61,7 +62,6 @@
       "blocks": {
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-heading-1": {
           "type": "heading",
-          "disabled": true,
           "settings": {
             "heading": "Image banner",
             "heading_size": "h1"
@@ -78,7 +78,7 @@
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-buttons-1": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "",
+            "button_label_1": "hello",
             "button_link_1": "shopify://collections/shop",
             "button_style_secondary_1": false,
             "button_label_2": "",
@@ -92,7 +92,6 @@
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-text-1",
         "template--15932363800714__a5e8ff74-ebb4-410d-88fd-8b56208bbbd4-buttons-1"
       ],
-      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Lucila_Safdie0674.jpg",
         "image_overlay_opacity": 0,
