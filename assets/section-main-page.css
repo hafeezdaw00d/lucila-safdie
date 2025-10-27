@@ -21,7 +21,6 @@
   display: flex;
   min-height: 5vh;
   border-bottom: 1px solid black;
-  text-decoration: underline;
   justify-content: center;
   flex-direction: column;
   /* margin-bottom: 10rem; */
@@ -32,8 +31,6 @@
 .coll-block-last {
   display: flex;
   min-height: 5vh;
-  border-bottom: 1px solid black;
-  text-decoration: underline;
   justify-content: center;
   flex-direction: column;
   /* margin-bottom: 10rem; */
@@ -42,12 +39,16 @@
   border-bottom: none;
 }
 
-.coll-block-last a {
-  color: black !important;
+.coll-block a {
+  color: var(--main-color) !important;
 }
 
 .coll-block-link a {
-  color: black !important;
+  color: var(--main-color) !important;
+}
+
+.coll-block-last a {
+  color: var(--main-color) !important;
 }
 
 .coll-block h6 {
@@ -55,7 +56,7 @@
 }
 
 .coll-block a {
-  color: black;
+  color: var(--main-color) !important;
   text-decoration: underline;
 }
 

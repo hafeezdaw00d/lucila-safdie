@@ -193,18 +193,18 @@
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
-                      <ul class='footer-block__details-content twcss-flex twcss-justify-between twcss-gap-6 twcss-flex-col  twcss-content-center list-unstyled'>
+                      <ul class='footer-block__details-content twcss-flex twcss-justify-between twcss-gap-6 twcss-flex-col twcss-content-center list-unstyled'>
                         {%- for link in block.settings.menu.links -%}
                           <li class='twcss-text-center twcss-mx-auto'>
                             <a
                               href='{{ link.url }}'
-                              class='twcss-p-0 helv-reset link link--text list-menu__item list-menu__item--link twcss-text-center{% if link.active %} list-menu__item--active{% endif %}'
+                              class='twcss-p-0 helv-reset twcss-font-black twcss-font-normal link link--text list-menu__item  list-menu__item--link twcss-text-center{% if link.active %} list-menu__item--active{% endif %}'
                             >
                               {{ link.title | escape }}
                             </a>
                           </li>
                         {%- endfor -%}
-                        <li class='twcss-text-center twcss-mx-auto twcss-mt-8 twcss-border-t-1 twcss-border-black'>
+                        <li class='twcss-text-center twcss-mx-auto twcss-mt-2 twcss-border-t-1 twcss-border-black'>
                           <p>website designed by <a href='instagram.com/444hafeez'>hafeez dawood</a></p>
                         </li>
                         <li class='caption twcss-text-center twcss-mx-auto '>
