@@ -131,21 +131,23 @@
               </a>
             </h3>
           </div>
-          <div style='position: absolute; bottom: 0.5rem; right: 0.5rem;'>
+          <div class='twcss-absolute twcss-w-full twcss-bottom-0 twcss-mx-auto twcss-text-center'>
             {%- assign available_variants = card_product.variants | where: 'available', true -%}
             {%- assign first_available = available_variants.first -%}
 
             {%- if card_product.available == false -%}
-              <div style='color: black; text-transform: lowercase; padding: 0.4rem 0.6rem;'>
-                {{ }}
+              <div class='twcss-text-center helv-reset twcss-text-white twcss-bg-black twcss-h-auto twcss-py-2'>
+                {{ 'products.product.sold_out' | t }}
               </div>
             {%- elsif available_variants.size == 1
               and first_available.inventory_management == 'shopify'
               and first_available.inventory_quantity == 1
             -%}
-              <div style='color: black; text-transform: lowercase; padding: 0.4rem 0.6rem;'>only 1 left</div>
+              <div class='twcss-text-center twcss-text-black helv-reset twcss-h-auto twcss-bg-gray-400 twcss-py-2'>
+                only 1 left
+              </div>
             {%- elsif card_product.compare_at_price > card_product.price -%}
-              <div style='color: black; text-transform: lowercase; padding: 0.4rem 0.6rem;'>
+              <div class='twcss-text-center twcss-text-black helv-reset twcss-h-auto twcss-bg-[#ff006c] twcss-py-2'>
                 {{ 'products.product.on_sale' | t }}
               </div>
             {%- endif -%}

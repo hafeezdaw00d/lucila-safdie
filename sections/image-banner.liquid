@@ -116,7 +116,7 @@
     </div>
   {%- endif -%}
   <div class='banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'>
-    <div class='twcss-absolute twcss-bottom-0 twcss-invert banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient'>
+    <div class='twcss-flex twcss-flex-col twcss-justify-center twcss-bottom-0 banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient'>
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
@@ -142,7 +142,7 @@
                   {% else %}
                     href='{{ block.settings.button_link_1 }}'
                   {% endif %}
-                  class='twcss-lowercase twcss-justify-center button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}'
+                  class='twcss-border twcss-border-black twcss-lowercase helv-reset twcss-justify-center twcss-text-black twcss-p-4 twcss-bg-white{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}'
                 >
                   {{- block.settings.button_label_1 | escape -}}
                 </a>

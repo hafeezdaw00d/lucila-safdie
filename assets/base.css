@@ -9,6 +9,7 @@
   --focused-base-outline-offset: 0.3rem;
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+  --main-color: #ff006c;
 }
 
 .product-card-wrapper .card,
@@ -97,7 +98,7 @@ html {
   letter-spacing: var(--l-s);
   line-height: normal !important;
   /* text-decoration: none; */
-  color: black !important;
+  /* color: black !important; */
 }
 
 .x-image-slider {
@@ -583,7 +584,7 @@ h6:empty {
 }
 
 a:hover {
-  text-shadow: 0 0 5px #f0f;
+  text-shadow: 0 0 8px var(--main-color);
 }
 
 .link--text {
@@ -2951,7 +2952,7 @@ details[open] > .header__submenu {
   padding: 1.2rem;
   padding-top: 0;
   text-decoration: none !important;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
 }
 
 .header__menu-item:hover {
@@ -2972,7 +2973,7 @@ details[open] > .header__menu-item {
 }
 
 details[open]:hover > .header__menu-item {
-  text-decoration-thickness: 0.2rem;
+  text-decoration-thickness: 0.3rem;
 }
 
 details[open] > .header__menu-item .icon-caret {
@@ -2980,27 +2981,28 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .menuu-item:active {
-  text-shadow: 0 0 5px #ff00ff;
+  text-shadow: 0 0 8px var(--main-color);
 }
 .collections-list {
   list-style: none;
 }
 
 .active {
-  text-shadow: 0 0 5px #ff00ff;
+  text-shadow: 0 0 8px var(--main-color);
   list-style: none;
 }
 
 .header__active-menu-item {
   /* transition: text-decoration-thickness var(--duration-short) ease; */
   color: rgb(var(--color-foreground));
-  /* text-decoration: underline; */
-  /* text-underline-offset: 0.3rem; */
-  text-shadow: 0 0 5px #ff00ff;
+  /* text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.1rem; */
+  text-shadow: 0 0 8px var(--main-color);
 }
 
 .header__menu-item:hover .header__active-menu-item {
-  text-decoration-thickness: 0.2rem;
+  text-decoration-thickness: 0.3rem;
 }
 
 .header__submenu {
@@ -3404,10 +3406,11 @@ details-disclosure > details {
 
 .rte a {
   color: rgba(var(--color-link), var(--alpha-link));
+  text-decoration: underline;
   text-underline-offset: 0.3rem;
   text-decoration-thickness: 0.1rem;
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: #ff00ff;
+  color: var(--main-color);
 }
 
 .rte a:hover {
@@ -3703,7 +3706,7 @@ details-disclosure > details {
   :root {
     --easter-egg: url('./sparkle.gif');
     --sparkle: url('./sparkle.gif');
-    background: #f0f;
+    background: var(--main-color) !important;
   }
 
   .animate--hover-vertical-lift .button:not(.button--tertiary),

@@ -10,7 +10,17 @@
 
 .coll-block {
   display: flex;
-  min-height: 10vh;
+  min-height: 5vh;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-bottom: 10rem; */
+  text-align: center;
+  /* border-bottom: 1px solid black; */
+}
+.coll-block-link {
+  display: flex;
+  min-height: 5vh;
+  border-bottom: 1px solid black;
   justify-content: center;
   flex-direction: column;
   /* margin-bottom: 10rem; */
@@ -18,12 +28,35 @@
   /* border-bottom: 1px solid black; */
 }
 
+.coll-block-last {
+  display: flex;
+  min-height: 5vh;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-bottom: 10rem; */
+  text-align: center;
+  /* border-bottom: 1px solid black; */
+  border-bottom: none;
+}
+
+.coll-block a {
+  color: var(--main-color) !important;
+}
+
+.coll-block-link a {
+  color: var(--main-color) !important;
+}
+
+.coll-block-last a {
+  color: var(--main-color) !important;
+}
+
 .coll-block h6 {
   margin-bottom: 4rem;
 }
 
 .coll-block a {
-  color: black;
+  color: var(--main-color) !important;
   text-decoration: underline;
 }
 
