@@ -2274,7 +2274,7 @@ input[type='checkbox'] {
   }
 
   .utility-bar__grid--2-col {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 'social-icons language-currency';
   }
 
@@ -2508,7 +2508,7 @@ input[type='checkbox'] {
 
 @media screen and (max-width: 749px) {
   .header--has-app {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 2fr auto;
   }
 }
 
