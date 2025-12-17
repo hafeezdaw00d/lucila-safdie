@@ -2514,7 +2514,7 @@ input[type='checkbox'] {
 
 /* @media screen and (min-width: 990px) {
   .header {
-    grid-template-columns: 2fr auto 1fr;
+    grid-template-columns: 2fr auto 2fr;
   }
 
   .header--top-left,
