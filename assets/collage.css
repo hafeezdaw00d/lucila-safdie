@@ -38,7 +38,7 @@
   }
 
   .collage--mobile .collage__item--right:nth-child(3n - 2) {
-    grid-column-start: 1;
+    grid-column-start: 2;
   }
 
   .collage--mobile .collage__item--right:nth-child(3n - 2):last-child {
