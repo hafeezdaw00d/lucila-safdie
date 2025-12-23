@@ -3874,3 +3874,8 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+@media screen and (min-width: 990px) {
+  .grid--4-col-desktop {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
