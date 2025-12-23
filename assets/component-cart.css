@@ -119,8 +119,8 @@ cart-items {
 
 @media screen and (min-width: 750px) {
   .cart__items {
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
     padding-bottom: 4rem;
   }
 
