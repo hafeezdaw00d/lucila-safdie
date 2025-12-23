@@ -3876,6 +3876,6 @@ details-disclosure > details {
 }
 @media screen and (min-width: 990px) {
   .grid--4-col-desktop {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(2, 1fr));
   }
 }
