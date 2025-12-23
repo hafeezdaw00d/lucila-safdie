@@ -3874,8 +3874,27 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+/* Mobile: minimum 2 */
+@media screen and (max-width: 749px) {
+  .product-grid,
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablet: 3 */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .product-grid,
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Desktop: maximum 4 */
 @media screen and (min-width: 990px) {
+  .grid--5-col-desktop,
+  .grid--6-col-desktop,
   .grid--4-col-desktop {
-    grid-template-columns: repeat(5, minmax(2, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
