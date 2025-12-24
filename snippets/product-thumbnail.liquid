@@ -30,12 +30,12 @@
     assign lazy = 'lazy'
   endunless
 
-  assign desktop_columns = 2
+  assign desktop_columns = 1
   if desktop_layout == 'columns' and media_count > 1
     assign desktop_columns = 2
   endif
 
-  assign mobile_columns = 2
+  assign mobile_columns = 1
   if mobile_layout == 'columns' and media_count > 1
     assign mobile_columns = 2
   endif
