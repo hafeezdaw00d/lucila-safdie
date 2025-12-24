@@ -1005,7 +1005,7 @@ summary::-webkit-details-marker {
 .grid__item {
   width: calc(25% - var(--grid-mobile-horizontal-spacing) * 3 / 4);
   max-width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
-  flex-grow: 1;
+  flex-grow: 2;
   flex-shrink: 0;
 }
 
