@@ -64,7 +64,7 @@
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 4,
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
