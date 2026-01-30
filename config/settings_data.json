@@ -394,5 +394,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".product__sku {display: none !important;}"
+    ]
   }
 }
