@@ -136,11 +136,11 @@
   {%- assign first_available = available_variants.first -%}
 
   {%- if available_variants.size == 1 and first_available.inventory_management == 'shopify' and first_available.inventory_quantity == 1 -%}
-    <span class="helv-reset" style="display:inline-block; padding:4px 4px; line-height:1;">
+    <span class="helv-reset" style="display:inline-block; padding:6px 6px; line-height:1;">
       only 1 left
     </span>
   {%- elsif card_product.compare_at_price > card_product.price -%}
-    <span class="helv-reset" style="display:inline-block; padding:4px 4px; line-height:1;">
+    <span class="helv-reset" style="display:inline-block; padding:6px 6px; line-height:1;">
       {{ 'products.product.on_sale' | t }}
     </span>
   {%- endif -%}
