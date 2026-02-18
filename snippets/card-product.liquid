@@ -131,27 +131,28 @@
               </a>
             </h3>
           </div>
-          <div class='twcss-absolute twcss-w-full twcss-bottom-0 twcss-mx-auto twcss-text-center'>
-            {%- assign available_variants = card_product.variants | where: 'available', true -%}
-            {%- assign first_available = available_variants.first -%}
+          <div class='twcss-absolute twcss-bottom-2 twcss-right-2'>
+  {%- assign available_variants = card_product.variants | where: 'available', true -%}
+  {%- assign first_available = available_variants.first -%}
 
-            {%- if card_product.available == false -%}
-              <div class='twcss-text-center helv-reset twcss-text-white twcss-bg-black twcss-h-auto twcss-py-2'>
-                {{ 'products.product.sold_out' | t }}
-              </div>
-            {%- elsif available_variants.size == 1
-              and first_available.inventory_management == 'shopify'
-              and first_available.inventory_quantity == 1
-            -%}
-              <div class='twcss-text-center twcss-text-black helv-reset twcss-h-auto twcss-bg-gray-400 twcss-py-2'>
-                only 1 left
-              </div>
-            {%- elsif card_product.compare_at_price > card_product.price -%}
-              <div class='twcss-text-center twcss-text-black helv-reset twcss-h-auto twcss-bg-[#ff006c] twcss-py-2'>
-                {{ 'products.product.on_sale' | t }}
-              </div>
-            {%- endif -%}
-          </div>
+  {%- if card_product.available == false -%}
+    <span class='helv-reset twcss-text-white twcss-text-xs twcss-bg-black twcss-px-2 twcss-py-1'>
+      {{ 'products.product.sold_out' | t }}
+    </span>
+  {%- elsif available_variants.size == 1
+    and first_available.inventory_management == 'shopify'
+    and first_available.inventory_quantity == 1
+  -%}
+    <span class='helv-reset twcss-text-black twcss-text-xs'>
+      only 1 left
+    </span>
+  {%- elsif card_product.compare_at_price > card_product.price -%}
+    <span class='helv-reset twcss-text-black twcss-text-xs twcss-bg-[#ff006c] twcss-px-2 twcss-py-1'>
+      {{ 'products.product.on_sale' | t }}
+    </span>
+  {%- endif -%}
+</div>
+
         </div>
       </div>
       <div class='card__content'>
