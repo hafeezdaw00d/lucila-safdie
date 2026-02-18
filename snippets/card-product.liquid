@@ -564,77 +564,27 @@
           {% endif %}
         {% endif %}
         <div class='card__badge {{ settings.badge_position }}'>
-          {%- if card_product.available == false -%}
-            <span
-              id='Badge-{{ section_id }}-{{ card_product.id }}'
-              class='hidden helv-reset badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}'
-            >
-              {{- 'products.product.sold_out' | t -}}
-            </span>
-          {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-            <span
-              id='Badge-{{ section_id }}-{{ card_product.id }}'
-              class='badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
-            >
-              {{- 'products.product.on_sale' | t -}}
-            </span>
-          {%- endif -%}
-        </div>
-      </div>
-    </div>
-  </div>
-{%- else -%}
-  {%- liquid
-    assign ratio = 1
-    assign placeholder = true
-    if media_aspect_ratio == 'portrait'
-      assign ratio = 0.8
-    endif
+  {%- assign available_variants = card_product.variants | where: 'available', true -%}
+  {%- assign first_available = available_variants.first -%}
+
+  {%- if available_variants.size == 1
+    and first_available.inventory_management == 'shopify'
+    and first_available.inventory_quantity == 1
   -%}
-  <div class='card-wrapper product-card-wrapper underline-links-hover'>
-    <div
-      class='
-        card card--{{ settings.card_style }}
-        {% if extend_height %} card--extend-height{% endif %}
-        {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
-        {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
-      '
-      style='--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;'
+    <span
+      id='Badge-{{ section_id }}-{{ card_product.id }}'
+      class='badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
     >
-      <div
-        class='card__inner{% if settings.card_style == 'standard' %} color-{{ settings.card_color_scheme }} gradient{% endif %} ratio'
-      >
-        <div
-          class='card__media {% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}'
-        >
-          <div
-            class='media media--transparent'
-          >
-            {% if card_product.available == false %} twcss-filter twcss-grayscale{% endif %}
-            {%- if placeholder_image -%}
-              {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
-            {%- else -%}
-              {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      <div class='card__content'>
-        <div class='card__information'>
-          <h3 class='card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}'>
-            <a role='link' aria-disabled='true' class='full-unstyled-link'>
-              {{ 'onboarding.product_title' | t }}
-            </a>
-          </h3>
-          <div class='card-information'>
-            {%- if show_vendor -%}
-              <span class='visually-hidden'>{{ 'accessibility.vendor' | t }}</span>
-              <div class='caption-with-letter-spacing light'>{{ 'products.product.vendor' | t }}</div>
-            {%- endif -%}
-            {% render 'price', placeholder: placeholder, show_compare_at_price: true %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      only 1 left
+    </span>
+
+  {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+    <span
+      id='Badge-{{ section_id }}-{{ card_product.id }}'
+      class='badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
+    >
+      {{ 'products.product.on_sale' | t }}
+    </span>
+  {%- endif -%}
+</div>
 {%- endif -%}
