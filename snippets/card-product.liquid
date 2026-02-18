@@ -67,7 +67,27 @@
         style='--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;'
       >
         {%- if card_product.featured_media -%}
-          <div class='card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}'>
+          <div
+  class='card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}'
+  style='position: relative;'
+>
+  <div class='twcss-absolute twcss-bottom-4 twcss-right-4 twcss-z-10 twcss-pointer-events-none'>
+  {%- assign available_variants = card_product.variants | where: 'available', true -%}
+  {%- assign first_available = available_variants.first -%}
+
+  {%- if available_variants.size == 1
+    and first_available.inventory_management == 'shopify'
+    and first_available.inventory_quantity == 1
+  -%}
+    <span class='helv-reset twcss-text-sm twcss-font-medium twcss-px-3 twcss-py-2'>
+      only 1 left
+    </span>
+  {%- elsif card_product.compare_at_price > card_product.price -%}
+    <span class='helv-reset twcss-text-sm twcss-font-medium twcss-px-3 twcss-py-2'>
+      {{ 'products.product.on_sale' | t }}
+    </span>
+  {%- endif -%}
+</div>
             <div class='media media--transparent media--hover-effect'>
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
@@ -143,23 +163,6 @@
               - On sale (compare_at_price > price)
             Sold out label removed.
           {%- endcomment -%}
-          <div class='twcss-absolute twcss-bottom-4 twcss-right-4 twcss-z-10 twcss-pointer-events-none'>
-  {%- assign available_variants = card_product.variants | where: 'available', true -%}
-  {%- assign first_available = available_variants.first -%}
-
-  {%- if available_variants.size == 1
-    and first_available.inventory_management == 'shopify'
-    and first_available.inventory_quantity == 1
-  -%}
-    <span class='helv-reset twcss-text-sm twcss-font-medium twcss-px-3 twcss-py-2'>
-      only 1 left
-    </span>
-  {%- elsif card_product.compare_at_price > card_product.price -%}
-    <span class='helv-reset twcss-text-sm twcss-font-medium twcss-px-3 twcss-py-2'>
-      {{ 'products.product.on_sale' | t }}
-    </span>
-  {%- endif -%}
-</div>
 
         </div>
       </div>
