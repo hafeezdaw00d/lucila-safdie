@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
   Renders a product card
 
   Accepts:
@@ -19,7 +19,8 @@
 
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
-{% endcomment %}
+{%- endcomment -%}
+
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
@@ -28,6 +29,7 @@
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {%- endunless -%}
+
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 0.67
@@ -40,6 +42,7 @@
       assign ratio = 0.67
     endif
   -%}
+
   <div
     class='
       card-wrapper product-card-wrapper underline-links-hover {% if card_product.selected_or_first_available_variant.available == false %}
@@ -113,6 +116,7 @@
             </div>
           </div>
         {%- endif -%}
+
         <div class='card__content'>
           <div class='card__information'>
             <h3
@@ -131,29 +135,34 @@
               </a>
             </h3>
           </div>
-          <div class='twcss-absolute twcss-w-full twcss-bottom-0 twcss-mx-auto twcss-text-center'>
+
+          {%- comment -%}
+            Bottom right corner label on image, no bar.
+            Shows ONLY for:
+              - Only 1 left (single available variant, Shopify managed, inventory_quantity == 1)
+              - On sale (compare_at_price > price)
+            Sold out label removed.
+          {%- endcomment -%}
+          <div class='twcss-absolute twcss-bottom-2 twcss-right-2 twcss-z-10'>
             {%- assign available_variants = card_product.variants | where: 'available', true -%}
             {%- assign first_available = available_variants.first -%}
 
-            {%- if card_product.available == false -%}
-              <div class='twcss-text-center helv-reset twcss-text-white twcss-bg-black twcss-h-auto twcss-py-2'>
-                {{ 'products.product.sold_out' | t }}
-              </div>
-            {%- elsif available_variants.size == 1
+            {%- if available_variants.size == 1
               and first_available.inventory_management == 'shopify'
               and first_available.inventory_quantity == 1
             -%}
-              <div class='twcss-text-center twcss-text-black helv-reset twcss-h-auto twcss-bg-gray-400 twcss-py-2'>
+              <span class='helv-reset twcss-inline-block twcss-text-black twcss-bg-gray-400 twcss-px-2 twcss-py-1 twcss-text-xs twcss-rounded'>
                 only 1 left
-              </div>
+              </span>
             {%- elsif card_product.compare_at_price > card_product.price -%}
-              <div class='twcss-text-center twcss-text-black helv-reset twcss-h-auto twcss-bg-[#ff006c] twcss-py-2'>
+              <span class='helv-reset twcss-inline-block twcss-text-black twcss-bg-[#ff006c] twcss-px-2 twcss-py-1 twcss-text-xs twcss-rounded'>
                 {{ 'products.product.on_sale' | t }}
-              </div>
+              </span>
             {%- endif -%}
           </div>
         </div>
       </div>
+
       <div class='card__content'>
         <div class='twcss-grid twcss-grid-flow-row twcss-grid-cols-4 twcss-gap-4 card__information'>
           <h3
@@ -214,6 +223,7 @@
                 </span>
               </p>
             {%- endif -%}
+
             {%- if card_product.available == false -%}
               <span class='right'>SOLD OUT</span>
             {%- else -%}
@@ -303,6 +313,7 @@
             {%- endif -%}
           </div>
         </div>
+
         {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
         {% if quick_add == 'standard' %}
           <div class='quick-add no-js-hidden'>
@@ -482,9 +493,7 @@
                     <div class='quick-add__content-info__media'>
                       <div class='quick-add__info'>
                         {%- if card_product.featured_media -%}
-                          <div
-                            class='quick-add__product-media'
-                          >
+                          <div class='quick-add__product-media'>
                             <div class='quick-add__product-container global-media-settings'>
                               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
                               <img
@@ -554,8 +563,7 @@
                         data-url='{{ card_product.url }}'
                         data-section-id='{{ section_id }}'
                         data-product-id='{{ card_product.id }}'
-                      >
-                      </bulk-modal>
+                      ></bulk-modal>
                     </div>
                   </div>
                 </div>
@@ -563,28 +571,78 @@
             </div>
           {% endif %}
         {% endif %}
+
         <div class='card__badge {{ settings.badge_position }}'>
-  {%- assign available_variants = card_product.variants | where: 'available', true -%}
-  {%- assign first_available = available_variants.first -%}
+          {%- if card_product.available == false -%}
+            <span
+              id='Badge-{{ section_id }}-{{ card_product.id }}'
+              class='hidden helv-reset badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}'
+            >
+              {{- 'products.product.sold_out' | t -}}
+            </span>
+          {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+            <span
+              id='Badge-{{ section_id }}-{{ card_product.id }}'
+              class='hidden helv-reset badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
+            >
+              {{- 'products.product.on_sale' | t -}}
+            </span>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
 
-  {%- if available_variants.size == 1
-    and first_available.inventory_management == 'shopify'
-    and first_available.inventory_quantity == 1
+{%- else -%}
+  {%- liquid
+    assign ratio = 1
+    assign placeholder = true
+    if media_aspect_ratio == 'portrait'
+      assign ratio = 0.8
+    endif
   -%}
-    <span
-      id='Badge-{{ section_id }}-{{ card_product.id }}'
-      class='badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
+  <div class='card-wrapper product-card-wrapper underline-links-hover'>
+    <div
+      class='
+        card card--{{ settings.card_style }}
+        {% if extend_height %} card--extend-height{% endif %}
+        {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
+        {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
+      '
+      style='--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;'
     >
-      only 1 left
-    </span>
-
-  {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-    <span
-      id='Badge-{{ section_id }}-{{ card_product.id }}'
-      class='badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
-    >
-      {{ 'products.product.on_sale' | t }}
-    </span>
-  {%- endif -%}
-</div>
+      <div
+        class='card__inner{% if settings.card_style == 'standard' %} color-{{ settings.card_color_scheme }} gradient{% endif %} ratio'
+      >
+        <div
+          class='card__media {% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}'
+        >
+          <div class='media media--transparent'>
+            {% if card_product.available == false %} twcss-filter twcss-grayscale{% endif %}
+            {%- if placeholder_image -%}
+              {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- else -%}
+              {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class='card__content'>
+        <div class='card__information'>
+          <h3 class='card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}'>
+            <a role='link' aria-disabled='true' class='full-unstyled-link'>
+              {{ 'onboarding.product_title' | t }}
+            </a>
+          </h3>
+          <div class='card-information'>
+            {%- if show_vendor -%}
+              <span class='visually-hidden'>{{ 'accessibility.vendor' | t }}</span>
+              <div class='caption-with-letter-spacing light'>{{ 'products.product.vendor' | t }}</div>
+            {%- endif -%}
+            {% render 'price', placeholder: placeholder, show_compare_at_price: true %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {%- endif -%}
