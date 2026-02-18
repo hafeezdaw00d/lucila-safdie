@@ -143,11 +143,11 @@
               and first_available.inventory_management == 'shopify'
               and first_available.inventory_quantity == 1
             -%}
-              <div class='twcss-text-black helv-reset twcss-h-auto twcss-py-2'>
+              <div class='twcss-text-center twcss-text-black helv-reset twcss-h-auto twcss-py-2'>
                 only 1 left
               </div>
             {%- elsif card_product.compare_at_price > card_product.price -%}
-              <div class='twcss-text-center twcss-text-black helv-reset twcss-h-auto twcss-bg-[#ff006c] twcss-py-2'>
+              <div class='twcss-text-center twcss-text-black helv-reset twcss-h-auto twcss-py-2'>
                 {{ 'products.product.on_sale' | t }}
               </div>
             {%- endif -%}
