@@ -12,6 +12,18 @@
     "0be67e9d-173c-4493-940b-6ee684efeb14": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_8e6M7G": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "s-s26"
+          }
+        },
+        "featured_collection_VrdDtT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
         "template--15932364325002__0be67e9d-173c-4493-940b-6ee684efeb14-featured_collection-1": {
           "type": "featured_collection",
           "settings": {
@@ -32,6 +44,8 @@
         }
       },
       "block_order": [
+        "featured_collection_8e6M7G",
+        "featured_collection_VrdDtT",
         "template--15932364325002__0be67e9d-173c-4493-940b-6ee684efeb14-featured_collection-1",
         "template--15932364325002__0be67e9d-173c-4493-940b-6ee684efeb14-featured_collection-2",
         "template--15932364325002__0be67e9d-173c-4493-940b-6ee684efeb14-featured_collection-3"
