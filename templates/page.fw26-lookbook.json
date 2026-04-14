@@ -44,18 +44,6 @@
             "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_5.jpg"
           }
         },
-        "10bc0338-3610-431e-b4e3-f92bef31645d": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_16.jpg"
-          }
-        },
-        "36f132e4-66c0-432a-94f5-160e3e31b7b3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_17.jpg"
-          }
-        },
         "f790f826-381e-415e-886e-be918c07c528": {
           "type": "image",
           "settings": {
@@ -80,6 +68,18 @@
             "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_8.jpg"
           }
         },
+        "36f132e4-66c0-432a-94f5-160e3e31b7b3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_17.jpg"
+          }
+        },
+        "399f1997-a319-4fbd-b282-794ccdeae67d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_6.jpg"
+          }
+        },
         "0badec4f-2202-46f7-bff4-3c91b9070ee9": {
           "type": "image",
           "settings": {
@@ -92,28 +92,16 @@
             "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_12.jpg"
           }
         },
-        "399f1997-a319-4fbd-b282-794ccdeae67d": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_6.jpg"
-          }
-        },
         "c6262526-c8e1-477b-b522-7a95efb2162b": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_11.jpg"
           }
         },
-        "012eee7e-19f3-46fa-8d0a-d7cb5f5796d3": {
+        "10bc0338-3610-431e-b4e3-f92bef31645d": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_9.jpg"
-          }
-        },
-        "094a7ba3-c417-431a-96ad-6f6406c2c279": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_18.jpg"
+            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_16.jpg"
           }
         },
         "bf469d08-d915-41d8-b4c6-b31e1b16136a": {
@@ -122,10 +110,10 @@
             "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_19.jpg"
           }
         },
-        "5324642e-c9b2-4cbb-8ba0-e3ddf75819f4": {
+        "094a7ba3-c417-431a-96ad-6f6406c2c279": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_13.jpg"
+            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_18.jpg"
           }
         },
         "812e2425-48f5-4dd6-b05a-f3e36916be22": {
@@ -134,16 +122,28 @@
             "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_21.jpg"
           }
         },
-        "template--15935446417546__efbf6637-635a-44e8-8833-251e79e22a0d-image-1": {
+        "5324642e-c9b2-4cbb-8ba0-e3ddf75819f4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_20.jpg"
+            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_13.jpg"
           }
         },
         "4856b0aa-0f84-41fb-81b3-8e68c22a83d7": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_14.jpg"
+          }
+        },
+        "012eee7e-19f3-46fa-8d0a-d7cb5f5796d3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_9.jpg"
+          }
+        },
+        "template--15935446417546__efbf6637-635a-44e8-8833-251e79e22a0d-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/LS01_FW26_PRESENTATION_LOOKBOOK_1080x1440_INSTAGRAM_20.jpg"
           }
         },
         "8b26181c-3379-4846-ac94-0941a560c1cf": {
@@ -158,23 +158,23 @@
         "dbec0d65-8974-4fb7-8f77-12c31be99114",
         "7216abdb-aa13-4910-989b-1a2eb96adb37",
         "983c916e-7e8c-4374-9665-fd278aabc235",
-        "10bc0338-3610-431e-b4e3-f92bef31645d",
-        "36f132e4-66c0-432a-94f5-160e3e31b7b3",
         "f790f826-381e-415e-886e-be918c07c528",
         "8e9ce144-5344-4647-8c08-1a7f5ed2e8e9",
         "0cad12ab-3579-4f2d-a055-d44a1e0e39e6",
         "5c4f9141-ed5c-4d89-9617-ef2bfc7047e3",
+        "36f132e4-66c0-432a-94f5-160e3e31b7b3",
+        "399f1997-a319-4fbd-b282-794ccdeae67d",
         "0badec4f-2202-46f7-bff4-3c91b9070ee9",
         "6400151d-6a08-4d46-9a23-70315ba568ca",
-        "399f1997-a319-4fbd-b282-794ccdeae67d",
         "c6262526-c8e1-477b-b522-7a95efb2162b",
-        "012eee7e-19f3-46fa-8d0a-d7cb5f5796d3",
-        "094a7ba3-c417-431a-96ad-6f6406c2c279",
+        "10bc0338-3610-431e-b4e3-f92bef31645d",
         "bf469d08-d915-41d8-b4c6-b31e1b16136a",
-        "5324642e-c9b2-4cbb-8ba0-e3ddf75819f4",
+        "094a7ba3-c417-431a-96ad-6f6406c2c279",
         "812e2425-48f5-4dd6-b05a-f3e36916be22",
-        "template--15935446417546__efbf6637-635a-44e8-8833-251e79e22a0d-image-1",
+        "5324642e-c9b2-4cbb-8ba0-e3ddf75819f4",
         "4856b0aa-0f84-41fb-81b3-8e68c22a83d7",
+        "012eee7e-19f3-46fa-8d0a-d7cb5f5796d3",
+        "template--15935446417546__efbf6637-635a-44e8-8833-251e79e22a0d-image-1",
         "8b26181c-3379-4846-ac94-0941a560c1cf"
       ],
       "settings": {
