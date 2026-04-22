@@ -16,20 +16,9 @@
         "padding_top": 36,
         "padding_bottom": 100
       }
-    },
-    "custom_liquid_CKRYDe": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<div class=\"klaviyo-form-SeugvQ\"></div>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
-    "main",
-    "custom_liquid_CKRYDe"
+    "main"
   ]
 }
