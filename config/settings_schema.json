@@ -1463,6 +1463,13 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
+      },
+      {
+        "type": "number",
+        "id": "cart_free_shipping_threshold",
+        "label": "Free shipping threshold",
+        "info": "Order amount (in your store currency, e.g. 150) that unlocks free shipping. Set to 0 to hide the progress bar.",
+        "default": 0
       }
     ]
   }
