@@ -101,12 +101,12 @@
         "button_editorial"
       ],
       "settings": {
-        "image": "",
+        "image": "shopify://shop_images/LS14_FW26_Presentation_JG_Portraits__REDUCED.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
         "content_layout": "no-overlap",
         "section_color_scheme": "scheme-1",
         "color_scheme": "scheme-1",
@@ -133,7 +133,8 @@
           }
         },
         "email_form_newsletter": {
-          "type": "email_form"
+          "type": "email_form",
+          "settings": {}
         }
       },
       "block_order": [
